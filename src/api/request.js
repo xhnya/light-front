@@ -8,7 +8,7 @@ import "nprogress/nprogress.css";
 const requests =axios.create({
     //接口中都带有的，在请求路径中都带上
     //让http://xxxxxx变成http://xxxxxx/api
-    baseURL:"/api",
+    baseURL:"/xhn",
     //超时时间
     timeout:5000,
 });
