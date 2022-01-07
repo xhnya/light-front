@@ -1,10 +1,9 @@
 module.exports ={
     //关闭eslint
     lintOnSave:false,
-    devServer: {
-        port: 80,     // 端口号
-    },
     devServer:{
+        port: 80,
+        open: true,
         proxy:{
             '/xhn':{
                 target: 'http://localhost:88',

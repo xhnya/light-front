@@ -2,12 +2,14 @@
   <div>
     <el-row :gutter="0" type="flex" justify="center">
       <el-col :span="3"
-        ><div class="grid-content">
-          <img class="header-img" src="./images/logo.png" />
+      >
+        <div class="grid-content">
+          <img class="header-img" src="./images/logo.png"/>
         </div>
       </el-col>
-      <el-col :span="6"
-        ><div class="grid-content header-top">
+      <el-col :span="5"
+      >
+        <div class="grid-content header-top">
           <div class="header-text">
             <span>首页</span>
             <span>分类</span>
@@ -16,22 +18,24 @@
             <span>资讯</span>
             <span>关于我们</span>
           </div>
-        </div></el-col
-      >
+        </div>
+      </el-col>
       <el-col :span="8"
-        ><div class="grid-content bg-purple">
+      >
+        <div class="grid-content bg-purple">
           <div>
-            <el-input
-              placeholder="请输入内容"
-              v-model="input3"
-              class="input-with-select"
-            >
+            <el-input placeholder="请输入内容" v-model="input3">
               <el-button slot="append" icon="el-icon-search"></el-button>
             </el-input>
-          </div></div
-      ></el-col>
-      <el-col :span="7">
-        
+          </div>
+        </div
+        >
+      </el-col>
+      <el-col :span="8">
+        <div class="header-ava block">
+          <el-avatar size="medium" :src="circleUrl"></el-avatar>
+          <i  style="font-size:30px"  class="el-icon-message"></i>消息
+        </div>
       </el-col>
     </el-row>
   </div>
@@ -43,13 +47,16 @@ export default {
     return {
       input3: "",
       select: "",
+      circleUrl: "http://img.xhnya.top/img/vae.jpg",
     };
   },
 };
 </script>
 
+
 <style scoped>
 @import "./css/header.css";
+
 /* .el-row {
   margin-bottom: 20px;
   &:last-child {
@@ -81,4 +88,10 @@ export default {
   padding: 10px 0;
   background-color: #f9fafc;
 } */
+</style>
+
+<style>
+.header-search-color {
+  background-color: #dcdee4;
+}
 </style>

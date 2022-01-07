@@ -15,3 +15,10 @@
 .header-text span{
     margin-left: 10px;
 }
+.header-search{
+    /*搜索框*/
+    background-color: #dcdee4;
+}
+.header-ava {
+    margin-left: 30px;
+}
