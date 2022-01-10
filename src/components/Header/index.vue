@@ -4,7 +4,7 @@
       <el-col :span="3"
       >
         <div class="grid-content">
-          <img class="header-img" src="./images/logo.png"/>
+          <img class="header-img" src="../../assets/img/logo2.png"/>
         </div>
       </el-col>
       <el-col :span="5"
@@ -13,10 +13,9 @@
           <div class="header-text">
             <span>首页</span>
             <span>分类</span>
-            <span>论坛</span>
+            <span>社区</span>
             <span>百科</span>
             <span>资讯</span>
-            <span>关于我们</span>
           </div>
         </div>
       </el-col>
@@ -95,6 +94,7 @@
       </el-col>
     </el-row>
     <div style="position: absolute;top: 0;z-index: -1" class="header-banner"></div>
+    <div style="height: 100px"></div>
   </div>
 
 </template>
@@ -117,6 +117,7 @@ export default {
 
 .header-banner {
   background-image: url('../../assets/img/header_banner.jpg');
+  opacity: 0.8;
   /*background-position-x: center;*/
   /*background-position-y: top;*/
   /*background-size: initial;*/

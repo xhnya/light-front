@@ -14,7 +14,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65ada172-319e-4308-af14-dc3416332114" name="Default Changelist" comment="header">
+      <change afterPath="$PROJECT_DIR$/src/assets/img/95EEA673-E49A-424E-9BDC-46EA9A242C8B.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/logo2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/css/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +55,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Header/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/img" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -62,8 +69,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\xhn\Desktop\code\light-vue\light\src\components\Header\images" />
       <recent name="C:\Users\xhn\Desktop\code\light-vue\light\src\assets\img" />
+      <recent name="C:\Users\xhn\Desktop\code\light-vue\light\src\components\Header\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\xhn\Desktop\code\light-vue\light\src\assets\img" />
@@ -120,6 +127,8 @@
       <workItem from="1641571348604" duration="1628000" />
       <workItem from="1641609806996" duration="62000" />
       <workItem from="1641733163647" duration="6465000" />
+      <workItem from="1641812426638" duration="4099000" />
+      <workItem from="1641818636083" duration="7866000" />
     </task>
     <task id="LOCAL-00001" summary="header">
       <created>1641572920466</created>
