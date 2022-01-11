@@ -23,6 +23,7 @@
 
 .sort-header {
     margin-top: 30px;
+    height: 500px;
 }
 
 .card-header span {
@@ -46,12 +47,18 @@
 
 .box-card3{
     margin-right: 7.5%;
+    width: 81%;
 }
 .box-card4{
     width: 98%;
     margin-right: 30px;
-
 }
+.box-card5{
+    width: 98%;
+    margin-right: 30px;
+    margin-top: 30px;
+}
+
 
 /*********************element css********************/
 
@@ -76,7 +83,7 @@
     font-size: 15px;
 }
 
-.item {
+.item1 {
     margin-bottom: 15px;
 }
 

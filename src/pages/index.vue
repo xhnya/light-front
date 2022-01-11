@@ -1,5 +1,6 @@
 <template>
   <div class="index-header">
+    <el-backtop></el-backtop>
     <!--    游戏展示-->
     <div>
       <div class="card-header">
@@ -138,7 +139,7 @@
               <span> 常用</span>
               <el-button style="float: right; padding: 1px 0" type="text">操作</el-button>
             </div>
-            <div style="margin-left: 20px;" v-for="o in 3" :key="o" class="text item">
+            <div style="margin-left: 20px;" v-for="o in 3" :key="o" class="text item1">
               {{ '列表内容 ' + o }}
             </div>
           </el-card>
@@ -148,7 +149,7 @@
               <span> 规则</span>
               <el-button style="float: right; padding: 1px 0" type="text">操作</el-button>
             </div>
-            <div v-for="o in 3" :key="o" class="text item" style="margin-left: 20px;">
+            <div v-for="o in 3" :key="o" class="text item1" style="margin-left: 20px;">
               {{ '列表内容 ' + o }}
             </div>
           </el-card>
@@ -166,7 +167,7 @@
               <div slot="header" class="clearfix">
                 <span>游戏动态</span>
               </div>
-              <div v-for="o in 4" :key="o" class="text item">
+              <div v-for="o in 15" :key="o" class="text item1">
                 {{ '列表内容 ' + o }}
               </div>
             </el-card>
@@ -174,18 +175,182 @@
         </el-col>
 
         <el-col :span="12">
-          <div   class="grid-content">
-            <el-card style="float: right;" class="box-card4">
+          <div class="grid-content">
+            <el-card shadow="hover" style="float: right;" class="box-card4">
               <div slot="header" class="clearfix">
-                <span>游戏动态</span>
+                <span>经典大作</span>
+                <i style="float: right;" class="el-icon-d-arrow-right"></i>
               </div>
-              <div v-for="o in 4" :key="o" class="text item">
-                {{ '列表内容 ' + o }}
+              <div>
+                <el-row>
+                  <el-col :span="6">
+                    <div class="grid-content recently-game ">
+                      <el-popover
+                          placement="top-start"
+                          title="标题"
+                          width="200"
+                          trigger="hover"
+                          content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
+                        <div slot="reference">
+                          <div style="text-align: center;">
+                            <el-image
+                                style="width: 100px; height: 120px;text-align: center;"
+                                :src="recentlyUrl"
+                                fit="fill"></el-image>
+                          </div>
+                          <div style="text-align: center;">
+                            消逝的光芒2
+                          </div>
+                          <div style="text-align: center;">
+                            2022-02-04
+                          </div>
+                        </div>
+                      </el-popover>
+                    </div>
+                  </el-col>
+                  <el-col :span="6">
+                    <div class="grid-content ">
+                      <div>
+                        <div style="text-align: center;">
+                          <el-image
+                              style="width: 100px; height: 120px;text-align: center;"
+                              :src="recentlyUrl"
+                              fit="fill"></el-image>
+                        </div>
+                        <div style="text-align: center;">
+                          消逝的光芒2
+                        </div>
+                        <div style="text-align: center;">
+                          2022-02-04
+                        </div>
+                      </div>
+                    </div>
+                  </el-col>
+                  <el-col :span="6">
+                    <div class="grid-content ">
+                      <div>
+                        <div style="text-align: center;">
+                          <el-image
+                              style="width: 100px; height: 120px;text-align: center;"
+                              :src="recentlyUrl"
+                              fit="fill"></el-image>
+                        </div>
+                        <div style="text-align: center;">
+                          消逝的光芒2
+                        </div>
+                        <div style="text-align: center;">
+                          2022-02-04
+                        </div>
+                      </div>
+                    </div>
+                  </el-col>
+                  <el-col :span="6">
+                    <div class="grid-content ">
+                      <div>
+                        <div style="text-align: center;">
+                          <el-image
+                              style="width: 100px; height: 120px;text-align: center;"
+                              :src="recentlyUrl"
+                              fit="fill"></el-image>
+                        </div>
+                        <div style="text-align: center;">
+                          消逝的光芒2
+                        </div>
+                        <div style="text-align: center;">
+                          2022-02-04
+                        </div>
+                      </div>
+                    </div>
+                  </el-col>
+                </el-row>
+              </div>
+            </el-card>
+            <el-card shadow="hover" style="float: right;" class="box-card5">
+              <div slot="header" class="clearfix">
+                <span>最近发布</span>
+                <i style="float: right;" class="el-icon-d-arrow-right"></i>
+              </div>
+              <div>
+                <el-row>
+                  <el-col :span="6">
+                    <div class="grid-content ">
+                      <div>
+                        <div style="text-align: center;">
+                          <el-image
+                              style="width: 100px; height: 120px;text-align: center;"
+                              :src="recentlyUrl"
+                              fit="fill"></el-image>
+                        </div>
+                        <div style="text-align: center;">
+                          消逝的光芒2
+                        </div>
+                        <div style="text-align: center;">
+                          2022-02-04
+                        </div>
+                      </div>
+                    </div>
+                  </el-col>
+                  <el-col :span="6">
+                    <div class="grid-content ">
+                      <div>
+                        <div style="text-align: center;">
+                          <el-image
+                              style="width: 100px; height: 120px;text-align: center;"
+                              :src="recentlyUrl"
+                              fit="fill"></el-image>
+                        </div>
+                        <div style="text-align: center;">
+                          消逝的光芒2
+                        </div>
+                        <div style="text-align: center;">
+                          2022-02-04
+                        </div>
+                      </div>
+                    </div>
+                  </el-col>
+                  <el-col :span="6">
+                    <div class="grid-content ">
+                      <div>
+                        <div style="text-align: center;">
+                          <el-image
+                              style="width: 100px; height: 120px;text-align: center;"
+                              :src="recentlyUrl"
+                              fit="fill"></el-image>
+                        </div>
+                        <div style="text-align: center;">
+                          消逝的光芒2
+                        </div>
+                        <div style="text-align: center;">
+                          2022-02-04
+                        </div>
+                      </div>
+                    </div>
+                  </el-col>
+                  <el-col :span="6">
+                    <div class="grid-content ">
+                      <div>
+                        <div style="text-align: center;">
+                          <el-image
+                              style="width: 100px; height: 120px;text-align: center;"
+                              :src="recentlyUrl"
+                              fit="fill"></el-image>
+                        </div>
+                        <div style="text-align: center;">
+                          消逝的光芒2
+                        </div>
+                        <div style="text-align: center;">
+                          2022-02-04
+                        </div>
+                      </div>
+                    </div>
+                  </el-col>
+                </el-row>
               </div>
             </el-card>
           </div>
         </el-col>
       </el-row>
+
     </div>
 
     <!--    排行榜-->
@@ -252,8 +417,11 @@
         </el-col>
       </el-row>
     </div>
+    <!--      回到顶部-->
 
+<!--    <el-backtop target=".page-component__scroll .el-scrollbar__wrap"></el-backtop>-->
   </div>
+
 </template>
 
 <script>
@@ -264,6 +432,7 @@ export default {
       activeName1: '1',
       activeName2: '1',
       activeName3: '1',
+      recentlyUrl: "http://img.xhnya.top/DyingLight2.jpg",
     };
   },
   created() {
@@ -294,6 +463,5 @@ export default {
 
 <style scoped>
 @import '../assets/style/home.css';
-
 
 </style>

@@ -99,7 +99,7 @@ export default {
 .footer-div{
   background-color: #858585;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 200px;
   margin-bottom: 30px;
 }
 

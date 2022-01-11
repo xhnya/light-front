@@ -1,19 +1,19 @@
 <template>
-  <div style="color: #f7f8f9">
+  <div style="color: #ffffff">
     <el-row :gutter="0" type="flex" justify="center">
       <el-col :span="3"
       >
-        <div class="grid-content">
-          <img class="header-img" src="../../assets/img/logo2.png"/>
+        <div  @click="goIndex" class="grid-content">
+          <img  class="header-img" src="../../assets/img/logo2.png"/>
         </div>
       </el-col>
       <el-col :span="5"
       >
         <div class="grid-content header-top">
           <div class="header-text">
-            <span>首页</span>
-            <span @click="goType" to>分类</span>
-            <span>社区</span>
+            <router-link to="/"><span class="box animated bounce">首页</span></router-link>
+            <router-link to="/type"><span ><span>分类</span></span></router-link>
+            <router-link to="/community"><span>社区</span></router-link>
             <span>百科</span>
             <span>资讯</span>
           </div>
@@ -110,7 +110,10 @@ export default {
   },
   methods:{
     goType(){
-      this.$route.push("/")
+      this.$router.push({path:'/type'})
+    },
+    goIndex(){
+      this.$router.push({path:'/'})
     }
   }
 };
@@ -140,6 +143,9 @@ export default {
   height: 170px;
   z-index: 0;
 }
+/**************动画*************/
+
+/**************动画结束*************/
 .header_bar{
   position: absolute;
   top: 0;

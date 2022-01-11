@@ -7,6 +7,8 @@ Vue.use(VueRouter);
 import Login from '@/pages/login/index.vue'
 import Index from '@/pages/index.vue'
 import Type from '@/pages/type/index.vue'
+import Community from '@/pages/community/index.vue'
+
 
 //保存VueRouter.prototype.push
 let originPush = VueRouter.prototype.push;
@@ -53,6 +55,11 @@ export default new VueRouter({
         {
             path: "/type",
             component: Type,
+            // meta:{show:true}
+        },
+        {
+            path: "/community",
+            component: Community,
             // meta:{show:true}
         },
 
