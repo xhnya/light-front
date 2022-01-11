@@ -3,7 +3,7 @@
     <el-row>
       <el-col :span="5">
         <div class="grid-content bg-purple">
-          <el-card class="box-card">
+          <el-card class="box-card-c1">
             <div slot="header" class="clearfix">
               <span>卡片名称</span>
               <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
@@ -58,5 +58,9 @@ export default {
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 30px;
+}
+.box-card-c1{
+
+  width: 200px;
 }
 </style>

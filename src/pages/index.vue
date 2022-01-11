@@ -22,9 +22,7 @@
                 <span>荒野大镖客2</span>
                 <el-divider direction="vertical"></el-divider>
                 <span>荒野大镖客2</span>
-                <el-divider direction="vertical"></el-divider>
-                <span>荒野大镖客2</span>
-                <el-divider direction="vertical"></el-divider>
+
 
               </div>
             </div>
@@ -46,9 +44,7 @@
                 <span>荒野大镖客2</span>
                 <el-divider direction="vertical"></el-divider>
                 <span>荒野大镖客2</span>
-                <el-divider direction="vertical"></el-divider>
-                <span>荒野大镖客2</span>
-                <el-divider direction="vertical"></el-divider>
+
               </div>
             </div>
           </el-col>
@@ -73,9 +69,7 @@
                 <span>荒野大镖客2</span>
                 <el-divider direction="vertical"></el-divider>
                 <span>荒野大镖客2</span>
-                <el-divider direction="vertical"></el-divider>
-                <span>荒野大镖客2</span>
-                <el-divider direction="vertical"></el-divider>
+
               </div>
             </div>
           </el-col>
@@ -96,9 +90,6 @@
                 <span>荒野大镖客2</span>
                 <el-divider direction="vertical"></el-divider>
                 <span>荒野大镖客2</span>
-                <el-divider direction="vertical"></el-divider>
-                <span>荒野大镖客2</span>
-                <el-divider direction="vertical"></el-divider>
               </div>
             </div>
           </el-col>

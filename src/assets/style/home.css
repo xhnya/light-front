@@ -9,7 +9,7 @@
 }
 /*设置文字最大显示长度*/
 .max-text {
-    width: 420px;
+    width: 80%;
     overflow: hidden;
     white-space: nowrap;
     -ms-text-overflow: ellipsis;
