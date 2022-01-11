@@ -12,7 +12,7 @@
         <div class="grid-content header-top">
           <div class="header-text">
             <span>首页</span>
-            <span>分类</span>
+            <span @click="goType" to>分类</span>
             <span>社区</span>
             <span>百科</span>
             <span>资讯</span>
@@ -90,7 +90,7 @@
         </div>
       </el-col>
       <el-col style="text-align: center;" :span="2">
-        <el-button style="width: 100px" type="danger" icon="el-icon-circle-plus">发布</el-button>
+        <el-button style="width: 100px;background-color: #fb7299" type="danger" icon="el-icon-circle-plus">发布</el-button>
       </el-col>
     </el-row>
     <div style="position: absolute;top: 0;z-index: -1" class="header-banner"></div>
@@ -108,6 +108,11 @@ export default {
       circleUrl: "http://img.xhnya.top/img/vae.jpg",
     };
   },
+  methods:{
+    goType(){
+      this.$route.push("/")
+    }
+  }
 };
 </script>
 

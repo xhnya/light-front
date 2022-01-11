@@ -6,6 +6,7 @@ Vue.use(VueRouter);
 
 import Login from '@/pages/login/index.vue'
 import Index from '@/pages/index.vue'
+import Type from '@/pages/type/index.vue'
 
 //保存VueRouter.prototype.push
 let originPush = VueRouter.prototype.push;
@@ -33,16 +34,28 @@ VueRouter.prototype.replace = function (location, resolve, reject) {
 }
 
 export default new VueRouter({
-    routes: [{
-        path: "/login",
-        component: Login,
-        // meta:{show:true}
-    },
-    {
-        path: "/",
-        component: Index,
-       // meta:{show:true}
-    },
+    routes: [
+        {
+            path: "/login",
+            component: Login,
+            // meta:{show:true}
+        },
+        {
+            path: "/",
+            component: Index,
+            // meta:{show:true}
+        },
+        {
+            path: "/",
+            component: Index,
+            // meta:{show:true}
+        },
+        {
+            path: "/type",
+            component: Type,
+            // meta:{show:true}
+        },
+
     ]
 })
 
