@@ -1,56 +1,59 @@
 <template>
-  <div class="message-index">
-    <!--    消息中心-->
-    <div>
-      <el-row>
-        <!--        左边固定列-->
-        <el-col style="background-color: #e8f5fd;" :span="4">
-          <div style="height: 100%;" class="grid-content bg-purple-dark">
-            <div class="message-sys-item">
-              <i class="el-icon-s-promotion"></i><span>消息中心</span>
+  <div class="message-body">
+    <div class="message-index">
+      <!--    消息中心-->
+      <div>
+        <el-row>
+          <!--        左边固定列-->
+          <el-col style="background-color: #e8f5fd;" :span="4">
+            <div style="height: 100%;" class="grid-content bg-purple-dark">
+              <div class="message-sys-item">
+                <i class="el-icon-s-promotion"></i><span>消息中心</span>
+              </div>
+              <div>
+                <ul class="message-sys-ui">
+                  <li @click="changerHeaderName('回复我的')">
+                    <router-link to="/message/reply">回复我的</router-link>
+                  </li>
+                  <li @click="changerHeaderName('@我的')">
+                    <router-link to="/message/atme">@我的</router-link>
+                  </li>
+                  <li @click="changerHeaderName('收到的赞')">
+                    <router-link to="/message/love">收到的赞</router-link>
+                  </li>
+                  <li @click="changerHeaderName('系统通知')">
+                    <router-link to="/message/system">系统通知</router-link>
+                  </li>
+                  <li @click="changerHeaderName('我的消息')">
+                    <router-link to="/message/whisper">我的消息</router-link>
+                  </li>
+                </ul>
+              </div>
+              <div class="message-sys-item">
+                <i class="el-icon-setting"></i><span>消息设置</span>
+              </div>
             </div>
-            <div>
-              <ul class="message-sys-ui">
-                <li @click="changerHeaderName('回复我的')">
-                  <router-link to="/message/reply">回复我的</router-link>
-                </li>
-                <li @click="changerHeaderName('@我的')">
-                  <router-link to="/message/atme">@我的</router-link>
-                </li>
-                <li @click="changerHeaderName('收到的赞')">
-                  <router-link to="">收到的赞</router-link>
-                </li>
-                <li @click="changerHeaderName('系统通知')">
-                  <router-link to="">系统通知</router-link>
-                </li>
-                <li @click="changerHeaderName('我的消息')">
-                  <router-link to="">我的消息</router-link>
-                </li>
-              </ul>
+          </el-col>
+          <el-col :span="20">
+            <div class="grid-content bg-purple-dark">
+              <!--            头部-->
+              <div>
+                <el-card class="box-message-1">
+                  {{ headerName }}
+                </el-card>
+              </div>
+              <div>
+                <router-view/>
+              </div>
             </div>
-            <div class="message-sys-item">
-              <i class="el-icon-setting"></i><span>消息设置</span>
-            </div>
-          </div>
-        </el-col>
-        <el-col :span="20">
-          <div class="grid-content bg-purple-dark">
-            <!--            头部-->
-            <div>
-              <el-card class="box-message-1">
-                {{ headerName }}
-              </el-card>
-            </div>
-            <div>
-              <router-view/>
-            </div>
-          </div>
 
-        </el-col>
-      </el-row>
+          </el-col>
+        </el-row>
+      </div>
+
     </div>
-
   </div>
+
 </template>
 
 <script>
@@ -69,8 +72,14 @@ export default {
 </script>
 
 <style scoped>
+.message-body{
+  background: url("http://img.xhnya.top/img/messageBackground.jpg") no-repeat fixed;
+  padding: 0;
+  height: 1000px;
+}
 .message-index {
-  margin-top: 30px;
+
+  padding-top: 30px;
   margin-left: 20%;
   margin-right: 20%;
 }

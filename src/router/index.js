@@ -11,6 +11,10 @@ import Community from '@/pages/community/index.vue'
 import Message from '@/pages/message'
 import Reply from '@/pages/message/reply/index.vue'
 import AtMe from  '@/pages/message/at'
+import Love from  '@/pages/message/love/love.vue'
+import System from '@/pages/message/system'
+import Whisper from '@/pages/message/whisper'
+
 
 //保存VueRouter.prototype.push
 let originPush = VueRouter.prototype.push;
@@ -80,9 +84,28 @@ export default new VueRouter({
                     path: 'atme',
                     name: 'atme',
                     component: AtMe,
+                },
+                {
+                    path: 'love',
+                    name: 'love',
+                    component: Love,
+                },
+                {
+                    path: 'system',
+                    name: 'system',
+                    component: System,
+                },
+                {
+                    path: 'whisper',
+                    name: 'whisper',
+                    component: Whisper,
                 }]
         },
 
-    ]
+    ],
+    // 页面跳转时候回到最上面
+    scrollBehavior (to, from, savedPosition) {
+        return { y: 0 }
+    }
 })
 

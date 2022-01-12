@@ -39,7 +39,7 @@
       </el-col>
       <el-col :span="1">
         <div style="text-align: center;">
-          <router-link to="/message">
+          <router-link to="/message/reply">
             <div>
               <el-badge :value="200" :max="99" class="item">
                 <i style="font-size:20px" class="el-icon-message"></i>
