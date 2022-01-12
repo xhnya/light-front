@@ -13,15 +13,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65ada172-319e-4308-af14-dc3416332114" name="Default Changelist" comment="index">
-      <change afterPath="$PROJECT_DIR$/src/pages/collections/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/message/love/love.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/message/system/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/message/whisper/index.vue" afterDir="false" />
+    <list default="true" id="65ada172-319e-4308-af14-dc3416332114" name="Default Changelist" comment="1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/message/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/message/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/collections/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/collections/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -131,6 +128,8 @@
       <workItem from="1641733163647" duration="6465000" />
       <workItem from="1641812426638" duration="4099000" />
       <workItem from="1641818636083" duration="7866000" />
+      <workItem from="1641996738860" duration="58000" />
+      <workItem from="1642000651040" duration="1642000" />
     </task>
     <task id="LOCAL-00001" summary="header">
       <created>1641572920466</created>
@@ -139,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641572920466</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="1">
+      <created>1641996786365</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1641996786365</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +164,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="header" />
-    <option name="LAST_COMMIT_MESSAGE" value="header" />
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
 </project>

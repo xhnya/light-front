@@ -9,6 +9,10 @@ import "./assets/style/global.css";
 import animated from 'animate.css'
 Vue.use(animated)
 
+import less from 'less'
+Vue.use(less)
+
+
 import HeaderBanner from "@/components/HeaderBanner";
 Vue.component('HeaderBanner',HeaderBanner)
 

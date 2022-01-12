@@ -1,6 +1,9 @@
 <template>
-  <div>
+  <div class="box-collection">
+1111
+    <HeaderBanner/>
   </div>
+
 </template>
 
 <script>
@@ -12,5 +15,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
+@margin-top: 100px;
+.box-collection{
+  margin-top: @margin-top;
+}
+
+
 </style>

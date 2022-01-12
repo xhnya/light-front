@@ -14,6 +14,7 @@ import AtMe from  '@/pages/message/at'
 import Love from  '@/pages/message/love/love.vue'
 import System from '@/pages/message/system'
 import Whisper from '@/pages/message/whisper'
+import Collections from '@/pages/collections'
 
 
 //保存VueRouter.prototype.push
@@ -65,6 +66,12 @@ export default new VueRouter({
             path: "/community",
             component: Community,
             name: 'community',
+            // meta:{show:true}
+        },
+        {
+            path: "/collections",
+            component: Collections,
+            name: 'collections',
             // meta:{show:true}
         },
         {
