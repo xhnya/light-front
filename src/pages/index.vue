@@ -1,5 +1,6 @@
 <template>
   <div class="index-header">
+    <HeaderBanner/>
     <el-backtop></el-backtop>
     <!--    游戏展示-->
     <div>
@@ -124,7 +125,7 @@
         </el-col>
         <el-col :span="6">
           <!--          卡片 ---------------常用-->
-          <el-card style="float: right;" :body-style="{ padding: '0px' }" class="box-card"
+          <el-card style="float: right;" :body-style="{ padding: '0px' }" class="box-card-index1"
           >
             <div slot="header" class="clearfix">
               <span> 常用</span>
@@ -416,6 +417,7 @@
 </template>
 
 <script>
+
 export default {
   data() {
     return {

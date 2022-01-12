@@ -8,7 +8,9 @@ import Login from '@/pages/login/index.vue'
 import Index from '@/pages/index.vue'
 import Type from '@/pages/type/index.vue'
 import Community from '@/pages/community/index.vue'
-
+import Message from '@/pages/message'
+import Reply from '@/pages/message/reply/index.vue'
+import AtMe from  '@/pages/message/at'
 
 //保存VueRouter.prototype.push
 let originPush = VueRouter.prototype.push;
@@ -40,27 +42,45 @@ export default new VueRouter({
         {
             path: "/login",
             component: Login,
-            // meta:{show:true}
+            name: 'login',
+            //meta:{isHideFooter:true}
         },
         {
             path: "/",
-            component: Index,
-            // meta:{show:true}
-        },
-        {
-            path: "/",
-            component: Index,
+            name: 'index',
+            component: Index
             // meta:{show:true}
         },
         {
             path: "/type",
             component: Type,
+            name: 'type',
             // meta:{show:true}
         },
         {
             path: "/community",
             component: Community,
+            name: 'community',
             // meta:{show:true}
+        },
+        {
+            path: "/message",
+            component: Message,
+            name: 'message',
+            meta: {
+                isHideFooter: true
+            },
+            children: [
+                {
+                    path: 'reply',
+                    name: 'reply',
+                    component: Reply,
+                },
+                {
+                    path: 'atme',
+                    name: 'atme',
+                    component: AtMe,
+                }]
         },
 
     ]

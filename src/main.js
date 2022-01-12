@@ -9,9 +9,12 @@ import "./assets/style/global.css";
 import animated from 'animate.css'
 Vue.use(animated)
 
+import HeaderBanner from "@/components/HeaderBanner";
+Vue.component('HeaderBanner',HeaderBanner)
 
 Vue.config.productionTip = false
 Vue.use(ElementUI);
+
 new Vue({
   render: h => h(App),
   router,

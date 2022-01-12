@@ -1,10 +1,10 @@
 <template>
-  <div style="color: #ffffff">
+  <div style="color: #2b2b2c">
     <el-row :gutter="0" type="flex" justify="center">
       <el-col :span="3"
       >
-        <div  @click="goIndex" class="grid-content">
-          <img  class="header-img" src="../../assets/img/logo2.png"/>
+        <div @click="goIndex" class="grid-content">
+          <img class="header-img" src="../../assets/img/logo2.png"/>
         </div>
       </el-col>
       <el-col :span="5"
@@ -12,7 +12,7 @@
         <div class="grid-content header-top">
           <div class="header-text">
             <router-link to="/"><span class="box animated bounce">首页</span></router-link>
-            <router-link to="/type"><span ><span>分类</span></span></router-link>
+            <router-link to="/type"><span><span>分类</span></span></router-link>
             <router-link to="/community"><span>社区</span></router-link>
             <span>百科</span>
             <span>资讯</span>
@@ -39,14 +39,16 @@
       </el-col>
       <el-col :span="1">
         <div style="text-align: center;">
-          <div>
-            <el-badge :value="200" :max="99" class="item">
-              <i style="font-size:20px" class="el-icon-message"></i>
-            </el-badge>
-          </div>
-          <div>
-            <span style="font-size: small">消息</span>
-          </div>
+          <router-link to="/message">
+            <div>
+              <el-badge :value="200" :max="99" class="item">
+                <i style="font-size:20px" class="el-icon-message"></i>
+              </el-badge>
+            </div>
+            <div>
+              <span style="font-size: small">消息</span>
+            </div>
+          </router-link>
         </div>
       </el-col>
       <el-col :span="1">
@@ -90,11 +92,13 @@
         </div>
       </el-col>
       <el-col style="text-align: center;" :span="2">
-        <el-button style="width: 100px;background-color: #fb7299" type="danger" icon="el-icon-circle-plus">发布</el-button>
+        <el-button style="width: 100px;background-color: #fb7299" type="danger" icon="el-icon-circle-plus">发布
+        </el-button>
       </el-col>
     </el-row>
-    <div style="position: absolute;top: 0;z-index: -1" class="header-banner"></div>
-    <div style="height: 100px"></div>
+
+<!--    <div style="position: absolute;top: 0;z-index: -1" class="header-banner"></div>-->
+<!--    <div style="height: 100px"></div>-->
   </div>
 
 </template>
@@ -108,12 +112,12 @@ export default {
       circleUrl: "http://img.xhnya.top/img/vae.jpg",
     };
   },
-  methods:{
-    goType(){
-      this.$router.push({path:'/type'})
+  methods: {
+    goType() {
+      this.$router.push({path: '/type'})
     },
-    goIndex(){
-      this.$router.push({path:'/'})
+    goIndex() {
+      this.$router.push({path: '/'})
     }
   }
 };
@@ -123,30 +127,11 @@ export default {
 <style scoped>
 @import "./css/header.css";
 
-.header-banner {
-  background-image: url('../../assets/img/header_banner.jpg');
-  opacity: 0.8;
-  /*background-position-x: center;*/
-  /*background-position-y: top;*/
-  /*background-size: initial;*/
-  /*background-repeat-x: no-repeat;*/
-  /*background-repeat-y: no-repeat;*/
-  /*background-attachment: initial;*/
-  /*background-origin: initial;*/
-  /*background-clip: initial;*/
-  /*background-color: initial;*/
 
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 170px;
-  z-index: 0;
-}
 /**************动画*************/
 
 /**************动画结束*************/
-.header_bar{
+.header_bar {
   position: absolute;
   top: 0;
   z-index: 1002;
@@ -158,6 +143,7 @@ export default {
   width: 100%;
   height: 64px;
 }
+
 /* .el-row {
   margin-bottom: 20px;
   &:last-child {
