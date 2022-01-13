@@ -5,7 +5,7 @@
         <div class="game-user-item">
           <div class="game-user-item1">
             <el-image
-                style="width: 100px; height: 120px"
+                style="width: 100px; height: 120px;border-radius: 6px;"
                 :src="gameInfo.gameUrl"
                 fit="fill"></el-image>
             <div>{{ gameInfo.title }}</div>
