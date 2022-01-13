@@ -33,7 +33,7 @@
       </el-col>
       <!--   --------------------   搜索框结束，右边---------------------->
       <el-col class="header-right" :span="0.8">
-        <div class="block">
+        <div @click="goUser"  class="block">
           <el-avatar size="medium" :src="circleUrl"></el-avatar>
         </div>
       </el-col>
@@ -53,22 +53,26 @@
       </el-col>
       <el-col :span="1">
         <div style="text-align: center;">
-          <div>
-            <i style="font-size:20px" class="el-icon-star-off"></i>
-          </div>
-          <div>
-            <span style="font-size: small">收藏</span>
-          </div>
+          <router-link to="/collections">
+            <div>
+              <i style="font-size:20px" class="el-icon-star-off"></i>
+            </div>
+            <div>
+              <span style="font-size: small">收藏</span>
+            </div>
+          </router-link>
         </div>
       </el-col>
       <el-col :span="1">
         <div style="text-align: center;">
-          <div>
-            <i style="font-size:20px" class="el-icon-time"></i>
-          </div>
-          <div>
-            <span style="font-size: small">历史</span>
-          </div>
+          <router-link to="/account/history">
+            <div>
+              <i style="font-size:20px" class="el-icon-time"></i>
+            </div>
+            <div>
+              <span style="font-size: small">历史</span>
+            </div>
+          </router-link>
         </div>
       </el-col>
       <el-col :span="1">
@@ -118,6 +122,9 @@ export default {
     },
     goIndex() {
       this.$router.push({path: '/'})
+    },
+    goUser(){
+      this.$router.push({path: '/account/user'})
     }
   }
 };
