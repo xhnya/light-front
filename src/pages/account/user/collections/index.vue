@@ -1,6 +1,5 @@
 <template>
-  <div class="box-collection">
-    <HeaderBanner/>
+  <div class="user-collections">
     <el-card class="box-card">
       <div slot="header" class="clearfix">
         <span>收藏夹</span>
@@ -17,14 +16,12 @@
     </el-card>
 
   </div>
-
 </template>
 
 <script>
 export default {
   data() {
-    return {
-      collectionsList: [
+    return { collectionsList: [
         {
           id: 1,
           title: "我的收藏夹",
@@ -60,22 +57,17 @@ export default {
           updateTime: "2022-1-03",
           nums: 4
         }
-      ]
-    }
+      ]}
   },
   methods: {}
 }
 </script>
-
 <style lang="less" scoped>
 @margin-top: 30px;
-@marginLeftAndRight: 30%;
-
-.box-collection {
-  margin-top: @margin-top;
-  margin-right: @marginLeftAndRight;
-  margin-left: @marginLeftAndRight;
+.user-collections{
+  margin-top: 10px;
 }
+
 .collections-title{
   font-size: 18px;
   font-weight: bold;
@@ -83,5 +75,4 @@ export default {
 .collections-item{
   margin-top: @margin-top;
 }
-
 </style>

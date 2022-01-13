@@ -2,7 +2,12 @@ import Login from "@/pages/login";
 import Index from "@/pages";
 import Type from "@/pages/type";
 import Community from "@/pages/community";
-import Collections from "@/pages/collections";
+import Collections from "@/pages/collections/index.vue";
+import UserCollections from "@/pages/account/user/collections"
+import UserGame from "@/pages/account/user/game"
+import UserPage from "@/pages/account/user/page"
+import UserOrder from "@/pages/account/user/order"
+
 import AccountHistory from "@/pages/account/history/history";
 import User from "@/pages/account/user";
 import Message from "@/pages/message";
@@ -11,6 +16,7 @@ import AtMe from "@/pages/message/at";
 import Love from "@/pages/message/love/love";
 import System from "@/pages/message/system";
 import Whisper from "@/pages/message/whisper";
+import UserHome from "@/pages/account/user/home";
 
 export default [
     {
@@ -40,7 +46,7 @@ export default [
     {
         path: "/collections",
         component: Collections,
-        name: 'collections',
+        name: 'CollectionsSeize',
         // meta:{show:true}
     },
     {
@@ -52,7 +58,38 @@ export default [
     {
         path: '/account/user',
         component: User,
-        name: 'user'
+        name: 'user',
+        children: [
+            {
+                path: 'home',
+                name: 'userHome',
+                component: UserHome
+            },
+            {
+                path: "collections",
+                component: UserCollections,
+                name: 'UserCollections',
+                // meta:{show:true}
+            },
+            {
+                path: "game",
+                component: UserGame,
+                name: 'UserGame',
+                // meta:{show:true}
+            },
+            {
+                path: "page",
+                component: UserPage,
+                name: 'UserPage',
+                // meta:{show:true}
+            },
+            {
+                path: "order",
+                component: UserOrder,
+                name: 'UserOrder',
+                // meta:{show:true}
+            },
+        ]
     },
     {
         path: "/message",
