@@ -9,6 +9,14 @@ import "./assets/style/global.css";
 import animated from 'animate.css'
 Vue.use(animated)
 
+import Antd from 'ant-design-vue';
+import 'ant-design-vue/dist/antd.css';
+Vue.use(Antd);
+import { Button } from 'ant-design-vue';
+Vue.use(Button);
+
+
+
 import less from 'less'
 Vue.use(less)
 

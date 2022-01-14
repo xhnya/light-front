@@ -1,5 +1,5 @@
 <template>
-  <div style="color: #2b2b2c">
+  <div style="color: #2b2b2c;margin: 10px 10px 10px 10px">
     <el-row :gutter="0" type="flex" justify="center">
       <el-col :span="3"
       >
