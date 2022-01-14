@@ -18,8 +18,11 @@ import System from "@/pages/message/system";
 import Whisper from "@/pages/message/whisper";
 import UserHome from "@/pages/account/user/home";
 
+import WikiIndex from "@/pages/wiki/home"
 
 import AllGame from "@/pages/game/all";
+
+import Info from "@/pages/info/index"
 
 
 export default [
@@ -135,4 +138,17 @@ export default [
         name: 'AllGame',
         // meta:{show:true}
     },
+    {
+        path: "/wiki",
+        component: WikiIndex,
+        name: 'wiki',
+        // meta:{show:true}
+    },
+    {
+        path: "/info",
+        component: Info,
+        name: 'info',
+        // meta:{show:true}
+    },
+
 ]

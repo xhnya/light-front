@@ -14,8 +14,8 @@
             <router-link to="/"><span class="box animated bounce">首页</span></router-link>
             <router-link to="/type"><span><span>分类</span></span></router-link>
             <router-link to="/community"><span>社区</span></router-link>
-            <span>百科</span>
-            <span>资讯</span>
+            <router-link to="/wiki"><span>百科</span></router-link>
+            <router-link to="/info"><span>资讯</span></router-link>
           </div>
         </div>
       </el-col>

@@ -51,8 +51,8 @@
 
             <div class="grid-content bg-purple">
               <a-carousel arrows dots-class="slick-dots slick-thumb">
-                <a   slot="customPaging" slot-scope="props">
-                  <img  @mouseenter="changeGameBanner(props.i)" :src="gameBanner[props.i].coverUrl"/>
+                <a style="width: 50%;" slot="customPaging" slot-scope="props">
+                  <img @mouseenter="changeGameBanner(props.i)" :src="gameBanner[props.i].coverUrl"/>
                 </a>
                 <div class="game-type-second-image" v-for="item in gameBanner">
                   <el-card>
@@ -68,7 +68,7 @@
                         </div>
                         <div class="game-type-item">
                           <el-row>
-                            <el-col :span="12" >
+                            <el-col :span="12">
                               <ul>
                                 <li>PC照相模式</li>
                                 <li>PC照相模式</li>
@@ -76,7 +76,7 @@
                                 <li>PC照相模式</li>
                               </ul>
                             </el-col>
-                            <el-col :span="12" >
+                            <el-col :span="12">
                               <ul>
                                 <li>PC照相模式</li>
                                 <li>PC照相模式</li>
@@ -97,9 +97,18 @@
           </el-col>
           <el-col :span="12">
             <div class="grid-content bg-purple-light">
-              <el-card class="box-card">
-                <div v-for="o in 4" :key="o" class="text item">
-                  {{'列表内容 ' + o }}
+              <el-card class="game-tags-item01">
+                <div class="text item">
+                  <a-list
+                      :grid="{ gutter: 16, xs: 1, sm: 2, md: 4, lg: 4, xl: 6, xxl: 3, xxxl: 2 }"
+                      :data-source="tagsList"
+                  >
+                    <template v-for="(tags,index) in tagsList" >
+                      <a-list-item>
+                        <el-tag>{{ tags.name }}</el-tag>
+                      </a-list-item>
+                    </template>
+                  </a-list>
                 </div>
               </el-card>
 
@@ -109,12 +118,74 @@
 
       </div>
 
+<!--      游戏推荐-->
+      <div>
+        <el-card>
+          <a-list :grid="{ gutter: 16, column: 4 }" :data-source="gameImageList">
+            <template #renderItem="{ item }">
+              <a-list-item v-for="item in gameImageList">
+                <el-image
+                    style="width: 100px; height: 100px"
+                    :src="item.url"
+                    fit="fill"></el-image>
+                <span>item.title</span>
+              </a-list-item>
+            </template>
+            <template #header>
+              <div>推荐游戏</div>
+            </template>
+          </a-list>
+        </el-card>
 
+      </div>
+      <!--      最近游戏-->
+      <div>
+        <el-card>
+          <a-list :grid="{ gutter: 16, column: 4 }" :data-source="gameImageList">
+            <template #renderItem="{ item }">
+              <a-list-item v-for="item in gameImageList">
+                <el-image
+                    style="width: 100px; height: 100px"
+                    :src="item.url"
+                    fit="fill"></el-image>
+                <span>item.title</span>
+              </a-list-item>
+            </template>
+            <template #header>
+              <div>最近游戏</div>
+            </template>
+          </a-list>
+        </el-card>
+
+      </div>
+      <!--      优惠促销-->
+      <div>
+        <el-card>
+          <a-list :grid="{ gutter: 16, column: 4 }" :data-source="gameImageList">
+            <template #renderItem="{ item }">
+              <a-list-item v-for="item in gameImageList">
+                <el-image
+                    style="width: 100px; height: 100px"
+                    :src="item.url"
+                    fit="fill"></el-image>
+                <span>item.title</span>
+              </a-list-item>
+            </template>
+            <template #header>
+              <div>优惠促销</div>
+            </template>
+          </a-list>
+        </el-card>
+
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+const dataList = [{
+  name: 'Title 1',
+}];
 export default {
   data() {
     return {
@@ -259,6 +330,30 @@ export default {
           gameName: "荒野大镖客2"
         }
       ],
+      tagsList: [
+        {
+          name: "第一人称"
+        },
+        {
+          name: "第一人称"
+        },
+        {
+          name: "第一人称"
+        },
+        {
+          name: "第一人称"
+        },
+        {
+          name: "第一人称"
+        },
+        {
+          name: "第一人称"
+        },
+        {
+          name: "第一人称"
+        },
+      ],
+      dataList,
 
     }
   },
@@ -266,7 +361,7 @@ export default {
     gotoAllGame() {
       this.$router.push({path: '/game/all'})
     },
-    changeGameBanner(i){
+    changeGameBanner(i) {
       // alert(i)
       return this.gameBanner[i].coverUrl;
     }
@@ -277,9 +372,10 @@ export default {
 
 <style lang="less" scoped>
 @marginLeftAndRight: 15%;
-.style-type{
+.style-type {
   background-color: #fafafa;
 }
+
 .type-body {
   margin-top: 30px;
   margin-left: @marginLeftAndRight;
@@ -374,35 +470,47 @@ export default {
 .game-type-second-image /deep/ .el-card__body {
   padding: 10px 0 0 10px;
 }
-.game-type-second-score{
+
+.game-type-second-score {
   width: 50px;
   height: 50px;
   border-radius: 25px;
-  border:2px solid #00a0d8;
+  border: 2px solid #00a0d8;
   color: #fb7299;
   margin-left: 10px;
 }
-.game-type-button-score{
+
+.game-type-button-score {
   text-align: center;
 }
-.game-type-item{
+
+.game-type-item {
   margin-top: 10px;
   font-size: 12px;
 }
-.game-type-more{
+
+.game-type-more {
   float: right;
   padding: 3px 0;
+}
+
+.game-tags-item01{
+  height: 360px;
 }
 
 /****************************************************** 分割 **************************************************************/
 </style>
 
 
-
 <style scoped>
 /* For demo */
 .ant-carousel >>> .slick-dots {
   height: auto;
+}
+
+.game-type-tags {
+  width: 25%;
+  text-align: center;
 }
 
 .ant-carousel >>> .slick-slide img {
