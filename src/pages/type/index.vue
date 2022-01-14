@@ -2,7 +2,11 @@
   <div class="type-body">
     <HeaderBanner/>
     <!--    头部-->
-    <el-card>
+    <el-card class="game-card-body" >
+      <div slot="header" class="clearfix">
+        <span>分类</span>
+        <el-button @click="gotoAllGame" style="float: right; padding: 3px 0" type="text">全部游戏</el-button>
+      </div>
       <div class="game-card-01">
         <!--        按钮列表-->
         <div class="type-button01-parent">
@@ -107,10 +111,44 @@ export default {
         {
           title: "地平线5"
         },
+        {
+          title: "地平线5"
+        },
+        {
+          title: "地平线5"
+        },
+        {
+          title: "地平线5"
+        },
+        {
+          title: "地平线5"
+        },
+        {
+          title: "地平线5"
+        },
+        {
+          title: "地平线5"
+        },
+        {
+          title: "地平线5"
+        },
+        {
+          title: "地平线5"
+        },
+        {
+          title: "地平线5"
+        },
+        {
+          title: "地平线5"
+        },
       ]
     }
   },
-  methods: {}
+  methods: {
+    gotoAllGame(){
+      this.$router.push({path: '/game/all'})
+    },
+  }
 }
 </script>
 
@@ -121,10 +159,20 @@ export default {
   margin-left: @marginLeftAndRight;
   margin-right: @marginLeftAndRight;
 }
+.game-card-body{
+  padding-bottom: 30px;
+
+}
+.type-body /deep/ .el-card{
+  border-radius: 6px;
+  padding: 0;
+
+}
 
 .type-button01-parent {
   float: left;
   width: 10%;
+  padding-bottom: 10px;
 }
 
 .type-button01 {
@@ -144,6 +192,7 @@ export default {
 
 .game-card-01 {
   width: 100%;
+
 }
 .game-image-item{
   width: 130px;
@@ -167,12 +216,16 @@ export default {
 }
 .game-title-item{
   display: inline;
+  text-align: center;
 }
 .game-title-item1{
   display: inline-block;
-  margin-right: 10px;
-  margin-left: 10px;
+
   text-align: center;
   margin-top: 10px;
+}
+.game-title-item1 span{
+  margin-right: 20px;
+  margin-left: 20px;
 }
 </style>

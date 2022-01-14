@@ -18,6 +18,10 @@ import System from "@/pages/message/system";
 import Whisper from "@/pages/message/whisper";
 import UserHome from "@/pages/account/user/home";
 
+
+import AllGame from "@/pages/game/all";
+
+
 export default [
     {
         path: "/login",
@@ -124,5 +128,11 @@ export default [
                 name: 'whisper',
                 component: Whisper,
             }]
+    },
+    {
+        path: "/game/all",
+        component: AllGame,
+        name: 'AllGame',
+        // meta:{show:true}
     },
 ]
