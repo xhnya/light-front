@@ -14,7 +14,7 @@
           <el-col :span="10">
             <div class="grid-content ">
               <div class="game-item text-tag">
-                <span>荒野大镖客2</span>
+                <span @click="toGameInfo()">荒野大镖客2</span>
                 <el-divider direction="vertical"></el-divider>
                 <span>荒野大镖客2</span>
                 <el-divider direction="vertical"></el-divider>
@@ -449,6 +449,9 @@ export default {
     leaveShow3() {
       this.activeName3 = 0;
     },
+    toGameInfo(){
+      this.$router.push({path: `/game/1`})
+    }
 
   },
 };

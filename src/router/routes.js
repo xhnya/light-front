@@ -24,6 +24,7 @@ import UserHome from "@/pages/account/user/home";
 import WikiIndex from "@/pages/wiki/home"
 
 import AllGame from "@/pages/game/all";
+import GameInfo from "@/pages/game/home";
 
 import Info from "@/pages/info/index"
 
@@ -146,6 +147,12 @@ export default [
         path: "/game/all",
         component: AllGame,
         name: 'AllGame',
+        // meta:{show:true}
+    },
+    {
+        path: "/game/:id",
+        component: GameInfo,
+        name: 'GameInfo',
         // meta:{show:true}
     },
     {

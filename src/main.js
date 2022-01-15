@@ -3,7 +3,8 @@ import App from './App.vue'
 import router from '@/router'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-import "./assets/style/global.css";
+import "./assets/style/global.less";
+
 
 // 动画库
 import animated from 'animate.css'

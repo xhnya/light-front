@@ -13,19 +13,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65ada172-319e-4308-af14-dc3416332114" name="Default Changelist" comment="分类">
-      <change afterPath="$PROJECT_DIR$/src/pages/community/content.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/page/index.vue" afterDir="false" />
+    <list default="true" id="65ada172-319e-4308-af14-dc3416332114" name="Default Changelist" comment="add">
+      <change afterPath="$PROJECT_DIR$/src/assets/style/global.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/game/home/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HeaderBanner/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HeaderBanner/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/community/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/community/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/info/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/info/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/type/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/type/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/wiki/home/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/wiki/home/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/style/global.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,10 +33,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Vue Single File Component" />
-        <option value="${name}" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
         <option value="VueTemplate" />
       </list>
     </option>
@@ -83,37 +80,16 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\code\light\light-front\src\assets\style" />
+      <recent name="C:\Users\xhn\Desktop\code\light-vue\light\src\assets\img" />
+      <recent name="C:\Users\xhn\Desktop\code\light-vue\light\src\components\Header\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\code\light\light-front\src\pages\account\history" />
-      <recent name="D:\code\light\light-front\src\assets\img" />
-      <recent name="D:\code\light\light-front\src\pages\message" />
-      <recent name="D:\code\light\light-front\src\pages\message\at" />
-      <recent name="D:\code\light\light-front\src\pages\message\reply" />
+      <recent name="C:\Users\xhn\Desktop\code\light-vue\light\src\assets\style" />
+      <recent name="C:\Users\xhn\Desktop\code\light-vue\light\src\assets\img" />
+      <recent name="C:\Users\xhn\Desktop\code\light-vue\light\src\components\Header" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.serve">
-    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="lint" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="lint" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager">
     <configuration name="serve" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -124,12 +100,6 @@
       <envs />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="npm.build" />
-        <item itemvalue="npm.lint" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -166,58 +136,35 @@
       <workItem from="1641570991847" duration="224000" />
       <workItem from="1641571232480" duration="64000" />
       <workItem from="1641571308769" duration="27000" />
-      <workItem from="1641571348604" duration="1253000" />
-      <workItem from="1641872283317" duration="5344000" />
-      <workItem from="1641885586652" duration="7985000" />
-      <workItem from="1642119707474" duration="208000" />
-      <workItem from="1642121071653" duration="93000" />
-      <workItem from="1642121175724" duration="398000" />
-      <workItem from="1642121599494" duration="40000" />
-      <workItem from="1642121651248" duration="477000" />
-      <workItem from="1642122144722" duration="450000" />
-      <workItem from="1642122611626" duration="135000" />
-      <workItem from="1642122761271" duration="2976000" />
-      <workItem from="1642142418699" duration="1445000" />
-      <workItem from="1642143981073" duration="594000" />
-      <workItem from="1642149583044" duration="5616000" />
-      <workItem from="1642231408114" duration="6970000" />
+      <workItem from="1641571348604" duration="1628000" />
+      <workItem from="1641609806996" duration="62000" />
+      <workItem from="1641733163647" duration="6465000" />
+      <workItem from="1641812426638" duration="4099000" />
+      <workItem from="1641818636083" duration="7866000" />
+      <workItem from="1641996738860" duration="58000" />
+      <workItem from="1642000651040" duration="1642000" />
+      <workItem from="1642159362127" duration="44000" />
+      <workItem from="1642159439692" duration="38000" />
+      <workItem from="1642159511536" duration="323000" />
+      <workItem from="1642159854379" duration="165000" />
+      <workItem from="1642160034676" duration="1150000" />
+      <workItem from="1642161435111" duration="7963000" />
     </task>
-    <task id="LOCAL-00001" summary="首页">
-      <created>1641883869001</created>
+    <task id="LOCAL-00001" summary="header">
+      <created>1641572920466</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1641883869001</updated>
+      <updated>1641572920466</updated>
     </task>
-    <task id="LOCAL-00002" summary="社区">
-      <created>1641892252878</created>
+    <task id="LOCAL-00002" summary="1">
+      <created>1641996786365</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1641892252878</updated>
+      <updated>1641996786365</updated>
     </task>
-    <task id="LOCAL-00003" summary="13">
-      <created>1642053215820</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1642053215820</updated>
-    </task>
-    <task id="LOCAL-00004" summary="all game">
-      <created>1642126056283</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1642126056283</updated>
-    </task>
-    <task id="LOCAL-00005" summary="引入ant-design">
-      <created>1642143869482</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1642143869482</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,12 +183,8 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="首页" />
-    <MESSAGE value="社区" />
-    <MESSAGE value="13" />
-    <MESSAGE value="xhn" />
-    <MESSAGE value="all game" />
-    <MESSAGE value="引入ant-design" />
-    <option name="LAST_COMMIT_MESSAGE" value="引入ant-design" />
+    <MESSAGE value="header" />
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
 </project>
