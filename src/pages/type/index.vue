@@ -119,16 +119,16 @@
       </div>
 
 <!--      游戏推荐-->
-      <div>
+      <div class="type-game-recommend">
         <el-card>
-          <a-list :grid="{ gutter: 16, column: 4 }" :data-source="gameImageList">
+          <a-list :grid="{ gutter: 16, column: 6 }" :data-source="gameImageList">
             <template #renderItem="{ item }">
-              <a-list-item v-for="item in gameImageList">
+              <a-list-item style="text-align: center;padding: 10px;" v-for="item in gameImageList">
                 <el-image
-                    style="width: 100px; height: 100px"
+                    style="width: 100px; height: 120px;border-radius: 6px;"
                     :src="item.url"
                     fit="fill"></el-image>
-                <span>item.title</span>
+                <div>{{ item.title }}</div>
               </a-list-item>
             </template>
             <template #header>
@@ -139,16 +139,16 @@
 
       </div>
       <!--      最近游戏-->
-      <div>
+      <div class="type-game-lately">
         <el-card>
           <a-list :grid="{ gutter: 16, column: 4 }" :data-source="gameImageList">
-            <template #renderItem="{ item }">
-              <a-list-item v-for="item in gameImageList">
+            <template   #renderItem="{ item }">
+              <a-list-item style="text-align: center;padding: 10px;" v-for="item in gameImageList">
                 <el-image
-                    style="width: 100px; height: 100px"
+                    style="width: 100px; height: 120px;border-radius: 6px;"
                     :src="item.url"
                     fit="fill"></el-image>
-                <span>item.title</span>
+                <div>{{ item.title }}</div>
               </a-list-item>
             </template>
             <template #header>
@@ -159,16 +159,16 @@
 
       </div>
       <!--      优惠促销-->
-      <div>
+      <div class="type-game-discount">
         <el-card>
           <a-list :grid="{ gutter: 16, column: 4 }" :data-source="gameImageList">
             <template #renderItem="{ item }">
-              <a-list-item v-for="item in gameImageList">
+              <a-list-item  style="text-align: center;padding: 10px;" v-for="item in gameImageList">
                 <el-image
-                    style="width: 100px; height: 100px"
+                    style="width: 100px; height: 120px;border-radius: 6px;"
                     :src="item.url"
                     fit="fill"></el-image>
-                <span>item.title</span>
+                <div>{{ item.title }}</div>
               </a-list-item>
             </template>
             <template #header>
@@ -372,6 +372,7 @@ export default {
 
 <style lang="less" scoped>
 @marginLeftAndRight: 15%;
+@marginTop: 30px;
 .style-type {
   background-color: #fafafa;
 }
@@ -380,6 +381,7 @@ export default {
   margin-top: 30px;
   margin-left: @marginLeftAndRight;
   margin-right: @marginLeftAndRight;
+  padding-bottom: @marginTop;
 
 }
 
@@ -497,7 +499,16 @@ export default {
 .game-tags-item01{
   height: 360px;
 }
-
+.type-game-recommend{
+  margin-top: @marginTop;
+}
+.type-game-discount{
+  margin-top: @marginTop;
+  margin-bottom: @marginTop;
+}
+.type-game-lately{
+  margin-top: @marginTop;
+}
 /****************************************************** 分割 **************************************************************/
 </style>
 

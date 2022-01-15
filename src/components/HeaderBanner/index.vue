@@ -1,7 +1,7 @@
 <template>
   <div>
     <div style="position: absolute;top: 0;z-index: -1" class="header-banner"></div>
-    <div style="height: 100px"></div>
+    <div style="z-index: -1;height: 100px"></div>
   </div>
 </template>
 

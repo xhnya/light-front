@@ -1,7 +1,10 @@
 import Login from "@/pages/login";
 import Index from "@/pages";
 import Type from "@/pages/type";
-import Community from "@/pages/community";
+
+import Community from "@/pages/community/index.vue";
+import CollectionsContent from "@/pages/community/content.vue";
+
 import Collections from "@/pages/collections/index.vue";
 import UserCollections from "@/pages/account/user/collections"
 import UserGame from "@/pages/account/user/game"
@@ -49,6 +52,13 @@ export default [
         component: Community,
         name: 'community',
         // meta:{show:true}
+        children: [
+            {
+                path: "content",
+                component: CollectionsContent,
+                name: 'CollectionsContent',
+            }
+        ]
     },
     {
         path: "/collections",

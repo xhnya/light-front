@@ -24,17 +24,7 @@
       <el-col :span="14">
         <div  class="grid-content bg-purple-light">
           <el-card style="height:80%;" class="box-card-c2">
-            <div class="infinite-list-wrapper" style="overflow:auto">
-              <ul
-                  class="list"
-                  style="height: 80%"
-                  v-infinite-scroll="load"
-                  infinite-scroll-disabled="disabled">
-                <li v-for="i in count" class="list-item">{{ i }}</li>
-              </ul>
-              <p v-if="loading">加载中...</p>
-              <p v-if="noMore">没有更多了</p>
-            </div>
+            <router-view/>
           </el-card>
         </div>
       </el-col>
@@ -67,26 +57,11 @@
 export default {
   data() {
     return {
-      count: 10,
-      loading: false
     }
   },
   computed: {
-    noMore () {
-      return this.count >= 10
-    },
-    disabled () {
-      return this.loading || this.noMore
-    }
   },
   methods: {
-    load () {
-      this.loading = true
-      setTimeout(() => {
-        this.count += 2
-        this.loading = false
-      }, 2000)
-    },
   }
 }
 </script>

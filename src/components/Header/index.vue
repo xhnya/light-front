@@ -13,7 +13,7 @@
           <div class="header-text">
             <router-link to="/"><span class="box animated bounce">首页</span></router-link>
             <router-link to="/type"><span><span>分类</span></span></router-link>
-            <router-link to="/community"><span>社区</span></router-link>
+            <router-link to="/community/content"><span>社区</span></router-link>
             <router-link to="/wiki"><span>百科</span></router-link>
             <router-link to="/info"><span>资讯</span></router-link>
           </div>
@@ -124,7 +124,7 @@ export default {
       this.$router.push({path: '/'})
     },
     goUser(){
-      this.$router.push({path: '/account/user'})
+      this.$router.push({path: '/account/user/home'})
     }
   }
 };
