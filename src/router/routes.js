@@ -24,7 +24,13 @@ import UserHome from "@/pages/account/user/home";
 import WikiIndex from "@/pages/wiki/home"
 
 import AllGame from "@/pages/game/all";
-import GameInfo from "@/pages/game/home";
+import GameInfo from "@/pages/game/home/index.vue";
+import GameInfoIndex from  "@/pages/game/home/home.vue"
+import GameInfoAtlas from  "@/pages/game/home/atlas.vue"
+import GameInfoCommunity from  "@/pages/game/home/community.vue"
+import GameInfoInformation from  "@/pages/game/home/information.vue"
+import GameInfoStrategy from  "@/pages/game/home/strategy.vue"
+import GameInfoWiki from  "@/pages/game/home/wiki.vue"
 
 import Info from "@/pages/info/index"
 
@@ -154,6 +160,38 @@ export default [
         component: GameInfo,
         name: 'GameInfo',
         // meta:{show:true}
+        children: [
+            {
+                path: "index",
+                component: GameInfoIndex,
+                name: 'GameInfoIndex',
+            },
+            {
+                path: "atlas",
+                component: GameInfoAtlas,
+                name: 'GameInfoAtlas',
+            },
+            {
+                path: "community",
+                component: GameInfoCommunity,
+                name: 'GameInfoCommunity',
+            },
+            {
+                path: "information",
+                component: GameInfoInformation,
+                name: 'GameInfoInformation',
+            },
+            {
+                path: "strategy",
+                component: GameInfoStrategy,
+                name: 'GameInfoStrategy',
+            },
+            {
+                path: "wiki",
+                component: GameInfoWiki,
+                name: 'GameInfoWiki',
+            },
+        ]
     },
     {
         path: "/wiki",
