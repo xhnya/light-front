@@ -74,72 +74,43 @@
     <div class="game-info-index-content">
 
       <div class="game-info-home-cover1">
-        <el-card>
-          <el-carousel indicator-position="outside">
-            <el-carousel-item v-for="item in 4" :key="item">
-              <el-image
-                  style="width: 100%; height:100%"
-                  :src="gameBGUrl"
-                  fit="fill"></el-image>
-            </el-carousel-item>
-          </el-carousel>
-        </el-card>
-        <el-card>
-          <Video></Video>
-        </el-card>
+        <el-row>
+          <el-col :span="12"><el-card>
+            <el-carousel indicator-position="outside">
+              <el-carousel-item v-for="item in 4" :key="item">
+                <el-image
+                    style="width: 100%; height:100%"
+                    :src="gameBGUrl"
+                    fit="fill"></el-image>
+              </el-carousel-item>
+            </el-carousel>
+          </el-card><el-card>
+            <Video></Video>
+          </el-card></el-col>
+          <el-col :span="12"><div class="game-info-home-cover2">
+            <el-card style="height: 640px;">
+              <a-list bordered :data-source="data">
+                <a-list-item slot="renderItem" slot-scope="item, index">
+                  {{ item }}
+                </a-list-item>
+              </a-list>
+            </el-card>
 
-      </div>
-      <div class="game-info-home-cover2">
-        <el-card style="height: 640px;">
-          <a-list bordered :data-source="data">
-            <a-list-item slot="renderItem" slot-scope="item, index">
-              {{ item }}
-            </a-list-item>
-          </a-list>
-        </el-card>
+          </div></el-col>
+        </el-row>
 
-        <el-card>
-          xx
-        </el-card>
       </div>
 
     </div>
+    <div>
+      <el-card>
+        aaa
+      </el-card>
+    </div>
 <!--    评论-->
     <div class="game-home-comment">
-      <div>
-        <a-list
-            v-if="comments.length"
-            :data-source="comments"
-            :header="`${comments.length} ${comments.length > 1 ? 'replies' : 'reply'}`"
-            item-layout="horizontal"
-        >
-          <a-list-item slot="renderItem" slot-scope="item, index">
-            <a-comment
-                :author="item.author"
-                :avatar="item.avatar"
-                :content="item.content"
-                :datetime="item.datetime"
-            />
-          </a-list-item>
-        </a-list>
-        <a-comment>
-          <a-avatar
-              slot="avatar"
-              src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-              alt="Han Solo"
-          />
-          <div slot="content">
-            <a-form-item>
-              <a-textarea :rows="4" :value="value" @change="handleChange" />
-            </a-form-item>
-            <a-form-item>
-              <a-button html-type="submit" :loading="submitting" type="primary" @click="handleSubmit">
-                Add Comment
-              </a-button>
-            </a-form-item>
-          </div>
-        </a-comment>
-      </div>
+<!--      评论列表-->
+
     </div>
   </div>
 </template>
@@ -275,14 +246,13 @@ export default {
 }
 
 .game-info-home-cover1 {
-  float: left;
-  width: 50%;
+
+
   padding-right: 10px;
 }
 
 .game-info-home-cover2 {
-  float: right;
-  width: 50%;
+
 }
 .game-home-comment{
   margin-top: 30px;

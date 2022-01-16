@@ -14,19 +14,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65ada172-319e-4308-af14-dc3416332114" name="Default Changelist" comment="游戏详情">
-      <change afterPath="$PROJECT_DIR$/src/components/video/video.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/game/home/atlas.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/game/home/community.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/game/home/home.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/game/home/information.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/game/home/strategy.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/game/home/wiki.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/game/home/home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/game/home/home.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/game/home/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/game/home/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +142,8 @@
       <workItem from="1642159854379" duration="165000" />
       <workItem from="1642160034676" duration="1150000" />
       <workItem from="1642161435111" duration="7963000" />
-      <workItem from="1642302264401" duration="22766000" />
+      <workItem from="1642302264401" duration="23009000" />
+      <workItem from="1642342181856" duration="1581000" />
     </task>
     <task id="LOCAL-00001" summary="header">
       <created>1641572920466</created>
@@ -175,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642261834669</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="游戏详情">
+      <created>1642338293065</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1642338293065</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
