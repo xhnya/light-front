@@ -117,4 +117,4 @@ dist
 
 
 .idea
-.idea/*
+.idea/**

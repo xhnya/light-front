@@ -38,9 +38,7 @@
                           <div class="game-home-info-text"><span>类型:</span><span>Rockstar</span></div>
                           <div class="game-home-info-text" style="display: block;"><span>平台:</span>
                             <div class="game-info-tags">
-              <span>
-                pc
-              </span>
+                              <span>pc</span>
                             </div>
                           </div>
                           <div class="game-home-info-text"><span>发售:</span><span>2019-11-05 ( PC )</span></div>
@@ -148,6 +146,7 @@
             </div>
 
           </div>
+          <!--          游戏评分和奖项-->
           <div style="margin-top: 30px;">
             <el-row>
               <el-col :span="15">
@@ -162,9 +161,9 @@
                           <el-card class="media-game-info">
                             <span style="font-size: 24px;font-style:italic;">light </span>
                             <span style="font-size: 24px;color: red;font-style:italic;">9.9</span>
-                            <span  style="font-size: 15px;">/10</span>
+                            <span style="font-size: 15px;">/10</span>
                             <div class="media-game-info-text">
-                              对于二表哥来说，评测的分数是多少已经不重要了，冲游戏那快溢出来的诚意，满分不夸张，但有些问题也不能因此被忽视，所以分数仅供参考，买就完事了。
+                              对于大表哥来说，评测的分数是多少已经不重要了，冲游戏那快溢出来的诚意，满分不夸张，但有些问题也不能因此被忽视，所以分数仅供参考，买就完事了。
                             </div>
                           </el-card>
                         </div>
@@ -179,32 +178,213 @@
                     <span>奖项</span>
                   </div>
                   <div>
-                    <div>
+
+                    <div style="height: 80px;">
                       <div>
                         <div class="game-home-award-div">
                           <el-image
                               style="width: 100%; height: 100%"
                               src=" http://img.xhnya.top/img/AwardTGA.png"
                               fit="fill"></el-image>
-                         </div>
+                        </div>
                       </div>
                       <div style="margin-left: 20px;">
-                        <span style="font-size:20px;">TGA</span>
-                        <span style="font-size:12px;">( the game award )</span>
+                        <span style="font-size:20px;margin-left: 10px;">TGA</span>
+                        <span style="font-size:12px;color: #8e8e93;margin-left: 10px;">( the game award )</span>
+                      </div>
+                      <div style="font-size: 13px;">
+                        <span style="margin-left: 10px;color: #ff853b;">2018</span> <span>年最佳音效、最佳叙述游戏、最佳音乐</span>
                       </div>
                       <div>
 
                       </div>
                     </div>
+                    <div style="height: 80px;">
+                      <div>
+                        <div class="game-home-award-div">
+                          <el-image
+                              style="width: 100%; height: 100%"
+                              src=" http://img.xhnya.top/img/AwardTGA.png"
+                              fit="fill"></el-image>
+                        </div>
+                      </div>
+                      <div style="margin-left: 20px;">
+                        <span style="font-size:20px;margin-left: 10px;">TGA</span>
+                        <span style="font-size:12px;color: #8e8e93;margin-left: 10px;">( the game award )</span>
+                      </div>
+                      <div style="font-size: 13px;">
+                        <span style="margin-left: 10px;color: #ff853b;">2018</span> <span>年最佳音效、最佳叙述游戏、最佳音乐</span>
+                      </div>
+                      <div>
+
+                      </div>
+                    </div>
+                    <div style="height: 80px;">
+                      <div>
+                        <div class="game-home-award-div">
+                          <el-image
+                              style="width: 100%; height: 100%"
+                              src=" http://img.xhnya.top/img/AwardTGA.png"
+                              fit="fill"></el-image>
+                        </div>
+                      </div>
+                      <div style="margin-left: 20px;">
+                        <span style="font-size:20px;margin-left: 10px;">TGA</span>
+                        <span style="font-size:12px;color: #8e8e93;margin-left: 10px;">( the game award )</span>
+                      </div>
+                      <div style="font-size: 13px;">
+                        <span style="margin-left: 10px;color: #ff853b;">2018</span> <span>年最佳音效、最佳叙述游戏、最佳音乐</span>
+                      </div>
+                      <div>
+
+                      </div>
+                    </div>
+                    <div style="height: 80px;">
+                      <div>
+                        <div class="game-home-award-div">
+                          <el-image
+                              style="width: 100%; height: 100%"
+                              src=" http://img.xhnya.top/img/AwardTGA.png"
+                              fit="fill"></el-image>
+                        </div>
+                      </div>
+                      <div style="margin-left: 20px;">
+                        <span style="font-size:20px;margin-left: 10px;">TGA</span>
+                        <span style="font-size:12px;color: #8e8e93;margin-left: 10px;">( the game award )</span>
+                      </div>
+                      <div style="font-size: 13px;">
+                        <span style="margin-left: 10px;color: #ff853b;">2018</span> <span>年最佳音效、最佳叙述游戏、最佳音乐</span>
+                      </div>
+                      <div>
+
+                      </div>
+                    </div>
+                    <div style="height: 80px;">
+                      <div>
+                        <div class="game-home-award-div">
+                          <el-image
+                              style="width: 100%; height: 100%"
+                              src=" http://img.xhnya.top/img/AwardTGA.png"
+                              fit="fill"></el-image>
+                        </div>
+                      </div>
+                      <div style="margin-left: 20px;">
+                        <span style="font-size:20px;margin-left: 10px;">TGA</span>
+                        <span style="font-size:12px;color: #8e8e93;margin-left: 10px;">( the game award )</span>
+                      </div>
+                      <div style="font-size: 13px;">
+                        <span style="margin-left: 10px;color: #ff853b;">2018</span> <span>年最佳音效、最佳叙述游戏、最佳音乐</span>
+                      </div>
+                      <div>
+
+                      </div>
+                    </div>
+
                   </div>
                 </el-card>
               </el-col>
             </el-row>
 
           </div>
+
+<!--          精美图片-->
+          <div class="game-index-home-images-goods">
+            <el-card>
+              <el-carousel :interval="4000" type="card" height="420px">
+                <el-carousel-item v-for="item in 6" :key="item">
+                  <h3 class="medium">{{ item }}</h3>
+                </el-carousel-item>
+              </el-carousel>
+            </el-card>
+          </div>
+<!--          ======类型游戏and产商游戏=======-->
+          <div class="game-type-card-index111">
+            <el-card>
+              <div class="game-type-button-index">
+                <a-button type="primary">
+                  系列游戏
+                </a-button>
+                <a-button type="primary">
+                  产商佳作
+                </a-button>
+              </div>
+              <div class="game-type-images-index">
+                <div >
+                  <a-list :grid="{ gutter: 16, column: 4 }" :data-source="data">
+                    <a-list-item slot="renderItem" slot-scope="item, index">
+                      <a-card :title="item.title">
+                        Card content
+                      </a-card>
+                    </a-list-item>
+                  </a-list>
+                </div>
+              </div>
+            </el-card>
+          </div>
+
           <!--    评论-->
           <div class="game-home-comment">
-            <!--      评论列表-->
+            <el-card>
+              <div>
+                <!--              评论-->
+                <a-list
+                    v-if="comments.length"
+                    :data-source="comments"
+                    :header="`${comments.length} ${comments.length > 1 ? 'replies' : 'reply'}`"
+                    item-layout="horizontal"
+                >
+                  <a-list-item slot="renderItem" slot-scope="item, index">
+                    <a-comment
+                        :author="item.author"
+                        :avatar="item.avatar"
+                        :content="item.content"
+                        :datetime="item.datetime"
+                    />
+                  </a-list-item>
+                </a-list>
+                <a-comment>
+                  <a-avatar
+                      slot="avatar"
+                      src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                      alt="Han Solo"
+                  />
+                  <div slot="content">
+                    <a-form-item>
+                      <a-textarea :rows="4" :value="value" @change="handleChange" />
+                    </a-form-item>
+                    <a-form-item>
+                      <a-button html-type="submit" :loading="submitting" type="primary" @click="handleSubmit">
+                        Add Comment
+                      </a-button>
+                    </a-form-item>
+                  </div>
+                </a-comment>
+              </div>
+              <!--      评论列表-->
+              <div>
+                <a-list
+                    class="comment-list"
+                    :header="`${content.length} replies`"
+                    item-layout="horizontal"
+                    :data-source="content"
+                >
+                  <a-list-item slot="renderItem" slot-scope="item, index">
+                    <a-comment :author="item.author" :avatar="item.avatar">
+                      <template slot="actions">
+                        <span v-for="action in item.actions">{{ action }}</span>
+                      </template>
+                      <p slot="content">
+                        {{ item.content }}
+                      </p>
+                      <a-tooltip slot="datetime" :title="item.datetime.format('YYYY-MM-DD HH:mm:ss')">
+                        <span>{{ item.datetime.fromNow() }}</span>
+                      </a-tooltip>
+                    </a-comment>
+                  </a-list-item>
+                </a-list>
+              </div>
+            </el-card>
+
 
           </div>
         </div>
@@ -252,6 +432,24 @@ export default {
       value: '',
       moment,
       data,
+      content: [
+        {
+          actions: ['Reply to'],
+          author: 'Han Solo',
+          avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+          content:
+              'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
+          datetime: moment().subtract(1, 'days'),
+        },
+        {
+          actions: ['Reply to'],
+          author: 'Han Solo',
+          avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+          content:
+              'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
+          datetime: moment().subtract(2, 'days'),
+        },
+      ],
     }
   },
   created() {
@@ -466,6 +664,7 @@ export default {
 
 .game-home-comment {
   margin-top: 30px;
+  padding-bottom: 30px;
 }
 
 .game-home-info-card-10 {
@@ -481,15 +680,51 @@ export default {
   border: @CancelBorder;
   color: #c7c7cc;
 }
-.media-game-info-text{
+
+.media-game-info-text {
   font-size: 13px;
   text-align: justify;
   color: #8e8e93;
   margin-top: 15px;
 }
-.game-home-award-div{
+
+.game-home-award-div {
   float: left;
   width: 55px;
   height: 55px;
+}
+
+.game-index-home-images-goods {
+  margin-top: 30px;
+  height: 540px;
+}
+
+.el-carousel__item h3 {
+  color: #475669;
+  font-size: 14px;
+  opacity: 0.75;
+  line-height: 450px;
+  margin: 0;
+}
+
+.el-carousel__item:nth-child(2n) {
+  background-color: #99a9bf;
+}
+
+.el-carousel__item:nth-child(2n+1) {
+  background-color: #d3dce6;
+}
+.game-type-button-index{
+  text-align: center;
+}
+.game-type-button-index button{
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.game-type-card-index111{
+  margin-bottom: 30px;
+}
+.game-type-images-index{
+  margin-top: 30px;
 }
 </style>

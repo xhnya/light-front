@@ -270,9 +270,9 @@ export default {
   margin-left: 10px;
 }
 
-.game-home-comment {
-  margin-top: 30px;
-}
+//.game-home-comment {
+//  margin-top: 30px;
+//}
 .game-home-info-card-10{
   margin-left: 5px;
   margin-right: 5px;

@@ -32,6 +32,8 @@ import GameInfoInformation from  "@/pages/game/home/information.vue"
 import GameInfoStrategy from  "@/pages/game/home/strategy.vue"
 import GameInfoWiki from  "@/pages/game/home/wiki.vue"
 
+import Atlas from "@/pages/game/atlas"
+
 import Info from "@/pages/info/index"
 
 
@@ -203,6 +205,12 @@ export default [
         path: "/info",
         component: Info,
         name: 'info',
+        // meta:{show:true}
+    },
+    {
+        path: "/atlas/:id",
+        component: Atlas,
+        name: 'Atlas',
         // meta:{show:true}
     },
 
