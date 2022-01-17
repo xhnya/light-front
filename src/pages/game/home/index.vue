@@ -99,10 +99,10 @@ export default {
 .game-info-content {
   .game-info-card1;
   z-index: 6;
-  margin: 0 auto;
+  margin: -185px auto;
   position: relative;
   width: 1200px;
-  margin-top: -185px;
+  //margin-top: -185px;
 }
 
 .game-info-content-card {
@@ -143,15 +143,5 @@ export default {
 
 .game-info-index-content /deep/ .el-card__body {
   padding: 0;
-}
-
-.game-info-home-cover1 {
-  float: left;
-  width: 50%;
-}
-
-.game-info-home-cover2 {
-  float: right;
-  width: 50%;
 }
 </style>

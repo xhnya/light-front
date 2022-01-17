@@ -36,10 +36,11 @@
             <el-card>
               <div slot="header" class="clearfix">
                 <span>游戏评测</span>
-                <el-button style="float: right; padding: 3px 0" type="text"><i class="el-icon-d-arrow-right"></i></el-button>
+                <el-button style="float: right; padding: 3px 0" type="text"><i class="el-icon-d-arrow-right"></i>
+                </el-button>
               </div>
               <div>
-                <div >
+                <div>
                   <el-row>
                     <el-col :span="10">
                       <div>
@@ -50,21 +51,22 @@
                       </div>
                     </el-col>
                     <el-col :span="10">
-                    <div class="info-evaluating-content">
-                      <p>它确实在维持原本风味的同时，变得更好了，但可能仍旧无法吸引回对这个配方失去兴趣的食客</p>
-                      <p style="display:flex;align-items:flex-end;margin-bottom: 0;">2021-10-06 19:00:00-xhn</p>
-                    </div>
-                  </el-col>
+                      <div class="info-evaluating-content">
+                        <p>它确实在维持原本风味的同时，变得更好了，但可能仍旧无法吸引回对这个配方失去兴趣的食客</p>
+                        <p style="display:flex;align-items:flex-end;margin-bottom: 0;">2021-10-06 19:00:00-xhn</p>
+                      </div>
+                    </el-col>
                     <el-col :span="4">
                       <div class="info-evaluating-nums">
-                        <a-statistic title="评分" :value="9.9"  :value-style="{ color: '#fb7299' }" style="margin-right: 50px;" />
+                        <a-statistic title="评分" :value="9.9" :value-style="{ color: '#fb7299' }"
+                                     style="margin-right: 50px;"/>
 
                       </div>
                     </el-col>
                   </el-row>
                 </div>
-                <a-divider />
-                <div >
+                <a-divider/>
+                <div>
                   <el-row>
                     <el-col :span="10">
                       <div>
@@ -82,14 +84,16 @@
                     </el-col>
                     <el-col :span="4">
                       <div class="info-evaluating-nums">
-                        <a-statistic title="评分" :value="9.9"  :value-style="{ color: '#fb7299' }" style="margin-right: 50px;" />
+                        <a-statistic title="评分" :value="9.9" :value-style="{ color: '#fb7299' }"
+                                     style="margin-right: 50px;"/>
 
                       </div>
                     </el-col>
                   </el-row>
-                </div> <a-divider />
+                </div>
+                <a-divider/>
 
-                <div >
+                <div>
                   <el-row>
                     <el-col :span="10">
                       <div>
@@ -107,12 +111,14 @@
                     </el-col>
                     <el-col :span="4">
                       <div class="info-evaluating-nums">
-                        <a-statistic title="评分" :value="9.9"  :value-style="{ color: '#fb7299' }" style="margin-right: 50px;" />
+                        <a-statistic title="评分" :value="9.9" :value-style="{ color: '#fb7299' }"
+                                     style="margin-right: 50px;"/>
 
                       </div>
                     </el-col>
                   </el-row>
-                </div> <a-divider />
+                </div>
+                <a-divider/>
               </div>
             </el-card>
           </div>
@@ -170,14 +176,17 @@ export default {
 .info-item-card {
   /*margin-top: 30px;*/
 }
-.info-game-evaluating{
+
+.info-game-evaluating {
   margin-left: 15px;
   margin-right: 30px;
 }
-.info-evaluating-nums{
+
+.info-evaluating-nums {
   text-align: center;
 }
-.info-evaluating-content{
+
+.info-evaluating-content {
   margin-left: 10px;
 }
 </style>

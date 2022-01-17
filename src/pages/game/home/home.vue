@@ -75,41 +75,56 @@
 
       <div class="game-info-home-cover1">
         <el-row>
-          <el-col :span="12"><el-card>
-            <el-carousel indicator-position="outside">
-              <el-carousel-item v-for="item in 4" :key="item">
-                <el-image
-                    style="width: 100%; height:100%"
-                    :src="gameBGUrl"
-                    fit="fill"></el-image>
-              </el-carousel-item>
-            </el-carousel>
-          </el-card><el-card>
-            <Video></Video>
-          </el-card></el-col>
-          <el-col :span="12"><div class="game-info-home-cover2">
-            <el-card style="height: 640px;">
-              <a-list bordered :data-source="data">
-                <a-list-item slot="renderItem" slot-scope="item, index">
-                  {{ item }}
-                </a-list-item>
-              </a-list>
+          <el-col :span="12">
+            <el-card>
+              <el-carousel indicator-position="outside">
+                <el-carousel-item v-for="item in 4" :key="item">
+                  <el-image
+                      style="width: 100%; height:100%"
+                      :src="gameBGUrl"
+                      fit="fill"></el-image>
+                </el-carousel-item>
+              </el-carousel>
             </el-card>
+            <el-card>
+              <Video></Video>
+            </el-card>
+          </el-col>
+          <el-col :span="12">
+            <div class="game-info-home-cover2">
+              <el-card style="height: 640px;">
+                <a-list bordered :data-source="data">
+                  <a-list-item slot="renderItem" slot-scope="item, index">
+                    {{ item }}
+                  </a-list-item>
+                </a-list>
+              </el-card>
 
-          </div></el-col>
+            </div>
+          </el-col>
         </el-row>
 
       </div>
 
     </div>
     <div>
-      <el-card>
-        aaa
-      </el-card>
+      <el-row>
+        <el-col :span="12">
+          <el-card class="game-home-info-card-10">
+
+          </el-card>
+        </el-col>
+        <el-col :span="12">
+          <el-card  class="game-home-info-card-10">
+
+          </el-card>
+        </el-col>
+      </el-row>
+
     </div>
-<!--    评论-->
+    <!--    评论-->
     <div class="game-home-comment">
-<!--      评论列表-->
+      <!--      评论列表-->
 
     </div>
   </div>
@@ -118,6 +133,7 @@
 <script>
 import Video from "@/components/video/video";
 import moment from 'moment';
+
 export default {
   components: {Video},
   data() {
@@ -217,7 +233,8 @@ export default {
   margin-left: 10px;
   margin-right: 10px;
 }
-.game-home-ptext{
+
+.game-home-ptext {
   line-height: 30px;
   font-size: 12px;
   color: #8e8e93;
@@ -226,6 +243,7 @@ export default {
   height: 120px;
   text-align: justify;
 }
+
 .game-home-ptext p {
   display: block;
   margin-block-start: 1em;
@@ -246,15 +264,18 @@ export default {
 }
 
 .game-info-home-cover1 {
-
-
   padding-right: 10px;
 }
 
 .game-info-home-cover2 {
-
+  margin-left: 10px;
 }
-.game-home-comment{
+
+.game-home-comment {
   margin-top: 30px;
+}
+.game-home-info-card-10{
+  margin-left: 5px;
+  margin-right: 5px;
 }
 </style>
