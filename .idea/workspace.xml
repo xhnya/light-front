@@ -13,10 +13,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65ada172-319e-4308-af14-dc3416332114" name="Default Changelist" comment="备份，改动">
+    <list default="true" id="65ada172-319e-4308-af14-dc3416332114" name="Default Changelist" comment="next">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/style/global.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/style/global.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/game/home/home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/game/home/home.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/game/home/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/game/home/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -173,7 +171,8 @@
       <workItem from="1642143981073" duration="594000" />
       <workItem from="1642149583044" duration="5616000" />
       <workItem from="1642231408114" duration="6970000" />
-      <workItem from="1642379492717" duration="4662000" />
+      <workItem from="1642379492717" duration="4897000" />
+      <workItem from="1642390908458" duration="1274000" />
     </task>
     <task id="LOCAL-00001" summary="首页">
       <created>1641883869001</created>
@@ -217,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642380245108</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="next">
+      <created>1642384224072</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1642384224072</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,6 +249,7 @@
     <MESSAGE value="all game" />
     <MESSAGE value="引入ant-design" />
     <MESSAGE value="备份，改动" />
-    <option name="LAST_COMMIT_MESSAGE" value="备份，改动" />
+    <MESSAGE value="next" />
+    <option name="LAST_COMMIT_MESSAGE" value="next" />
   </component>
 </project>

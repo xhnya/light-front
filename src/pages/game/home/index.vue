@@ -188,8 +188,9 @@
                               fit="fill"></el-image>
                          </div>
                       </div>
-                      <div>
-                        <span>TGA</span>
+                      <div style="margin-left: 20px;">
+                        <span style="font-size:20px;">TGA</span>
+                        <span style="font-size:12px;">( the game award )</span>
                       </div>
                       <div>
 
