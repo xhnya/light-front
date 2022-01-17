@@ -140,8 +140,6 @@ export default {
     return {
       gameCoverUrl: "http://img.xhnya.top/img/荒野大镖客2Cover.jpg",
       gameScore: 75,
-      isIndex: true,
-      gameBGUrl: "http://img.xhnya.top/img/荒野大镖客bg20220116.jpg",
       comments: [],
       submitting: false,
       value: '',
@@ -178,6 +176,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+
 @TitleColor: #cd231d;
 
 .game-home-body {
