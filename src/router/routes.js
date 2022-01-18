@@ -36,6 +36,8 @@ import Atlas from "@/pages/game/atlas"
 
 import Info from "@/pages/info/index"
 
+import PageIndex from "@/pages/page/index"
+
 
 export default [
     {
@@ -48,6 +50,12 @@ export default [
         path: "/",
         name: 'index',
         component: Index
+        // meta:{show:true}
+    },
+    {
+        path: "/page/:id",
+        name: 'PageIndex',
+        component: PageIndex
         // meta:{show:true}
     },
     {

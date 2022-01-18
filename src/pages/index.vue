@@ -118,7 +118,7 @@
         <el-col :span="8">
           <div class="grid-content index-content-item">
             <div v-for="o in 8" :key="o" class="text item2 max-text ">
-              {{ '老当益壮，宁移白首之心？穷且益坚，不坠青云之志。酌贪泉而觉爽，处涸辙以犹欢。' + o }}
+              <span @click="toPageIndex(o)">{{ '老当益壮，宁移白首之心？穷且益坚，不坠青云之志。酌贪泉而觉爽，处涸辙以犹欢。' + o }}</span>
               <hr>
             </div>
           </div>
@@ -451,7 +451,10 @@ export default {
     },
     toGameInfo(){
       this.$router.push({path: `/game/1`})
-    }
+    },
+    toPageIndex(val){
+      this.$router.push({path: `/page/${val}`})
+    },
 
   },
 };
