@@ -22,6 +22,7 @@ import Whisper from "@/pages/message/whisper";
 import UserHome from "@/pages/account/user/home";
 
 import WikiIndex from "@/pages/wiki/home"
+import WikiPage from "@/pages/wiki/info"
 
 import AllGame from "@/pages/game/all";
 import GameInfo from "@/pages/game/home/index.vue";
@@ -207,6 +208,12 @@ export default [
         path: "/wiki",
         component: WikiIndex,
         name: 'wiki',
+        // meta:{show:true}
+    },
+    {
+        path: "/wiki/:id",
+        component: WikiPage,
+        name: 'WikiPage',
         // meta:{show:true}
     },
     {
