@@ -106,8 +106,11 @@
           <div class="grid-content">
             <div class="block index-lun">
               <el-carousel height="360px">
-                <el-carousel-item v-for="item in 4" :key="item">
-                  <h3 class="small">{{ item }}</h3>
+                <el-carousel-item v-for="item in bannerList" :key="item">
+                  <el-image
+                      style="width: 100%; height: 100%"
+                      :src="item.coverUrl"
+                      fit="fill"></el-image>
                 </el-carousel-item>
               </el-carousel>
             </div>
@@ -411,13 +414,13 @@
     </div>
     <!--      回到顶部-->
 
-<!--    <el-backtop target=".page-component__scroll .el-scrollbar__wrap"></el-backtop>-->
+    <!--    <el-backtop target=".page-component__scroll .el-scrollbar__wrap"></el-backtop>-->
   </div>
 
 </template>
 
 <script>
-
+import index from "@/api/index"
 export default {
   data() {
     return {
@@ -426,9 +429,11 @@ export default {
       activeName2: '1',
       activeName3: '1',
       recentlyUrl: "http://img.xhnya.top/DyingLight2.jpg",
+      bannerList: []
     };
   },
   created() {
+    this.getBannerList()
   },
   methods: {
     changeItem1(o) {
@@ -449,12 +454,18 @@ export default {
     leaveShow3() {
       this.activeName3 = 0;
     },
-    toGameInfo(){
+    toGameInfo() {
       this.$router.push({path: `/game/1`})
     },
-    toPageIndex(val){
+    toPageIndex(val) {
       this.$router.push({path: `/page/${val}`})
     },
+    getBannerList() {
+      index.getBannerList().then((res) =>{
+        console.log(res);
+        this.bannerList=res.data.bannerList
+      })
+    }
 
   },
 };

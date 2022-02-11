@@ -6,7 +6,7 @@ module.exports ={
         port: 80,
         open: true,
         proxy:{
-            '/xhn':{
+            '/light':{
                 target: 'http://localhost:88',
                 //pathRewrite:{'^/api':''},路径重写
             }
