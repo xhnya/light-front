@@ -356,14 +356,33 @@
             <div @mouseleave="leaveShow1" class="sort-index">
               <div style="text-align: center;font-size: 25px;">
                 <el-card shadow="hover">
-                  <span>排行榜</span>
+                  <span>新游榜</span>
                 </el-card>
               </div>
-              <el-collapse v-for="o in 5" :key="o" v-model="activeName1" accordion>
-                <div @mouseenter="changeItem1(o)">
-                  <el-collapse-item title="一致性 Consistency" :name="o">
-                    <div>{{ o }}与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；</div>
-                    <div>在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。</div>
+              <el-collapse v-for="item in newRankGameList" :key="item.id" v-model="activeName1" accordion>
+                <div @mouseenter="changeItem1(item.sort)">
+                  <el-collapse-item :title="item.sort+'  '+item.gameName" :name="item.sort">
+                    <el-row :gutter="20">
+                      <el-col :span="12">
+                        <div class="grid-content bg-purple">
+                          <el-image
+                              style="width: 150px; height: 180px"
+                              :src="item.coverUrl"
+                              fit="fill"></el-image>
+                        </div>
+                      </el-col>
+                      <el-col :span="12">
+                        <div class="grid-content bg-purple">
+                          <div>{{ item.sort }}</div>
+                          <div>{{ item.gameName }}</div>
+                          <div>
+                            <div><span>热度：</span><span></span></div>
+                            <div><span>类型：</span><span>{{ item.gameType }}</span></div>
+                            <div><span>发行：</span><span>{{ item.releaseTime }}</span></div>
+                          </div>
+                        </div>
+                      </el-col>
+                    </el-row>
                   </el-collapse-item>
                 </div>
               </el-collapse>
@@ -376,14 +395,33 @@
             <div @mouseleave="leaveShow2" class="sort-index">
               <div style="text-align: center;font-size: 25px;">
                 <el-card shadow="hover">
-                  <span>排行榜</span>
+                  <span>热门榜</span>
                 </el-card>
               </div>
-              <el-collapse v-for="o in 5" :key="o" v-model="activeName2" accordion>
-                <div @mouseenter="changeItem2(o)">
-                  <el-collapse-item title="一致性 Consistency" :name="o">
-                    <div> {{ o }}与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；</div>
-                    <div>在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。</div>
+              <el-collapse v-for="item in hotRankGameList" :key="item.id" v-model="activeName2" accordion>
+                <div @mouseenter="changeItem2(item.sort)">
+                  <el-collapse-item :title="item.sort+'  '+item.gameName" :name="item.sort">
+                    <el-row :gutter="20">
+                      <el-col :span="12">
+                        <div class="grid-content bg-purple">
+                          <el-image
+                              style="width: 150px; height: 180px"
+                              :src="item.coverUrl"
+                              fit="fill"></el-image>
+                        </div>
+                      </el-col>
+                      <el-col :span="12">
+                        <div class="grid-content bg-purple">
+                          <div>{{ item.sort }}</div>
+                          <div>{{ item.gameName }}</div>
+                          <div>
+                            <div><span>热度：</span><span></span></div>
+                            <div><span>类型：</span><span>{{ item.gameType }}</span></div>
+                            <div><span>发行：</span><span>{{ item.releaseTime }}</span></div>
+                          </div>
+                        </div>
+                      </el-col>
+                    </el-row>
                   </el-collapse-item>
                 </div>
               </el-collapse>
@@ -395,14 +433,33 @@
             <div @mouseleave="leaveShow3" class="sort-index">
               <div style="text-align: center;font-size: 25px;">
                 <el-card shadow="hover">
-                  <span>排行榜</span>
+                  <span>期待榜</span>
                 </el-card>
               </div>
-              <el-collapse v-for="o in 5" :key="o" v-model="activeName3" accordion>
-                <div @mouseenter="changeItem3(o)">
-                  <el-collapse-item title="一致性 Consistency" :name="o">
-                    <div> {{ o }}与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；</div>
-                    <div>在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。</div>
+              <el-collapse v-for="item in expectRankGameList" :key="item.id" v-model="activeName3" accordion>
+                <div @mouseenter="changeItem3(item.sort)">
+                  <el-collapse-item :title="item.sort+'  '+item.gameName" :name="item.sort">
+                    <el-row :gutter="20">
+                      <el-col :span="12">
+                        <div class="grid-content bg-purple">
+                          <el-image
+                              style="width: 150px; height: 180px"
+                              :src="item.coverUrl"
+                              fit="fill"></el-image>
+                        </div>
+                      </el-col>
+                      <el-col :span="12">
+                        <div class="grid-content bg-purple">
+                          <div>{{ item.sort }}</div>
+                          <div>{{ item.gameName }}</div>
+                          <div>
+                            <div><span>热度：</span><span></span></div>
+                            <div><span>类型：</span><span>{{ item.gameType }}</span></div>
+                            <div><span>发行：</span><span>{{ item.releaseTime }}</span></div>
+                          </div>
+                        </div>
+                      </el-col>
+                    </el-row>
                   </el-collapse-item>
                 </div>
               </el-collapse>
@@ -421,6 +478,7 @@
 
 <script>
 import index from "@/api/index"
+
 export default {
   data() {
     return {
@@ -429,11 +487,15 @@ export default {
       activeName2: '1',
       activeName3: '1',
       recentlyUrl: "http://img.xhnya.top/DyingLight2.jpg",
-      bannerList: []
+      bannerList: [],
+      hotRankGameList: [],
+      expectRankGameList: [],
+      newRankGameList: []
     };
   },
   created() {
     this.getBannerList()
+    this.getHotGameRankList()
   },
   methods: {
     changeItem1(o) {
@@ -461,12 +523,25 @@ export default {
       this.$router.push({path: `/page/${val}`})
     },
     getBannerList() {
-      index.getBannerList().then((res) =>{
+      index.getBannerList().then((res) => {
         console.log(res);
-        this.bannerList=res.data.bannerList
+        this.bannerList = res.data.bannerList
       })
-    }
+    },
+    getHotGameRankList() {
+      index.getHotGameRankList(1).then((res) => {
 
+        this.newRankGameList = res.data.rankList
+      })
+      index.getHotGameRankList(2).then((res) => {
+        this.hotRankGameList = res.data.rankList
+      })
+      index.getHotGameRankList(3).then((res) => {
+
+        this.expectRankGameList = res.data.rankList
+      })
+
+    }
   },
 };
 </script>
