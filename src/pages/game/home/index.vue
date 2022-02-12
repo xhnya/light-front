@@ -22,7 +22,7 @@
                       <div class="game-home-img">
                         <el-image
                             style="width: 100%; height:  100%; "
-                            :src="gameInfo.coverUrl"
+                            :src="this.gameInfoView.coverUrl"
                             fit="fill"></el-image>
                       </div>
                     </div>
@@ -30,8 +30,8 @@
                   <el-col :span="9">
                     <div class="grid-content bg-purple-light">
                       <div class="game-home-text">
-                        <div class="game-info-title">荒野大镖客2</div>
-                        <span class="game-info-title-deps">(Red Dead: RedemptionⅡ)</span>
+                        <div class="game-info-title">{{ this.gameInfoView.gameNameChina }}</div>
+                        <span class="game-info-title-deps">({{ this.gameInfoView.gameName }})</span>
                         <div class="game-home-info-content">
                           <div class="game-home-info-text"><span>类型:</span><span>角色扮演</span></div>
                           <div class="game-home-info-text"><span>制作:</span><span>Rockstar</span></div>
