@@ -8,7 +8,7 @@
       <el-card v-else class="game-info-card1">
         <el-image
             style="width: 100%; height: 300px;"
-            :src="gameUrl"
+            :src="gameInfoView.coverUrl"
             fit="fill"></el-image>
       </el-card>
       <div class="game-info-content">
@@ -22,7 +22,7 @@
                       <div class="game-home-img">
                         <el-image
                             style="width: 100%; height:  100%; "
-                            :src="gameCoverUrl"
+                            :src="gameInfo.coverUrl"
                             fit="fill"></el-image>
                       </div>
                     </div>
@@ -287,7 +287,7 @@
 
           </div>
 
-<!--          精美图片-->
+          <!--          精美图片-->
           <div class="game-index-home-images-goods">
             <el-card>
               <el-carousel :interval="4000" type="card" height="420px">
@@ -297,7 +297,7 @@
               </el-carousel>
             </el-card>
           </div>
-<!--          ======类型游戏and产商游戏=======-->
+          <!--          ======类型游戏and产商游戏=======-->
           <div class="game-type-card-index111">
             <el-card>
               <div class="game-type-button-index">
@@ -309,7 +309,7 @@
                 </a-button>
               </div>
               <div class="game-type-images-index">
-                <div >
+                <div>
                   <a-list :grid="{ gutter: 16, column: 4 }" :data-source="data">
                     <a-list-item slot="renderItem" slot-scope="item, index">
                       <a-card :title="item.title">
@@ -350,7 +350,7 @@
                   />
                   <div slot="content">
                     <a-form-item>
-                      <a-textarea :rows="4" :value="value" @change="handleChange" />
+                      <a-textarea :rows="4" :value="value" @change="handleChange"/>
                     </a-form-item>
                     <a-form-item>
                       <a-button html-type="submit" :loading="submitting" type="primary" @click="handleSubmit">
@@ -399,6 +399,7 @@
 <script>
 import Video from "@/components/video/video";
 import moment from "moment";
+import {mapGetters} from "vuex";
 
 const data = [
   {
@@ -432,6 +433,7 @@ export default {
       value: '',
       moment,
       data,
+      gameId: 0,
       content: [
         {
           actions: ['Reply to'],
@@ -450,10 +452,19 @@ export default {
           datetime: moment().subtract(2, 'days'),
         },
       ],
+      gameInfo: {}
     }
   },
   created() {
-
+    this.gameId = this.$route.params.id
+    this.getGameInfo()
+  },
+  mounted() {
+    //派发action获取gameInfo
+    this.$store.dispatch('getGameInfos', this.$route.params.id)
+  },
+  computed: {
+    ...mapGetters(["gameInfoView"]),
   },
   methods: {
     handleClick(tab, event) {
@@ -489,6 +500,9 @@ export default {
     handleChange(e) {
       this.value = e.target.value;
     },
+    getGameInfo() {
+      this.gameInfo = this.$store.state.gameInfo
+    }
 
   },
 }
@@ -714,17 +728,21 @@ export default {
 .el-carousel__item:nth-child(2n+1) {
   background-color: #d3dce6;
 }
-.game-type-button-index{
+
+.game-type-button-index {
   text-align: center;
 }
-.game-type-button-index button{
+
+.game-type-button-index button {
   margin-right: 5px;
   margin-left: 5px;
 }
-.game-type-card-index111{
+
+.game-type-card-index111 {
   margin-bottom: 30px;
 }
-.game-type-images-index{
+
+.game-type-images-index {
   margin-top: 30px;
 }
 </style>

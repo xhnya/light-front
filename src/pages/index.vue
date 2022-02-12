@@ -23,8 +23,6 @@
                 <span>荒野大镖客2</span>
                 <el-divider direction="vertical"></el-divider>
                 <span>荒野大镖客2</span>
-
-
               </div>
             </div>
           </el-col>
@@ -106,7 +104,7 @@
           <div class="grid-content">
             <div class="block index-lun">
               <el-carousel height="360px">
-                <el-carousel-item v-for="item in bannerList" :key="item">
+                <el-carousel-item v-for="item in bannerList" :key="item.id">
                   <el-image
                       style="width: 100%; height: 100%"
                       :src="item.coverUrl"
@@ -359,10 +357,10 @@
                   <span>新游榜</span>
                 </el-card>
               </div>
-              <el-collapse v-for="item in newRankGameList" :key="item.id" v-model="activeName1" accordion>
-                <div @mouseenter="changeItem1(item.sort)">
-                  <el-collapse-item :title="item.sort+'  '+item.gameName" :name="item.sort">
-                    <el-row :gutter="20">
+              <el-collapse v-for="(item,index) in newRankGameList" :key="index" v-model="activeName1" accordion>
+                <div @click="gotoGameInfo(item.gameId)" @mouseenter="changeItem1(item.sort)">
+                  <el-collapse-item  :title="item.sort+'  '+item.gameName" :name="item.sort">
+                    <el-row  :gutter="20">
                       <el-col :span="12">
                         <div class="grid-content bg-purple">
                           <el-image
@@ -398,8 +396,8 @@
                   <span>热门榜</span>
                 </el-card>
               </div>
-              <el-collapse v-for="item in hotRankGameList" :key="item.id" v-model="activeName2" accordion>
-                <div @mouseenter="changeItem2(item.sort)">
+              <el-collapse  v-for="(item,index) in hotRankGameList" :key="index" v-model="activeName2" accordion>
+                <div @click="gotoGameInfo(item.gameId)"  @mouseenter="changeItem2(item.sort)">
                   <el-collapse-item :title="item.sort+'  '+item.gameName" :name="item.sort">
                     <el-row :gutter="20">
                       <el-col :span="12">
@@ -436,33 +434,36 @@
                   <span>期待榜</span>
                 </el-card>
               </div>
-              <el-collapse v-for="item in expectRankGameList" :key="item.id" v-model="activeName3" accordion>
-                <div @mouseenter="changeItem3(item.sort)">
-                  <el-collapse-item :title="item.sort+'  '+item.gameName" :name="item.sort">
-                    <el-row :gutter="20">
-                      <el-col :span="12">
-                        <div class="grid-content bg-purple">
-                          <el-image
-                              style="width: 150px; height: 180px"
-                              :src="item.coverUrl"
-                              fit="fill"></el-image>
-                        </div>
-                      </el-col>
-                      <el-col :span="12">
-                        <div class="grid-content bg-purple">
-                          <div>{{ item.sort }}</div>
-                          <div>{{ item.gameName }}</div>
-                          <div>
-                            <div><span>热度：</span><span></span></div>
-                            <div><span>类型：</span><span>{{ item.gameType }}</span></div>
-                            <div><span>发行：</span><span>{{ item.releaseTime }}</span></div>
+              <div v-for="item in expectRankGameList" :key="item.id">
+                <el-collapse  v-model="activeName3" accordion>
+                  <div @click="gotoGameInfo(item.gameId)" @mouseenter="changeItem3(item.sort)">
+                    <el-collapse-item :title="item.sort+'  '+item.gameName" :name="item.sort">
+                      <el-row  :gutter="20">
+                        <el-col :span="12">
+                          <div class="grid-content bg-purple">
+                            <el-image
+                                style="width: 150px; height: 180px"
+                                :src="item.coverUrl"
+                                fit="fill"></el-image>
                           </div>
-                        </div>
-                      </el-col>
-                    </el-row>
-                  </el-collapse-item>
-                </div>
-              </el-collapse>
+                        </el-col>
+                        <el-col :span="12">
+                          <div class="grid-content bg-purple">
+                            <div>{{ item.sort }}</div>
+                            <div>{{ item.gameName }}</div>
+                            <div>
+                              <div><span>热度：</span><span></span></div>
+                              <div><span>类型：</span><span>{{ item.gameType }}</span></div>
+                              <div><span>发行：</span><span>{{ item.releaseTime }}</span></div>
+                            </div>
+                          </div>
+                        </el-col>
+                      </el-row>
+                    </el-collapse-item>
+                  </div>
+                </el-collapse>
+              </div>
+
             </div>
           </div>
 
@@ -478,6 +479,7 @@
 
 <script>
 import index from "@/api/index"
+import game from "@/api/game"
 
 export default {
   data() {
@@ -540,7 +542,10 @@ export default {
 
         this.expectRankGameList = res.data.rankList
       })
-
+    },
+    gotoGameInfo(val) {
+      //前往游戏详情
+      this.$router.push({path: '/game/'+val})
     }
   },
 };

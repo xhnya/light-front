@@ -28,6 +28,8 @@ Vue.use(Button);
 import less from 'less'
 Vue.use(less)
 
+import store from './store'
+
 
 import HeaderBanner from "@/components/HeaderBanner";
 Vue.component('HeaderBanner',HeaderBanner)
@@ -39,4 +41,5 @@ new Vue({
   render: h => h(App),
   router,
   el: '#app',
+  store,
 }).$mount('#app')
