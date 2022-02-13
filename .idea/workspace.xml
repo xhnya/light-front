@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a4709f25-0ba9-428d-9696-215315439931" name="Default Changelist" comment="页面详情，开始开发后台">
+    <list default="true" id="a4709f25-0ba9-428d-9696-215315439931" name="Default Changelist" comment="页面显示">
+      <change afterPath="$PROJECT_DIR$/src/api/community.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/modules/community.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/game/home/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/game/home/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/page/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/page/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/type/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/type/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="VueTemplate" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -46,6 +54,14 @@
       </branch-storage>
     </favorite-branches>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="23rzFgQPY7Dee9SV8Si6ZDZ6W8U" />
   <component name="ProjectLevelVcsManager">
@@ -94,6 +110,8 @@
       <workItem from="1642678802522" duration="30000" />
       <workItem from="1642819376385" duration="2650000" />
       <workItem from="1644588906857" duration="3056000" />
+      <workItem from="1644728396109" duration="9120000" />
+      <workItem from="1644753181156" duration="3642000" />
     </task>
     <task id="LOCAL-00001" summary="页面详情，开始开发后台">
       <created>1642515757184</created>
@@ -102,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642515757184</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="页面显示">
+      <created>1644677990295</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1644677990296</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +147,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="页面详情，开始开发后台" />
-    <option name="LAST_COMMIT_MESSAGE" value="页面详情，开始开发后台" />
+    <MESSAGE value="页面显示" />
+    <option name="LAST_COMMIT_MESSAGE" value="页面显示" />
   </component>
 </project>

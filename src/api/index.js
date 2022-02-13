@@ -15,5 +15,17 @@ export default {
                 type: type
             }
         })
+    },
+    getIndexPageList() {
+        return request({
+            url: 'community/index/indexHotPageList',
+            method: 'get'
+        })
+    },
+    getNewReleaseGame() {
+        return request({
+            url: 'game/game/getNewReleaseGame',
+            method: 'get'
+        })
     }
 }

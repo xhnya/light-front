@@ -118,10 +118,11 @@
         <!--      列表-->
         <el-col :span="8">
           <div class="grid-content index-content-item">
-            <div v-for="o in 8" :key="o" class="text item2 max-text ">
-              <span @click="toPageIndex(o)">{{ '老当益壮，宁移白首之心？穷且益坚，不坠青云之志。酌贪泉而觉爽，处涸辙以犹欢。' + o }}</span>
+            <div v-for="item in hotPageList" :key="item.id" class="text item2 max-text ">
+              <span @click="toPageIndex(item.id)">{{ item.title }}</span>
               <hr>
             </div>
+            <el-empty v-if="hotPageList===[]" :image-size="200"></el-empty>
           </div>
         </el-col>
         <el-col :span="6">
@@ -176,8 +177,9 @@
               </div>
               <div>
                 <el-row>
-                  <el-col :span="6">
+                  <el-col v-for="item in newReleaseGame" :key="item.id" :span="6">
                     <div class="grid-content recently-game ">
+<!--                      TODO: 游戏描述-->
                       <el-popover
                           placement="top-start"
                           title="标题"
@@ -188,71 +190,17 @@
                           <div style="text-align: center;">
                             <el-image
                                 style="width: 100px; height: 120px;text-align: center;"
-                                :src="recentlyUrl"
+                                :src="item.cover"
                                 fit="fill"></el-image>
                           </div>
                           <div style="text-align: center;">
-                            消逝的光芒2
+                            {{ item.name }}
                           </div>
                           <div style="text-align: center;">
-                            2022-02-04
+                            {{ item.time }}
                           </div>
                         </div>
                       </el-popover>
-                    </div>
-                  </el-col>
-                  <el-col :span="6">
-                    <div class="grid-content ">
-                      <div>
-                        <div style="text-align: center;">
-                          <el-image
-                              style="width: 100px; height: 120px;text-align: center;"
-                              :src="recentlyUrl"
-                              fit="fill"></el-image>
-                        </div>
-                        <div style="text-align: center;">
-                          消逝的光芒2
-                        </div>
-                        <div style="text-align: center;">
-                          2022-02-04
-                        </div>
-                      </div>
-                    </div>
-                  </el-col>
-                  <el-col :span="6">
-                    <div class="grid-content ">
-                      <div>
-                        <div style="text-align: center;">
-                          <el-image
-                              style="width: 100px; height: 120px;text-align: center;"
-                              :src="recentlyUrl"
-                              fit="fill"></el-image>
-                        </div>
-                        <div style="text-align: center;">
-                          消逝的光芒2
-                        </div>
-                        <div style="text-align: center;">
-                          2022-02-04
-                        </div>
-                      </div>
-                    </div>
-                  </el-col>
-                  <el-col :span="6">
-                    <div class="grid-content ">
-                      <div>
-                        <div style="text-align: center;">
-                          <el-image
-                              style="width: 100px; height: 120px;text-align: center;"
-                              :src="recentlyUrl"
-                              fit="fill"></el-image>
-                        </div>
-                        <div style="text-align: center;">
-                          消逝的光芒2
-                        </div>
-                        <div style="text-align: center;">
-                          2022-02-04
-                        </div>
-                      </div>
                     </div>
                   </el-col>
                 </el-row>
@@ -265,74 +213,20 @@
               </div>
               <div>
                 <el-row>
-                  <el-col :span="6">
+                  <el-col v-for="item in newReleaseGame" :key="item.id" :span="6">
                     <div class="grid-content ">
                       <div>
                         <div style="text-align: center;">
                           <el-image
                               style="width: 100px; height: 120px;text-align: center;"
-                              :src="recentlyUrl"
+                              :src="item.cover"
                               fit="fill"></el-image>
                         </div>
                         <div style="text-align: center;">
-                          消逝的光芒2
+                          {{ item.name }}
                         </div>
                         <div style="text-align: center;">
-                          2022-02-04
-                        </div>
-                      </div>
-                    </div>
-                  </el-col>
-                  <el-col :span="6">
-                    <div class="grid-content ">
-                      <div>
-                        <div style="text-align: center;">
-                          <el-image
-                              style="width: 100px; height: 120px;text-align: center;"
-                              :src="recentlyUrl"
-                              fit="fill"></el-image>
-                        </div>
-                        <div style="text-align: center;">
-                          消逝的光芒2
-                        </div>
-                        <div style="text-align: center;">
-                          2022-02-04
-                        </div>
-                      </div>
-                    </div>
-                  </el-col>
-                  <el-col :span="6">
-                    <div class="grid-content ">
-                      <div>
-                        <div style="text-align: center;">
-                          <el-image
-                              style="width: 100px; height: 120px;text-align: center;"
-                              :src="recentlyUrl"
-                              fit="fill"></el-image>
-                        </div>
-                        <div style="text-align: center;">
-                          消逝的光芒2
-                        </div>
-                        <div style="text-align: center;">
-                          2022-02-04
-                        </div>
-                      </div>
-                    </div>
-                  </el-col>
-                  <el-col :span="6">
-                    <div class="grid-content ">
-                      <div>
-                        <div style="text-align: center;">
-                          <el-image
-                              style="width: 100px; height: 120px;text-align: center;"
-                              :src="recentlyUrl"
-                              fit="fill"></el-image>
-                        </div>
-                        <div style="text-align: center;">
-                          消逝的光芒2
-                        </div>
-                        <div style="text-align: center;">
-                          2022-02-04
+                          {{ item.time }}
                         </div>
                       </div>
                     </div>
@@ -359,8 +253,8 @@
               </div>
               <el-collapse v-for="(item,index) in newRankGameList" :key="index" v-model="activeName1" accordion>
                 <div @click="gotoGameInfo(item.gameId)" @mouseenter="changeItem1(item.sort)">
-                  <el-collapse-item  :title="item.sort+'  '+item.gameName" :name="item.sort">
-                    <el-row  :gutter="20">
+                  <el-collapse-item :title="item.sort+'  '+item.gameName" :name="item.sort">
+                    <el-row :gutter="20">
                       <el-col :span="12">
                         <div class="grid-content bg-purple">
                           <el-image
@@ -396,8 +290,8 @@
                   <span>热门榜</span>
                 </el-card>
               </div>
-              <el-collapse  v-for="(item,index) in hotRankGameList" :key="index" v-model="activeName2" accordion>
-                <div @click="gotoGameInfo(item.gameId)"  @mouseenter="changeItem2(item.sort)">
+              <el-collapse v-for="(item,index) in hotRankGameList" :key="index" v-model="activeName2" accordion>
+                <div @click="gotoGameInfo(item.gameId)" @mouseenter="changeItem2(item.sort)">
                   <el-collapse-item :title="item.sort+'  '+item.gameName" :name="item.sort">
                     <el-row :gutter="20">
                       <el-col :span="12">
@@ -435,10 +329,10 @@
                 </el-card>
               </div>
               <div v-for="item in expectRankGameList" :key="item.id">
-                <el-collapse  v-model="activeName3" accordion>
+                <el-collapse v-model="activeName3" accordion>
                   <div @click="gotoGameInfo(item.gameId)" @mouseenter="changeItem3(item.sort)">
                     <el-collapse-item :title="item.sort+'  '+item.gameName" :name="item.sort">
-                      <el-row  :gutter="20">
+                      <el-row :gutter="20">
                         <el-col :span="12">
                           <div class="grid-content bg-purple">
                             <el-image
@@ -492,12 +386,16 @@ export default {
       bannerList: [],
       hotRankGameList: [],
       expectRankGameList: [],
-      newRankGameList: []
+      newRankGameList: [],
+      hotPageList: [],
+      newReleaseGame: []
     };
   },
   created() {
     this.getBannerList()
     this.getHotGameRankList()
+    this.getPageList()
+    this.getNewRelease()
   },
   methods: {
     changeItem1(o) {
@@ -524,9 +422,13 @@ export default {
     toPageIndex(val) {
       this.$router.push({path: `/page/${val}`})
     },
+    getPageList() {
+      index.getIndexPageList().then((res) => {
+        this.hotPageList = res.data.result
+      })
+    },
     getBannerList() {
       index.getBannerList().then((res) => {
-        console.log(res);
         this.bannerList = res.data.bannerList
       })
     },
@@ -545,7 +447,12 @@ export default {
     },
     gotoGameInfo(val) {
       //前往游戏详情
-      this.$router.push({path: '/game/'+val})
+      this.$router.push({path: '/game/' + val})
+    },
+    getNewRelease() {
+      index.getNewReleaseGame().then((res) => {
+        this.newReleaseGame=res.data.result
+      })
     }
   },
 };

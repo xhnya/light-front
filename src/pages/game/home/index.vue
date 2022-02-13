@@ -2,18 +2,18 @@
   <div class="game-info-bg">
     <div :class="{gameInfoBg1: isIssues,gameInfoBg2: !isIssues}">
       <div v-if="isIssues===true">
-        <div class="game-info-bg01" :style="{backgroundImage: 'url(' + gameBGUrl + ')'}">
+        <div class="game-info-bg01" :style="{backgroundImage: 'url(' + this.gameInfoView.bgUrl + ')'}">
         </div>
       </div>
       <el-card v-else class="game-info-card1">
         <el-image
             style="width: 100%; height: 300px;"
-            :src="gameInfoView.coverUrl"
+            :src="this.gameInfoView.bgUrl"
             fit="fill"></el-image>
       </el-card>
       <div class="game-info-content">
         <div class="game-info-content-card0">
-          <el-card class="game-info-content-card">
+          <el-card  class="game-info-content-card">
             <el-tabs stretch class="game-info-content-tabs" v-model="activeName" @tab-click="handleClick">
               <el-tab-pane class="game-info-tabs-item" label="首页" name="index">
                 <el-row>
@@ -43,7 +43,7 @@
                           </div>
                           <div class="game-home-info-text"><span>发售:</span><span>2019-11-05 ( PC )</span></div>
                           <div class="game-home-info-text"><span>官网:</span>
-                            <el-link href="https://www.rockstargames.com/reddeadredemption2" target="_blank"
+                            <el-link :href="this.gameInfoView.website" target="_blank"
                                      type="primary">点击进入
                             </el-link>
                           </div>
@@ -82,7 +82,8 @@
                       </div>
                     </div>
                     <div class="game-home-ptext">
-                      <p>
+<!--                      TODO: 文本过长的时候隐藏下拉款-->
+                      <p v-text="this.gameInfoView.gameDescribe">
                         《荒野大镖客2(Red Dead Redemption 2)》是由Rockstar
                         Games制作发行的一款开放世界动作冒险类游戏，是人气游戏《荒野大镖客》的最新续作。本作讲述在美国无情的蛮荒大地上绽放出的生命诗篇。游戏庞大又细腻的世界，也将是全新多人游戏模式体验的最佳舞台。
                       </p>

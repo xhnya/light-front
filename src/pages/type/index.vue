@@ -9,39 +9,48 @@
           <el-button @click="gotoAllGame" style="float: right; padding: 3px 0" type="text">全部游戏</el-button>
         </div>
         <div class="game-card-01">
-          <!--        按钮列表-->
-          <div class="type-button01-parent">
-            <div class="type-button01">
-              <el-button class="type-button02" size="mini" style="margin-left: 10px;" plain>动作</el-button>
-              <el-button class="type-button02" size="mini" plain>角色</el-button>
-              <el-button class="type-button02" size="mini" plain>射击</el-button>
-              <el-button class="type-button02" size="mini" plain>策略</el-button>
-              <el-button class="type-button02" size="mini" plain>冒险</el-button>
-              <el-button class="type-button02" size="mini" plain>体育</el-button>
-              <el-button class="type-button02" size="mini" plain>模拟</el-button>
-            </div>
-          </div>
-          <!--        游戏列表-->
-          <div class="game-item-01">
-            <div style="width:100%;display:  inline;" v-for="(item,index) in gameImageList" :key="index">
-              <div class="game-image-item">
-                <el-image
-                    style="width: 100%; height: 100%;border-radius: 6px;"
-                    :src="item.url"
-                    fit="fill"></el-image>
-                <p>{{ item.title }}</p>
-              </div>
-            </div>
-            <div>
-              <div class="game-title-item">
-                <div class="game-title-item1" v-for="(item,index) in gameTitleList" :key="index">
-                  <span>{{ item.title }}</span>
-                  <el-divider direction="vertical"></el-divider>
+
+          <el-row>
+            <el-col :span="2">
+              <div class="grid-content bg-purple">
+                <!--        按钮列表-->
+                <div class="type-button01-parent">
+                  <div class="type-button01">
+                    <div v-for="item in typeList" :key="item.id">
+                      <el-button class="type-button02" size="mini" plain>{{ item.typeName }}</el-button>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </el-col>
+            <el-col :span="22">
+              <div class="grid-content bg-purple">
+                <!--        游戏列表-->
+                <div class="game-item-01">
+                  <div style="width:100%;display:  inline;" v-for="(item,index) in gameImageList" :key="index">
+                    <div class="game-image-item">
+                      <el-image
+                          style="width: 100%; height: 100%;border-radius: 6px;"
+                          :src="item.url"
+                          fit="fill"></el-image>
+                      <p>{{ item.title }}</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="game-title-item">
+                      <div class="game-title-item1" v-for="(item,index) in gameTitleList" :key="index">
+                        <span>{{ item.title }}</span>
+                        <el-divider direction="vertical"></el-divider>
+                      </div>
+                    </div>
+                  </div>
 
-          </div>
+                </div>
+              </div>
+            </el-col>
+          </el-row>
+
+
         </div>
       </el-card>
       <!--    第2层级-->
@@ -100,12 +109,12 @@
               <el-card class="game-tags-item01">
                 <div class="text item">
                   <a-list
-                      :grid="{ gutter: 16, xs: 1, sm: 2, md: 4, lg: 4, xl: 6, xxl: 3, xxxl: 2 }"
+                      :grid="{ gutter: 16, xs: 1, sm: 2, md: 4, lg: 4, xl: 6, xxl: 8, xxxl: 2 }"
                       :data-source="tagsList"
                   >
-                    <template v-for="(tags,index) in tagsList" >
+                    <template v-for="tags in tagsList">
                       <a-list-item>
-                        <el-tag>{{ tags.name }}</el-tag>
+                        <el-tag>{{ tags.tagName }}</el-tag>
                       </a-list-item>
                     </template>
                   </a-list>
@@ -118,7 +127,7 @@
 
       </div>
 
-<!--      游戏推荐-->
+      <!--      游戏推荐-->
       <div class="type-game-recommend">
         <el-card>
           <a-list :grid="{ gutter: 16, column: 6 }" :data-source="gameImageList">
@@ -142,7 +151,7 @@
       <div class="type-game-lately">
         <el-card>
           <a-list :grid="{ gutter: 16, column: 4 }" :data-source="gameImageList">
-            <template   #renderItem="{ item }">
+            <template #renderItem="{ item }">
               <a-list-item style="text-align: center;padding: 10px;" v-for="item in gameImageList">
                 <el-image
                     style="width: 100px; height: 120px;border-radius: 6px;"
@@ -163,7 +172,7 @@
         <el-card>
           <a-list :grid="{ gutter: 16, column: 4 }" :data-source="gameImageList">
             <template #renderItem="{ item }">
-              <a-list-item  style="text-align: center;padding: 10px;" v-for="item in gameImageList">
+              <a-list-item style="text-align: center;padding: 10px;" v-for="item in gameImageList">
                 <el-image
                     style="width: 100px; height: 120px;border-radius: 6px;"
                     :src="item.url"
@@ -183,6 +192,8 @@
 </template>
 
 <script>
+import game from '@/api/game'
+
 const dataList = [{
   name: 'Title 1',
 }];
@@ -330,32 +341,15 @@ export default {
           gameName: "荒野大镖客2"
         }
       ],
-      tagsList: [
-        {
-          name: "第一人称"
-        },
-        {
-          name: "第一人称"
-        },
-        {
-          name: "第一人称"
-        },
-        {
-          name: "第一人称"
-        },
-        {
-          name: "第一人称"
-        },
-        {
-          name: "第一人称"
-        },
-        {
-          name: "第一人称"
-        },
-      ],
+      tagsList: [],
       dataList,
+      typeList: []
 
     }
+  },
+  created() {
+    this.getGameTypeList()
+    this.getGameTagList()
   },
   methods: {
     gotoAllGame() {
@@ -364,7 +358,19 @@ export default {
     changeGameBanner(i) {
       // alert(i)
       return this.gameBanner[i].coverUrl;
-    }
+    },
+    getGameTypeList() {
+      game.getGameTypeList().then((res) => {
+        this.typeList = res.data.page.list
+      })
+    },
+    getGameTagList() {
+      const val = {}
+      val.size = 30
+      game.getGameTagList(val).then((res) => {
+        this.tagsList = res.data.page.list
+      })
+    },
 
   }
 }
@@ -496,19 +502,23 @@ export default {
   padding: 3px 0;
 }
 
-.game-tags-item01{
+.game-tags-item01 {
   height: 360px;
 }
-.type-game-recommend{
+
+.type-game-recommend {
   margin-top: @marginTop;
 }
-.type-game-discount{
+
+.type-game-discount {
   margin-top: @marginTop;
   margin-bottom: @marginTop;
 }
-.type-game-lately{
+
+.type-game-lately {
   margin-top: @marginTop;
 }
+
 /****************************************************** 分割 **************************************************************/
 </style>
 
