@@ -15,6 +15,12 @@ export default {
                 limit: val.size
             }
         })
+    },
+    selectRecommendListView() {
+        return request({
+            url: '/game/recommend/listView',
+            method: 'get'
+        })
     }
 }
 export const getGameInfo = (id) => request({

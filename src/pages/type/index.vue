@@ -130,20 +130,33 @@
       <!--      游戏推荐-->
       <div class="type-game-recommend">
         <el-card>
-          <a-list :grid="{ gutter: 16, column: 6 }" :data-source="gameImageList">
-            <template #renderItem="{ item }">
-              <a-list-item style="text-align: center;padding: 10px;" v-for="item in gameImageList">
-                <el-image
-                    style="width: 100px; height: 120px;border-radius: 6px;"
-                    :src="item.url"
-                    fit="fill"></el-image>
-                <div>{{ item.title }}</div>
-              </a-list-item>
-            </template>
-            <template #header>
-              <div>推荐游戏</div>
-            </template>
+          <!--          <a-list :grid="{ gutter: 16, column: 6 }" :data-source="gameRecommendList">-->
+          <!--            <template #renderItem="{ item }">-->
+          <!--              <a-list-item style="text-align: center;padding: 10px;" v-for="item in gameRecommendList">-->
+          <!--                <el-image-->
+          <!--                    style="width: 100px; height: 120px;border-radius: 6px;"-->
+          <!--                    :src="item.cover"-->
+          <!--                    fit="fill"></el-image>-->
+          <!--                <div>{{ item.name }}</div>-->
+          <!--              </a-list-item>-->
+          <!--            </template>-->
+          <!--            <template #header>-->
+          <!--              <div>推荐游戏</div>-->
+          <!--            </template>-->
+          <!--          </a-list>-->
+          <a-list :grid="{ gutter: 16, column: 6 }" :data-source="gameRecommendList">
+            <a-list-item @click="gotoGameInfo(item.id)" slot="renderItem" slot-scope="item, index">
+              <el-image
+                  style="width: 100px; height: 120px;border-radius: 6px;"
+                  :src="item.cover"
+                  fit="fill">
+              </el-image>
+              <div>{{ item.name }}</div>
+            </a-list-item>
           </a-list>
+          <template #header>
+            <div>推荐游戏</div>
+          </template>
         </el-card>
 
       </div>
@@ -343,13 +356,15 @@ export default {
       ],
       tagsList: [],
       dataList,
-      typeList: []
+      typeList: [],
+      gameRecommendList: []
 
     }
   },
   created() {
     this.getGameTypeList()
     this.getGameTagList()
+    this.getRecommendListView()
   },
   methods: {
     gotoAllGame() {
@@ -371,6 +386,16 @@ export default {
         this.tagsList = res.data.page.list
       })
     },
+    getRecommendListView() {
+      game.selectRecommendListView().then((res) => {
+        this.gameRecommendList = res.data.page
+      })
+    },
+    gotoGameInfo(id) {
+      // 前往游戏详情
+      this.$router.push({path: '/game/' + id})
+    }
+
 
   }
 }
