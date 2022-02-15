@@ -13,7 +13,7 @@
       </el-card>
       <div class="game-info-content">
         <div class="game-info-content-card0">
-          <el-card  class="game-info-content-card">
+          <el-card class="game-info-content-card">
             <el-tabs stretch class="game-info-content-tabs" v-model="activeName" @tab-click="handleClick">
               <el-tab-pane class="game-info-tabs-item" label="首页" name="index">
                 <el-row>
@@ -82,7 +82,7 @@
                       </div>
                     </div>
                     <div class="game-home-ptext">
-<!--                      TODO: 文本过长的时候隐藏下拉款-->
+                      <!--                      TODO: 文本过长的时候隐藏下拉款-->
                       <p v-text="this.gameInfoView.gameDescribe">
                         《荒野大镖客2(Red Dead Redemption 2)》是由Rockstar
                         Games制作发行的一款开放世界动作冒险类游戏，是人气游戏《荒野大镖客》的最新续作。本作讲述在美国无情的蛮荒大地上绽放出的生命诗篇。游戏庞大又细腻的世界，也将是全新多人游戏模式体验的最佳舞台。
@@ -474,7 +474,7 @@ export default {
         this.isIndex = true;
       } else {
         this.isIndex = false;
-        this.$router.push({path: '/game/1/' + this.activeName})
+        this.$router.push({path: '/game/' + this.$route.params.id + '/' + this.activeName})
       }
     },
     handleSubmit() {
