@@ -3,6 +3,7 @@
     <video-player class="video-player vjs-custom-skin"
                   ref="videoPlayer"
                   :playsinline="true"
+                  @play="onPlayerPlay($event)"
                   :options="playerOptions">
     </video-player>
   </div>
@@ -43,7 +44,9 @@ export default {
   computed: {
     player() {
       return this.$refs.videoPlayer.player
-    }
+    },
+    ...mapGetters(["gameInfoView"]),
+
   },
   methods: {
     fullScreen() {
@@ -53,6 +56,7 @@ export default {
       player.play()
     },
     onPlayerPlay(player) {
+      this.playerOptions.sources[0].src=this.gameInfoView.videoUrl
       player.play()
     },
     onPlayerPause(player) {

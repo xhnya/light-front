@@ -133,23 +133,25 @@
                 <el-col :span="12">
                   <el-card>
                     <el-carousel indicator-position="outside">
-                      <el-carousel-item v-for="(item,index) in this.gameInfoView.bannerList" :key="index">
-                        <el-image
-                            style="width: 100%; height:100%"
-                            :src="item"
-                            fit="fill"></el-image>
-                      </el-carousel-item>
+                      <div v-for="(item,index) in this.gameInfoView.bannerList" :key="index">
+                        <el-carousel-item >
+                          <el-image
+                              style="width: 100%; height:100%"
+                              :src="item"
+                              fit="fill"></el-image>
+                        </el-carousel-item>
+                      </div>
                     </el-carousel>
                   </el-card>
                   <el-card>
-                    <Video><source :src="this.gameInfoView.videoUrl" type="video/webm"></Video>
+                    <Video></Video>
                   </el-card>
                 </el-col>
                 <el-col :span="12">
                   <div class="game-info-home-cover2">
                     <el-card style="height: 640px;">
                       <a-list bordered :data-source="data">
-<!--                        TODO: 游戏动态显示-->
+<!--                       TODO: 游戏动态显示-->
                         <a-list-item slot="renderItem" slot-scope="item, index">
                           {{ item }}
                         </a-list-item>
@@ -185,8 +187,16 @@
                           </el-card>
                         </div>
                       </a-list-item>
-                      <a-empty ></a-empty>
+                      <div v-if="this.gameInfoView.scoreList.length ==0">
+                        <el-card class="box-at-1">
+                          <el-image
+                              style="width: 256px; height:  256px;"
+                              src="http://img.xhnya.top/img/nodata.png"
+                              fit="fill"></el-image>
+                        </el-card>
+                      </div>
                     </a-list>
+
                   </div>
                 </el-card>
               </el-col>
@@ -216,7 +226,7 @@
                       </div>
                     </div>
                   </div>
-                  <div v-if="this.gameInfoView.awardList==null">
+                  <div v-if="this.gameInfoView.awardList.length ==0">
                     <el-card class="box-at-1">
                       <el-image
                           style="width: 256px; height:  256px;"

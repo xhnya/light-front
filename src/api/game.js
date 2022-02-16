@@ -16,10 +16,13 @@ export default {
             }
         })
     },
-    selectRecommendListView() {
+    selectRecommendListView(type) {
         return request({
             url: '/game/recommend/listView',
-            method: 'get'
+            method: 'get',
+            params: {
+                type: type
+            }
         })
     }
 }

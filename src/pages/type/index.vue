@@ -161,6 +161,7 @@
 
       </div>
       <!--      最近游戏-->
+      <!--      TODO: 如果用户没有登录，就返回热门游戏-->
       <div class="type-game-lately">
         <el-card>
           <a-list :grid="{ gutter: 16, column: 4 }" :data-source="gameImageList">
@@ -183,20 +184,19 @@
       <!--      优惠促销-->
       <div class="type-game-discount">
         <el-card>
-          <a-list :grid="{ gutter: 16, column: 4 }" :data-source="gameImageList">
-            <template #renderItem="{ item }">
-              <a-list-item style="text-align: center;padding: 10px;" v-for="item in gameImageList">
-                <el-image
-                    style="width: 100px; height: 120px;border-radius: 6px;"
-                    :src="item.url"
-                    fit="fill"></el-image>
-                <div>{{ item.title }}</div>
-              </a-list-item>
-            </template>
-            <template #header>
-              <div>优惠促销</div>
-            </template>
+          <a-list :grid="{ gutter: 16, column: 6 }" :data-source="gamePreferentialList">
+            <a-list-item @click="gotoGameInfo(item.id)" slot="renderItem" slot-scope="item, index">
+              <el-image
+                  style="width: 100px; height: 120px;border-radius: 6px;"
+                  :src="item.cover"
+                  fit="fill">
+              </el-image>
+              <div>{{ item.name }}</div>
+            </a-list-item>
           </a-list>
+          <template #header>
+            <div>优惠促销</div>
+          </template>
         </el-card>
 
       </div>
@@ -357,7 +357,8 @@ export default {
       tagsList: [],
       dataList,
       typeList: [],
-      gameRecommendList: []
+      gameRecommendList: [],
+      gamePreferentialList: []
 
     }
   },
@@ -365,6 +366,7 @@ export default {
     this.getGameTypeList()
     this.getGameTagList()
     this.getRecommendListView()
+    this.getPreferentialList()
   },
   methods: {
     gotoAllGame() {
@@ -387,13 +389,19 @@ export default {
       })
     },
     getRecommendListView() {
-      game.selectRecommendListView().then((res) => {
+      game.selectRecommendListView(0).then((res) => {
         this.gameRecommendList = res.data.page
       })
     },
     gotoGameInfo(id) {
       // 前往游戏详情
       this.$router.push({path: '/game/' + id})
+    },
+    getPreferentialList() {
+      game.selectRecommendListView(1).then((res) => {
+        this.gamePreferentialList = res.data.page
+      })
+
     }
 
 
