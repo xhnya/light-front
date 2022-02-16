@@ -142,13 +142,14 @@
                     </el-carousel>
                   </el-card>
                   <el-card>
-                    <Video></Video>
+                    <Video><source :src="this.gameInfoView.videoUrl" type="video/webm"></Video>
                   </el-card>
                 </el-col>
                 <el-col :span="12">
                   <div class="game-info-home-cover2">
                     <el-card style="height: 640px;">
                       <a-list bordered :data-source="data">
+<!--                        TODO: 游戏动态显示-->
                         <a-list-item slot="renderItem" slot-scope="item, index">
                           {{ item }}
                         </a-list-item>
@@ -171,7 +172,7 @@
                     <span>评分</span>
                   </div>
                   <div>
-                    <a-list :grid="{ gutter: 16, column: 2 }" :data-source="data">
+                    <a-list :grid="{ gutter: 16, column: 2 }" :data-source="this.gameInfoView.scoreList">
                       <a-list-item slot="renderItem" slot-scope="item, index">
                         <div>
                           <el-card class="media-game-info">
@@ -184,6 +185,7 @@
                           </el-card>
                         </div>
                       </a-list-item>
+                      <a-empty ></a-empty>
                     </a-list>
                   </div>
                 </el-card>
@@ -193,110 +195,36 @@
                   <div slot="header" class="clearfix">
                     <span>奖项</span>
                   </div>
-                  <div>
-
+                  <div v-for="item in this.gameInfoView.awardList" :key="item.id">
                     <div style="height: 80px;">
                       <div>
                         <div class="game-home-award-div">
                           <el-image
                               style="width: 100%; height: 100%"
-                              src=" http://img.xhnya.top/img/AwardTGA.png"
+                              :src=" item.coverUrl"
                               fit="fill"></el-image>
                         </div>
                       </div>
                       <div style="margin-left: 20px;">
-                        <span style="font-size:20px;margin-left: 10px;">TGA</span>
+                        <span style="font-size:20px;margin-left: 10px;">{{ item.institutionsName }}</span>
                         <span style="font-size:12px;color: #8e8e93;margin-left: 10px;">( the game award )</span>
                       </div>
                       <div style="font-size: 13px;">
-                        <span style="margin-left: 10px;color: #ff853b;">2018</span> <span>年最佳音效、最佳叙述游戏、最佳音乐</span>
+                        <span style="margin-left: 10px;color: #ff853b;">2018</span> <span>{{  item.awardName }}</span>
                       </div>
                       <div>
-
                       </div>
                     </div>
-                    <div style="height: 80px;">
-                      <div>
-                        <div class="game-home-award-div">
-                          <el-image
-                              style="width: 100%; height: 100%"
-                              src=" http://img.xhnya.top/img/AwardTGA.png"
-                              fit="fill"></el-image>
-                        </div>
-                      </div>
-                      <div style="margin-left: 20px;">
-                        <span style="font-size:20px;margin-left: 10px;">TGA</span>
-                        <span style="font-size:12px;color: #8e8e93;margin-left: 10px;">( the game award )</span>
-                      </div>
-                      <div style="font-size: 13px;">
-                        <span style="margin-left: 10px;color: #ff853b;">2018</span> <span>年最佳音效、最佳叙述游戏、最佳音乐</span>
-                      </div>
-                      <div>
-
-                      </div>
-                    </div>
-                    <div style="height: 80px;">
-                      <div>
-                        <div class="game-home-award-div">
-                          <el-image
-                              style="width: 100%; height: 100%"
-                              src=" http://img.xhnya.top/img/AwardTGA.png"
-                              fit="fill"></el-image>
-                        </div>
-                      </div>
-                      <div style="margin-left: 20px;">
-                        <span style="font-size:20px;margin-left: 10px;">TGA</span>
-                        <span style="font-size:12px;color: #8e8e93;margin-left: 10px;">( the game award )</span>
-                      </div>
-                      <div style="font-size: 13px;">
-                        <span style="margin-left: 10px;color: #ff853b;">2018</span> <span>年最佳音效、最佳叙述游戏、最佳音乐</span>
-                      </div>
-                      <div>
-
-                      </div>
-                    </div>
-                    <div style="height: 80px;">
-                      <div>
-                        <div class="game-home-award-div">
-                          <el-image
-                              style="width: 100%; height: 100%"
-                              src=" http://img.xhnya.top/img/AwardTGA.png"
-                              fit="fill"></el-image>
-                        </div>
-                      </div>
-                      <div style="margin-left: 20px;">
-                        <span style="font-size:20px;margin-left: 10px;">TGA</span>
-                        <span style="font-size:12px;color: #8e8e93;margin-left: 10px;">( the game award )</span>
-                      </div>
-                      <div style="font-size: 13px;">
-                        <span style="margin-left: 10px;color: #ff853b;">2018</span> <span>年最佳音效、最佳叙述游戏、最佳音乐</span>
-                      </div>
-                      <div>
-
-                      </div>
-                    </div>
-                    <div style="height: 80px;">
-                      <div>
-                        <div class="game-home-award-div">
-                          <el-image
-                              style="width: 100%; height: 100%"
-                              src=" http://img.xhnya.top/img/AwardTGA.png"
-                              fit="fill"></el-image>
-                        </div>
-                      </div>
-                      <div style="margin-left: 20px;">
-                        <span style="font-size:20px;margin-left: 10px;">TGA</span>
-                        <span style="font-size:12px;color: #8e8e93;margin-left: 10px;">( the game award )</span>
-                      </div>
-                      <div style="font-size: 13px;">
-                        <span style="margin-left: 10px;color: #ff853b;">2018</span> <span>年最佳音效、最佳叙述游戏、最佳音乐</span>
-                      </div>
-                      <div>
-
-                      </div>
-                    </div>
-
                   </div>
+                  <div v-if="this.gameInfoView.awardList==null">
+                    <el-card class="box-at-1">
+                      <el-image
+                          style="width: 256px; height:  256px;"
+                          src="http://img.xhnya.top/img/nodata.png"
+                          fit="fill"></el-image>
+                    </el-card>
+                  </div>
+
                 </el-card>
               </el-col>
             </el-row>
@@ -307,9 +235,10 @@
           <div class="game-index-home-images-goods">
             <el-card>
               <el-carousel :interval="4000" type="card" height="420px">
-                <el-carousel-item v-for="item in 6" :key="item">
+                <el-carousel-item v-for="(item,index) in this.gameInfoView.pictureList" :key="index">
                   <h3 class="medium">{{ item }}</h3>
                 </el-carousel-item>
+                <el-empty :image-size="200"></el-empty>
               </el-carousel>
             </el-card>
           </div>
@@ -333,6 +262,7 @@
                       </a-card>
                     </a-list-item>
                   </a-list>
+
                 </div>
               </div>
             </el-card>
@@ -417,20 +347,7 @@ import Video from "@/components/video/video";
 import moment from "moment";
 import {mapGetters} from "vuex";
 
-const data = [
-  {
-    title: 'Title 1',
-  },
-  {
-    title: 'Title 2',
-  },
-  {
-    title: 'Title 3',
-  },
-  {
-    title: 'Title 4',
-  },
-];
+const data = [];
 export default {
   components: {Video},
   data() {
@@ -760,5 +677,11 @@ export default {
 
 .game-type-images-index {
   margin-top: 30px;
+}
+.box-at-1{
+  /*height: 100%*/
+  text-align: center;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 </style>

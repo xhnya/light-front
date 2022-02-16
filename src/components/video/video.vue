@@ -1,14 +1,16 @@
 <template>
-      <div class='demo'>
-        <video-player class="video-player vjs-custom-skin"
-                      ref="videoPlayer"
-                      :playsinline="true"
-                      :options="playerOptions">
-        </video-player>
-      </div>
+  <div class='demo'>
+    <video-player class="video-player vjs-custom-skin"
+                  ref="videoPlayer"
+                  :playsinline="true"
+                  :options="playerOptions">
+    </video-player>
+  </div>
 </template>
 
 <script>
+
+import {mapGetters} from "vuex";
 
 export default {
   data() {
@@ -55,7 +57,8 @@ export default {
     },
     onPlayerPause(player) {
       // alert("pause");
-    }
+    },
+
   },
 
 }
