@@ -178,8 +178,8 @@
               <div>
                 <el-row>
                   <el-col v-for="item in newReleaseGame" :key="item.id" :span="6">
-                    <div class="grid-content recently-game ">
-<!--                      TODO: 游戏描述-->
+                    <div @click="gotoGameInfo(item.id)" class="grid-content recently-game ">
+<!--                     TODO: 游戏描述-->
                       <el-popover
                           placement="top-start"
                           title="标题"
@@ -215,7 +215,7 @@
                 <el-row>
                   <el-col v-for="item in newReleaseGame" :key="item.id" :span="6">
                     <div class="grid-content ">
-                      <div>
+                      <div @click="gotoGameInfo(item.id)">
                         <div style="text-align: center;">
                           <el-image
                               style="width: 100px; height: 120px;text-align: center;"
@@ -232,6 +232,9 @@
                     </div>
                   </el-col>
                 </el-row>
+              </div>
+              <div v-if="newReleaseGame==null">
+                <el-empty description="描述文字"></el-empty>
               </div>
             </el-card>
           </div>

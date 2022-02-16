@@ -22,7 +22,7 @@
                       <div class="game-home-img">
                         <el-image
                             style="width: 100%; height:  100%; "
-                            :src="this.gameInfoView.coverUrl"
+                            :src="this.gameInfoView.cover"
                             fit="fill"></el-image>
                       </div>
                     </div>
@@ -30,18 +30,26 @@
                   <el-col :span="9">
                     <div class="grid-content bg-purple-light">
                       <div class="game-home-text">
-                        <div class="game-info-title">{{ this.gameInfoView.gameNameChina }}</div>
-                        <span class="game-info-title-deps">({{ this.gameInfoView.gameName }})</span>
+                        <div class="game-info-title">{{ this.gameInfoView.gameName }}</div>
+                        <span class="game-info-title-deps">({{ this.gameInfoView.gameNameOther }})</span>
                         <div class="game-home-info-content">
-                          <div class="game-home-info-text"><span>类型:</span><span>角色扮演</span></div>
-                          <div class="game-home-info-text"><span>制作:</span><span>Rockstar</span></div>
-                          <div class="game-home-info-text"><span>类型:</span><span>Rockstar</span></div>
+                          <div class="game-home-info-text">
+                            <span>类型:</span><span>{{ this.gameInfoView.typeName }}</span>
+                          </div>
+                          <div class="game-home-info-text">
+                            <span>制作:</span><span>{{ this.gameInfoView.produceName }}</span>
+                          </div>
+                          <div class="game-home-info-text">
+                            <span>发行:</span><span>{{ this.gameInfoView.issueName }}</span>
+                          </div>
                           <div class="game-home-info-text" style="display: block;"><span>平台:</span>
                             <div class="game-info-tags">
                               <span>pc</span>
                             </div>
                           </div>
-                          <div class="game-home-info-text"><span>发售:</span><span>2019-11-05 ( PC )</span></div>
+                          <div class="game-home-info-text">
+                            <span>发售:</span><span>{{ this.gameInfoView.releaseTime }} ( PC )</span>
+                          </div>
                           <div class="game-home-info-text"><span>官网:</span>
                             <el-link :href="this.gameInfoView.website" target="_blank"
                                      type="primary">点击进入
@@ -58,26 +66,33 @@
                           <el-button plain>light游戏评测</el-button>
                         </div>
                         <div style="display: inline;">
-                          <a-progress strokeWidth=12 :width="80" strokeColor="red" type="circle" :percent="gameScore">
+                          <a-progress  v-if="this.gameInfoView.lightScore!=null" strokeWidth=12 :width="80" strokeColor="red" type="circle" :percent="this.gameInfoView.lightScore">
                             <template #format="percent" style="font-size: 30px;">
                               <a-statistic :value="percent/10 "
                                            :value-style="{ color: 'red',fontSize: '30px',fontWeight: 'bold'}"/>
                             </template>
                           </a-progress>
+                          <span v-if="this.gameInfoView.lightScore==null">
+                            <span style="font-size: 12px;">暂无评分</span>
+                          </span>
                         </div>
                       </div>
                       <div class="game-home-info-score">
                         <div class="game-home-info-score111" style="">
+<!--                          TODO: 未登录显示请登录，以及登录显示评分，或者请评分-->
                           <span>你的评分是9.9</span>
                         </div>
                         <div style="display: inline;">
-                          <a-progress :strokeWidth="12" :width="80" strokeColor="red" type="circle"
-                                      :percent="gameScore">
+                          <a-progress v-if="this.gameInfoView.userScore!=null" :strokeWidth="12" :width="80" strokeColor="red" type="circle"
+                                      :percent="this.gameInfoView.userScore">
                             <template #format="percent" style="font-size: 30px;">
                               <a-statistic :value="percent/10 "
                                            :value-style="{ color: 'red',fontSize: '30px',fontWeight: 'bold'}"/>
                             </template>
                           </a-progress>
+                          <span v-if="this.gameInfoView.userScore==null">
+                            <span style="font-size: 12px;">暂无评分</span>
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -118,10 +133,10 @@
                 <el-col :span="12">
                   <el-card>
                     <el-carousel indicator-position="outside">
-                      <el-carousel-item v-for="item in 4" :key="item">
+                      <el-carousel-item v-for="(item,index) in this.gameInfoView.bannerList" :key="index">
                         <el-image
                             style="width: 100%; height:100%"
-                            :src="gameBGUrl"
+                            :src="item"
                             fit="fill"></el-image>
                       </el-carousel-item>
                     </el-carousel>
