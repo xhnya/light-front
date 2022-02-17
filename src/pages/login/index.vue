@@ -44,15 +44,13 @@
                   <el-input class="lable-width" v-model.number="ruleForm.code"></el-input>
                 </el-form-item>
                 <el-form-item>
-                  <el-button type="primary" @click="submitForm('ruleForm')"
-                  >登录
-                  </el-button
-                  >
+                  <el-button type="primary" @click.prevent="userLogin">
+                    登录
+                  </el-button>
                   <el-button @click="resetForm('ruleForm')">注册</el-button>
                 </el-form-item>
               </el-form>
-            </el-tab-pane
-            >
+            </el-tab-pane>
             <el-tab-pane label="验证登录" name="second"
             >
               <el-form
@@ -231,7 +229,7 @@ export default {
           {required: true, message: "请输入用户名", trigger: "blur"},
           {min: 3, message: "长度大于3", trigger: "blur"},
         ],
-      },
+      }
     };
   },
   created() {
@@ -240,7 +238,9 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert("submit!");
+          // const username = '15079730794'
+          // const password = '123456'
+          // (username && password) && this.$store.dispatch('userLogin')
         } else {
           console.log("error submit!!");
           return false;
@@ -248,7 +248,7 @@ export default {
       });
     },
     resetForm(formName) {
-      this.activeName='second'
+      this.activeName = 'second'
       this.$message('输入手机号,注册账号');
       this.$refs[formName].resetFields();
     },
@@ -259,6 +259,22 @@ export default {
       }
       return callback();
     },
+    handleClick(tab, event) {
+      console.log(tab, event);
+    },
+    async userLogin(){
+      try {
+        //登录成功
+        const username = '15079730794'
+        const password = '123456'
+        username&&password&&(await this.$store.dispatch("userLogin", { username, password }));
+        //登录的路由组件：看路由当中是否包含query参数，有：调到query参数指定路由，没有：调到home
+        //let toPath = this.$route.query.redirect||"/home";
+        this.$router.push({path: '/'});
+      } catch (error) {
+        alert(error.message);
+      }
+    }
   },
 };
 </script>

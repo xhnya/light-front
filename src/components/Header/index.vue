@@ -33,8 +33,13 @@
       </el-col>
       <!--   --------------------   搜索框结束，右边---------------------->
       <el-col class="header-right" :span="0.8">
-        <div @click="goUser"  class="block">
-          <el-avatar size="medium" :src="circleUrl"></el-avatar>
+        <div>
+          <div v-if="!userInfoCover" class="header-login-entry">
+            <span><router-link to="/login">登录</router-link></span>
+          </div>
+          <div v-else @click="goUser" class="block">
+            <el-avatar size="medium" :src="userInfoCover"></el-avatar>
+          </div>
         </div>
       </el-col>
       <el-col :span="1">
@@ -101,8 +106,8 @@
       </el-col>
     </el-row>
 
-<!--    <div style="position: absolute;top: 0;z-index: -1" class="header-banner"></div>-->
-<!--    <div style="height: 100px"></div>-->
+    <!--    <div style="position: absolute;top: 0;z-index: -1" class="header-banner"></div>-->
+    <!--    <div style="height: 100px"></div>-->
   </div>
 
 </template>
@@ -116,6 +121,11 @@ export default {
       circleUrl: "http://img.xhnya.top/img/vae.jpg",
     };
   },
+  computed: {
+    userInfoCover() {
+      return this.$store.state.user.userInfo.cover;
+    }
+  },
   methods: {
     goType() {
       this.$router.push({path: '/type'})
@@ -123,7 +133,7 @@ export default {
     goIndex() {
       this.$router.push({path: '/'})
     },
-    goUser(){
+    goUser() {
       this.$router.push({path: '/account/user/home'})
     }
   }
@@ -150,7 +160,17 @@ export default {
   width: 100%;
   height: 64px;
 }
-
+.header-login-entry{
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: #00aeec;
+  background: #f6f6f6;
+  text-align: center;
+  letter-spacing: 0;
+  font-size: 14px;
+  line-height: 36px;
+}
 /* .el-row {
   margin-bottom: 20px;
   &:last-child {

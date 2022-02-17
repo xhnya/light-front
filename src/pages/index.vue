@@ -403,41 +403,55 @@ export default {
     this.getNewRelease()
     this.getGamePageInfo()
   },
+  mounted() {
+    //派发action,
+    this.$store.dispatch('getUserInfo');
+  },
   methods: {
     changeItem1(o) {
       this.activeName1 = o;
-    },
+    }
+    ,
     changeItem2(o) {
       this.activeName2 = o;
-    },
+    }
+    ,
     changeItem3(o) {
       this.activeName3 = o;
-    },
+    }
+    ,
     leaveShow1() {
       this.activeName1 = 0;
-    },
+    }
+    ,
     leaveShow2() {
       this.activeName2 = 0;
-    },
+    }
+    ,
     leaveShow3() {
       this.activeName3 = 0;
-    },
+    }
+    ,
     toGameInfo() {
       this.$router.push({path: `/game/1`})
-    },
+    }
+    ,
     toPageIndex(val) {
       this.$router.push({path: `/page/${val}`})
-    },
+    }
+    ,
     getPageList() {
       index.getIndexPageList().then((res) => {
         this.hotPageList = res.data.result
       })
-    },
+    }
+    ,
     getBannerList() {
       index.getBannerList().then((res) => {
         this.bannerList = res.data.bannerList
       })
-    },
+    }
+    ,
     getHotGameRankList() {
       index.getHotGameRankList(1).then((res) => {
 
@@ -450,23 +464,28 @@ export default {
 
         this.expectRankGameList = res.data.rankList
       })
-    },
+    }
+    ,
     gotoGameInfo(val) {
       //前往游戏详情
       this.$router.push({path: '/game/' + val})
-    },
+    }
+    ,
     getNewRelease() {
       index.getNewReleaseGame().then((res) => {
         this.newReleaseGame = res.data.result
       })
-    },
+    }
+    ,
     getGamePageInfo() {
       index.getGamePageInfoLit().then((res) => {
         this.gamePageInfoList = res.data.result
       })
     }
-  },
-};
+  }
+  ,
+}
+;
 </script>
 
 <style scoped>
