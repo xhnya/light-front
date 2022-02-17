@@ -27,5 +27,11 @@ export default {
             url: 'game/game/getNewReleaseGame',
             method: 'get'
         })
+    },
+    getGamePageInfoLit() {
+        return request({
+            url: 'community/article/getGamePageInfoLit',
+            method: 'get'
+        })
     }
 }

@@ -161,9 +161,10 @@
               <div slot="header" class="clearfix">
                 <span>游戏动态</span>
               </div>
-              <div v-for="o in 15" :key="o" class="text item1">
-                {{ '列表内容 ' + o }}
+              <div v-for="item in gamePageInfoList" :key="item.id" class="text item1">
+                <div @click="toPageIndex(item.id)">{{ item.title }}</div>
               </div>
+              <el-empty v-if="gamePageInfoList.length===0" :image-size="200"></el-empty>
             </el-card>
           </div>
         </el-col>
@@ -179,7 +180,7 @@
                 <el-row>
                   <el-col v-for="item in newReleaseGame" :key="item.id" :span="6">
                     <div @click="gotoGameInfo(item.id)" class="grid-content recently-game ">
-<!--                     TODO: 游戏描述-->
+                      <!--                     TODO: 游戏描述-->
                       <el-popover
                           placement="top-start"
                           title="标题"
@@ -391,7 +392,8 @@ export default {
       expectRankGameList: [],
       newRankGameList: [],
       hotPageList: [],
-      newReleaseGame: []
+      newReleaseGame: [],
+      gamePageInfoList: []
     };
   },
   created() {
@@ -399,6 +401,7 @@ export default {
     this.getHotGameRankList()
     this.getPageList()
     this.getNewRelease()
+    this.getGamePageInfo()
   },
   methods: {
     changeItem1(o) {
@@ -454,7 +457,12 @@ export default {
     },
     getNewRelease() {
       index.getNewReleaseGame().then((res) => {
-        this.newReleaseGame=res.data.result
+        this.newReleaseGame = res.data.result
+      })
+    },
+    getGamePageInfo() {
+      index.getGamePageInfoLit().then((res) => {
+        this.gamePageInfoList = res.data.result
       })
     }
   },
