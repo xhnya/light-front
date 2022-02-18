@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a4709f25-0ba9-428d-9696-215315439931" name="Default Changelist" comment="1">
-      <change afterPath="$PROJECT_DIR$/src/components/Tinymce/components/EditorImage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Tinymce/dynamicLoadScript.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Tinymce/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Tinymce/plugins.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Tinymce/toolbar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Tinymce/zh_CN.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/page/add.vue" afterDir="false" />
+    <list default="true" id="a4709f25-0ba9-428d-9696-215315439931" name="Default Changelist" comment="页面显示">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/community.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/community.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/community/content.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/community/content.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/community/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/community/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/game/all/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/game/all/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/page/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/page/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/type/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/type/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/modules/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/modules/game.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645078614818</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="页面显示">
+      <created>1645159830547</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1645159830547</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,21 +170,21 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="页面详情，开始开发后台" />
-    <MESSAGE value="页面显示" />
     <MESSAGE value="首页显示" />
-    <option name="LAST_COMMIT_MESSAGE" value="首页显示" />
+    <MESSAGE value="页面显示" />
+    <option name="LAST_COMMIT_MESSAGE" value="页面显示" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/pages/type/index.vue</url>
-          <line>260</line>
+          <line>263</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/pages/type/index.vue</url>
-          <line>263</line>
+          <line>266</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

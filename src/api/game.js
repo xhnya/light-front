@@ -24,9 +24,43 @@ export default {
                 type: type
             }
         })
+    },
+    reqMyGameList() {
+        return request({
+            url: '/game/game/reqMyGameList',
+            method: 'get'
+        })
+    },
+    reqGameTypeForType(val) {
+        return request({
+            url: '/game/game/getGameTypeForType',
+            method: 'get',
+            params: {
+                id: val
+            }
+        })
+    },
+    reqGameTypeForTypeTop(val){
+        return request({
+            url: '/game/game/getGameTypeForTypeTop',
+            method: 'get',
+            params: {
+                id: val
+            }
+        })
+    },
+    reqAllGameList(params) {
+        return request({
+            url: '/game/game/getAllGameList',
+            method: 'get'
+        })
     }
 }
 export const getGameInfo = (id) => request({
     url: `/game/game/gameInfo/${id}`,
     method: 'get',
+})
+export const getGameTypeList = () => request({
+    url: '/game/type/list',
+    method: 'get'
 })

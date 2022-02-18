@@ -144,7 +144,7 @@
               <el-button style="float: right; padding: 1px 0" type="text">操作</el-button>
             </div>
             <div v-for="item in userNeedKnow" :key="item.id" class="text item1" style="margin-left: 20px;">
-              <div @click="toPageIndex(item.id)" style="margin-top: 10px;margin-bottom: 10px;">
+              <div @click="toPageIndex(item.id)" style="padding-top: 10px;padding-bottom: 10px;">
                 {{ item.title }}
               </div>
             </div>

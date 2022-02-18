@@ -17,7 +17,10 @@
                 <div class="type-button01-parent">
                   <div class="type-button01">
                     <div v-for="item in typeList" :key="item.id">
-                      <el-button class="type-button02" size="mini" plain>{{ item.typeName }}</el-button>
+<!--                      TODO: 获得焦点就跳转-->
+                      <el-button  @click="changeTypeGame(item.id)" class="type-button02" size="mini" plain>
+                        {{ item.typeName }}
+                      </el-button>
                     </div>
                   </div>
                 </div>
@@ -27,19 +30,19 @@
               <div class="grid-content bg-purple">
                 <!--        游戏列表-->
                 <div class="game-item-01">
-                  <div style="width:100%;display:  inline;" v-for="(item,index) in gameImageList" :key="index">
+                  <div style="width:100%;display:  inline;" v-for="item in gameTypeListTop" :key="item.id">
                     <div class="game-image-item">
                       <el-image
                           style="width: 100%; height: 100%;border-radius: 6px;"
-                          :src="item.url"
+                          :src="item.img"
                           fit="fill"></el-image>
-                      <p>{{ item.title }}</p>
+                      <p>{{ item.name }}</p>
                     </div>
                   </div>
                   <div>
                     <div class="game-title-item">
-                      <div class="game-title-item1" v-for="(item,index) in gameTitleList" :key="index">
-                        <span>{{ item.title }}</span>
+                      <div class="game-title-item1" v-for="item in gameTypeList" :key="item.id">
+                        <span>{{ item.name }}</span>
                         <el-divider direction="vertical"></el-divider>
                       </div>
                     </div>
@@ -358,15 +361,27 @@ export default {
       dataList,
       typeList: [],
       gameRecommendList: [],
-      gamePreferentialList: []
-
+      gamePreferentialList: [],
+      gameMyList: [],
+      gameTypeList: [],
+      gameTypeListTop: [],
     }
+  },
+  mounted() {
+    //派发action,
+    this.$store.dispatch('getGameTypeList');
   },
   created() {
     this.getGameTypeList()
     this.getGameTagList()
     this.getRecommendListView()
     this.getPreferentialList()
+    this.changeTypeGame(2)
+  },
+  computed: {
+    gameTypeListView() {
+      return this.$store.state.game.gameType;
+    }
   },
   methods: {
     gotoAllGame() {
@@ -401,9 +416,20 @@ export default {
       game.selectRecommendListView(1).then((res) => {
         this.gamePreferentialList = res.data.page
       })
-
-    }
-
+    },
+    getMyGameList() {
+      game.reqMyGameList().then((res) => {
+        console.log(res)
+      })
+    },
+    changeTypeGame(val) {
+      game.reqGameTypeForType(val).then((res) => {
+        this.gameTypeList=res.data.result
+      })
+      game.reqGameTypeForTypeTop(val).then((res) => {
+        this.gameTypeListTop=res.data.result
+      })
+    },
 
   }
 }
