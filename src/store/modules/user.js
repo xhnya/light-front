@@ -1,5 +1,6 @@
 import {reqUserLogin, reqUserInfo} from '@/api/user'
-import {getToken, setToken} from "@/utils/token";
+import {getToken, removeToken, setToken} from "@/utils/token";
+
 const state = {
     token: getToken(),
     userInfo: {}
@@ -10,6 +11,13 @@ const mutations = {
     },
     GETUSERINFO(state, userInfo) {
         state.userInfo = userInfo
+    },
+    CLEAR(state) {
+        //帮仓库中先关用户信息清空
+        state.token = '';
+        state.userInfo={};
+        //本地存储数据清空
+        removeToken();
     }
 }
 const actions = {
@@ -36,7 +44,12 @@ const actions = {
         } else {
             return Promise.reject(new Error("faile"));
         }
-    }
+    },
+    //退出登录
+    async userLogout({commit}) {
+        commit("CLEAR");
+        return 'ok';
+    },
 
 
 }

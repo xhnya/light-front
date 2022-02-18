@@ -26,6 +26,16 @@ export default {
             url: '/community/community/getCommunityCascader',
             method: 'get'
         })
+    },
+    reqInformation(params) {
+        return request({
+            url: '/community/article/getInformation',
+            method: 'get',
+            params: {
+                page: params.page,
+                limit: params.limit
+            }
+        })
     }
 }
 

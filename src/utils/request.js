@@ -27,13 +27,13 @@ requests.interceptors.request.use((config)=>{
 })
 //响应拦截器
 requests.interceptors.response.use((res)=>{
-    //结束
+    //进度条结束
     nprogress.done();
     //服务器成功的回调
     return res.data;
 },(error)=>{
     //响应失败的呃回调函数
-    return Promise.reject(new Error('faile'));
+    return Promise.reject(new Error("服务器错误"));
 
 })
 export default requests;

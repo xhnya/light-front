@@ -38,7 +38,18 @@
             <span><router-link to="/login">登录</router-link></span>
           </div>
           <div v-else @click="goUser" class="block">
-            <el-avatar size="medium" :src="userInfoCover"></el-avatar>
+            <el-popover
+                width="400"
+                trigger="hover"
+                placement="bottom">
+              <div style="text-align: center;">
+                <span style="font-size: 21px">{{ userInfoName }}</span>
+              </div>
+              <el-divider></el-divider>
+              <div style="text-align: center;"><el-button  @click="logout" icon="el-icon-switch-button">退出登录</el-button></div>
+              <el-avatar slot="reference" size="medium" :src="userInfoCover"></el-avatar>
+            </el-popover>
+
           </div>
         </div>
       </el-col>
@@ -101,7 +112,8 @@
         </div>
       </el-col>
       <el-col style="text-align: center;" :span="2">
-        <el-button @click="gotoAddPage" class="el-icon-"style="width: 100px;background-color: #fb7299" type="danger" icon="el-icon-circle-plus">发布
+        <el-button @click="gotoAddPage" class="el-icon-" style="width: 100px;background-color: #fb7299" type="danger"
+                   icon="el-icon-circle-plus">发布
         </el-button>
       </el-col>
     </el-row>
@@ -124,6 +136,9 @@ export default {
   computed: {
     userInfoCover() {
       return this.$store.state.user.userInfo.cover;
+    },
+    userInfoName() {
+      return this.$store.state.user.userInfo.userName;
     }
   },
   methods: {
@@ -136,8 +151,21 @@ export default {
     goUser() {
       this.$router.push({path: '/account/user/home'})
     },
-    gotoAddPage(){
+    gotoAddPage() {
       this.$router.push({path: '/addPage'})
+    },
+    async logout(){
+      //退出登录需要做的事情
+      //1:需要发请求，通知服务器退出登录【清除一些数据：token】
+      //2:清除项目当中的数据【userInfo、token】
+      try {
+        //如果退出成功
+        await this.$store.dispatch('userLogout');
+        //回到首页
+        this.$router.push('/');
+      } catch (error) {
+        this.$message.error('退出失败');
+      }
     }
   }
 };
@@ -163,7 +191,8 @@ export default {
   width: 100%;
   height: 64px;
 }
-.header-login-entry{
+
+.header-login-entry {
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -174,6 +203,7 @@ export default {
   font-size: 14px;
   line-height: 36px;
 }
+
 /* .el-row {
   margin-bottom: 20px;
   &:last-child {

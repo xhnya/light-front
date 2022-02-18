@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a4709f25-0ba9-428d-9696-215315439931" name="Default Changelist" comment="登录">
+    <list default="true" id="a4709f25-0ba9-428d-9696-215315439931" name="Default Changelist" comment="页面优化">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/game/home/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/game/home/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/type/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/type/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/modules/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/modules/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/community.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/community.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/info/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/info/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/modules/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/modules/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/token.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/token.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,6 +112,7 @@
       <workItem from="1644588906857" duration="3056000" />
       <workItem from="1644728396109" duration="9120000" />
       <workItem from="1644753181156" duration="3642000" />
+      <workItem from="1645198357991" duration="5894000" />
     </task>
     <task id="LOCAL-00001" summary="页面详情，开始开发后台">
       <created>1642515757184</created>
@@ -123,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644677990296</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="页面优化">
+      <created>1645193890511</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1645193890511</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,7 +156,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="页面详情，开始开发后台" />
     <MESSAGE value="页面显示" />
-    <option name="LAST_COMMIT_MESSAGE" value="页面显示" />
+    <MESSAGE value="页面优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="页面优化" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
