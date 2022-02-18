@@ -60,7 +60,7 @@ export const getGameInfo = (id) => request({
     url: `/game/game/gameInfo/${id}`,
     method: 'get',
 })
-export const getGameTypeList = () => request({
+export const reqGameTypeList = () => request({
     url: '/game/type/list',
     method: 'get'
 })

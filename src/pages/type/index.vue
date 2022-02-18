@@ -16,7 +16,7 @@
                 <!--        按钮列表-->
                 <div class="type-button01-parent">
                   <div class="type-button01">
-                    <div v-for="item in typeList" :key="item.id">
+                    <div v-for="item in gameTypeListView" :key="item.id">
 <!--                      TODO: 获得焦点就跳转-->
                       <el-button  @click="changeTypeGame(item.id)" class="type-button02" size="mini" plain>
                         {{ item.typeName }}
@@ -31,7 +31,7 @@
                 <!--        游戏列表-->
                 <div class="game-item-01">
                   <div style="width:100%;display:  inline;" v-for="item in gameTypeListTop" :key="item.id">
-                    <div class="game-image-item">
+                    <div @click="gotoGameInfo(item.id)" class="game-image-item">
                       <el-image
                           style="width: 100%; height: 100%;border-radius: 6px;"
                           :src="item.img"
@@ -372,7 +372,7 @@ export default {
     this.$store.dispatch('getGameTypeList');
   },
   created() {
-    this.getGameTypeList()
+    //this.getGameTypeList()
     this.getGameTagList()
     this.getRecommendListView()
     this.getPreferentialList()

@@ -21,7 +21,7 @@ const actions = {
         }
     },
     async getGameTypeList({commit}) {
-        let result = await reqGameTypeList(id)
+        let result = await reqGameTypeList()
         if (result.code === 200) {
             commit("GETGAMETYPE", result.data.page.list)
         }

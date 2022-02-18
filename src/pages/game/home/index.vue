@@ -178,11 +178,11 @@
                       <a-list-item slot="renderItem" slot-scope="item, index">
                         <div>
                           <el-card class="media-game-info">
-                            <span style="font-size: 24px;font-style:italic;">light </span>
-                            <span style="font-size: 24px;color: red;font-style:italic;">9.9</span>
+                            <span style="font-size: 24px;font-style:italic;">{{ item.scoreName }} </span>
+                            <span style="font-size: 24px;color: red;font-style:italic;">{{ item.gameScore }}</span>
                             <span style="font-size: 15px;">/10</span>
                             <div class="media-game-info-text">
-                              对于大表哥来说，评测的分数是多少已经不重要了，冲游戏那快溢出来的诚意，满分不夸张，但有些问题也不能因此被忽视，所以分数仅供参考，买就完事了。
+                              {{item.scoreDescribe}}
                             </div>
                           </el-card>
                         </div>
