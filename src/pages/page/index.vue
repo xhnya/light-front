@@ -5,9 +5,9 @@
       <div>
         <a-page-header
             style="border: 1px solid rgb(235, 237, 240);background-color: #ffffff; "
-            title="Title"
-            sub-title="This is a subtitle"
-            @back="() => null"
+            title="返回"
+            sub-title="文章详情"
+            @back="() =>  this.$router.go(-1)"
         />
         <div class="page-index-content-card">
           <el-card>

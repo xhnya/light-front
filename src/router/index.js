@@ -78,7 +78,7 @@ router.beforeEach(async (to, from, next) => {
         //未登录：不能去个人中心
         //未登录去上面这些路由-----登录
         let toPath = to.path;
-        if(toPath.indexOf('/message')!=-1){
+        if(toPath.indexOf('/message')!=-1 || toPath.indexOf('/addPage')!=-1){
             //把未登录的时候向去而没有去成的信息，存储于地址栏中【路由】
             next('/login?redirect='+toPath);
         }else{

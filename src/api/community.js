@@ -7,6 +7,25 @@ export default {
             method: 'GET',
             params: param
         })
+    },
+    getCommunityListView() {
+        return request({
+            url: '/community/community/getCommunityListView',
+            method: 'GET'
+        })
+    },
+    reqSaveArticle(article) {
+        return request({
+            url: '/community/article/saveUserArticle',
+            method: 'post',
+            data: article
+        })
+    },
+    getCascaderOptionsData() {
+        return request({
+            url: '/community/community/getCommunityCascader',
+            method: 'get'
+        })
     }
 }
 

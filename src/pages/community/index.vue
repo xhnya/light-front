@@ -11,10 +11,13 @@
                 <template slot="title">
                   <i class="header-icon el-icon-info"></i>我的关注
                 </template>
-                <div>北海虽赊，扶摇可接；东隅已逝，桑榆非晚。孟尝高洁，空余报国之情；阮籍猖狂，岂效穷途之哭！</div>
+                <div v-if="userInfoId">北海虽赊，扶摇可接；东隅已逝，桑榆非晚。孟尝高洁，空余报国之情；阮籍猖狂，岂效穷途之哭！</div>
+                <div v-else>请登录</div>
               </el-collapse-item>
               <el-collapse-item title="分类">
-                <div>冯唐易老，李广难封。屈贾谊于长沙，非无圣主；窜梁鸿于海曲，岂乏明时？</div>
+                <div v-for="item in communityList" :key="item.id" class="text item">
+                  {{ item.name }}
+                </div>
               </el-collapse-item>
             </el-collapse>
           </el-card>
@@ -24,7 +27,7 @@
       <el-col :span="14">
         <div class="grid-content bg-purple-light">
           <el-card style="height:80%;" class="box-card-c2">
-            <router-view/>
+            <router-view></router-view>
           </el-card>
         </div>
       </el-col>
@@ -54,12 +57,29 @@
 </template>
 
 <script>
+import community from "@/api/community";
+
 export default {
   data() {
-    return {}
+    return {
+      communityList: []
+    }
   },
-  computed: {},
-  methods: {}
+  computed: {
+    userInfoId() {
+      return this.$store.state.user.userInfo.id;
+    }
+  },
+  created() {
+    this.getCommunityList()
+  },
+  methods: {
+    getCommunityList() {
+      community.getCommunityListView().then((res) => {
+        this.communityList=res.data.result
+      })
+    }
+  }
 }
 </script>
 

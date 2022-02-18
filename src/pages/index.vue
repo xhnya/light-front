@@ -143,8 +143,10 @@
               <span> 规则</span>
               <el-button style="float: right; padding: 1px 0" type="text">操作</el-button>
             </div>
-            <div v-for="o in 3" :key="o" class="text item1" style="margin-left: 20px;">
-              {{ '列表内容 ' + o }}
+            <div v-for="item in userNeedKnow" :key="item.id" class="text item1" style="margin-left: 20px;">
+              <div @click="toPageIndex(item.id)" style="margin-top: 10px;margin-bottom: 10px;">
+                {{ item.title }}
+              </div>
             </div>
           </el-card>
         </el-col>
@@ -393,7 +395,8 @@ export default {
       newRankGameList: [],
       hotPageList: [],
       newReleaseGame: [],
-      gamePageInfoList: []
+      gamePageInfoList: [],
+      userNeedKnow: []
     };
   },
   created() {
@@ -402,6 +405,7 @@ export default {
     this.getPageList()
     this.getNewRelease()
     this.getGamePageInfo()
+    this.getUserNeedKnow()
   },
   mounted() {
     //派发action,
@@ -481,7 +485,13 @@ export default {
       index.getGamePageInfoLit().then((res) => {
         this.gamePageInfoList = res.data.result
       })
+    },
+    getUserNeedKnow(){
+      index.reqUserNeedKnow().then((res) => {
+        this.userNeedKnow=res.data.list
+      })
     }
+
   }
   ,
 }

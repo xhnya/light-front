@@ -228,5 +228,11 @@ export default [
         name: 'Atlas',
         // meta:{show:true}
     },
+    {
+        path: "/addPage",
+        component: () => import('@/pages/page/add'),
+        name: 'AddPage',
+        // meta:{show:true}
+    },
 
 ]

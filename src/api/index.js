@@ -33,5 +33,11 @@ export default {
             url: 'community/article/getGamePageInfoLit',
             method: 'get'
         })
+    },
+    reqUserNeedKnow() {
+        return request({
+            url: 'community/article/getUserNeedKnow',
+            method: 'get'
+        })
     }
 }

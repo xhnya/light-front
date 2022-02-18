@@ -101,7 +101,7 @@
         </div>
       </el-col>
       <el-col style="text-align: center;" :span="2">
-        <el-button style="width: 100px;background-color: #fb7299" type="danger" icon="el-icon-circle-plus">发布
+        <el-button @click="gotoAddPage" class="el-icon-"style="width: 100px;background-color: #fb7299" type="danger" icon="el-icon-circle-plus">发布
         </el-button>
       </el-col>
     </el-row>
@@ -135,6 +135,9 @@ export default {
     },
     goUser() {
       this.$router.push({path: '/account/user/home'})
+    },
+    gotoAddPage(){
+      this.$router.push({path: '/addPage'})
     }
   }
 };
