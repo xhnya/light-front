@@ -40,7 +40,7 @@ export default {
             }
         })
     },
-    reqGameTypeForTypeTop(val){
+    reqGameTypeForTypeTop(val) {
         return request({
             url: '/game/game/getGameTypeForTypeTop',
             method: 'get',
@@ -52,6 +52,12 @@ export default {
     reqAllGameList(params) {
         return request({
             url: '/game/game/getAllGameList',
+            method: 'get'
+        })
+    },
+    reqEvaluating() {
+        return request({
+            url: '/game/score/getEvaluating',
             method: 'get'
         })
     }

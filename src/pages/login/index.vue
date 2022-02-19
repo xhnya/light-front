@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div data-v-2c844fd9="" class="top-banner"><img src="@/assets/rl_top.35edfde.png"></div>
-    <div data-v-2c844fd9="" class="title-line"><span class="tit" style="font-size: 38px;">登录</span></div>
+    <!--    <div data-v-2c844fd9="" class="top-banner"><img src="@/assets/rl_top.35edfde.png"></div>-->
+    <div class="title-line"><span class="tit" style="font-size: 38px;">登录</span></div>
     <el-row>
       <el-col :span="16">
         <div>left</div>
@@ -98,19 +98,18 @@
                       v-model="phoneForm.code"
                       autocomplete="off"
                   >
-                    <el-button style="background-color: #00a1d6;color: #fffffc;height: 100%" slot="append"
-                               type="primary"
-                    >获取验证码
-                    </el-button
-                    >
-                  </el-input
-                  >
+
+                    <el-button v-if="show" style="background-color: #00a1d6;color: #fffffc;height: 100%" slot="append"
+                               @click="sms" type="primary">获取验证码
+                    </el-button>
+                    <el-button v-if="!show" style="background-color: #00a1d6;color: #fffffc;height: 100%" slot="append"
+                               type="primary">{{ times }}s
+                    </el-button>
+                  </el-input>
                 </el-form-item>
                 <el-form-item>
-                  <el-button type="primary" @click="submitForm('ruleForm')"
-                  >登录
-                  </el-button
-                  >
+                  <el-button type="primary" @click="userLoginForPhone">登录
+                  </el-button>
                   <el-button @click="resetForm('ruleForm')">注册</el-button>
                 </el-form-item>
               </el-form>
@@ -192,6 +191,8 @@
 </template>
 
 <script>
+import user from "@/api/user";
+
 export default {
   data() {
     var validatePass = (rule, value, callback) => {
@@ -229,7 +230,9 @@ export default {
           {required: true, message: "请输入用户名", trigger: "blur"},
           {min: 3, message: "长度大于3", trigger: "blur"},
         ],
-      }
+      },
+      times: 60,
+      show: true
     };
   },
   created() {
@@ -262,19 +265,55 @@ export default {
     handleClick(tab, event) {
       console.log(tab, event);
     },
-    async userLogin(){
+    async userLogin() {
       try {
         //登录成功
-        const username = '15079730794'
-        const password = '123456'
-        username&&password&&(await this.$store.dispatch("userLogin", { username, password }));
-        //登录的路由组件：看路由当中是否包含query参数，有：调到query参数指定路由，没有：调到home
+        const username = this.ruleForm.userName
+        const password = this.ruleForm.pass
+        username && password && (await this.$store.dispatch("userLogin", {username, password}));
+        //登录的路由组件：看x路由当中是否包含query参数，有：调到query参数指定路由，没有：调到home
         //let toPath = this.$route.query.redirect||"/home";
         this.$router.push({path: '/'});
       } catch (error) {
         alert(error.message);
       }
-    }
+    },
+    async userLoginForPhone() {
+      try {
+        //登录成功
+        const username = this.phoneForm.mobile
+        const password = this.phoneForm.code
+        username && password && (await this.$store.dispatch("userLoginForPhone", {username, password}));
+        //登录的路由组件：看x路由当中是否包含query参数，有：调到query参数指定路由，没有：调到home
+        //let toPath = this.$route.query.redirect||"/home";
+        this.$router.push({path: '/'});
+      } catch (error) {
+        alert(error.message);
+      }
+    },
+    sms() {
+      if (this.phoneForm.mobile == "") {
+        this.$message({
+          message: '请输入手机号',
+          type: 'warning'
+        });
+      }
+      this.show = false
+      this.timer = setInterval(() => {
+        this.times--
+        if (this.times === 0) {
+          this.show = true
+          clearInterval(this.timer)
+          this.times=60
+        }
+      }, 1000)
+      user.smsPhone(this.phoneForm.mobile).then((res) => {
+        this.$message({
+          message: '发送成功',
+          type: 'success'
+        });
+      })
+    },
   },
 };
 </script>
@@ -305,6 +344,7 @@ export default {
   border-bottom: 1px solid #ddd;
   margin-bottom: 28px;
   text-align: center;
+  margin-top: 100px;
 }
 
 .line {

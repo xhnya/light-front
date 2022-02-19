@@ -49,19 +49,19 @@ router.beforeEach(async (to, from, next) => {
     //方便测试 统一放行
     //  next();
     //获取仓库中的token-----可以确定用户是登录了
-    let token  = store.state.user.token;
+    let token = store.state.user.token;
     let id = store.state.user.userInfo.id;
     //用户登录了
-    if(token){
+    if (token) {
         //已经登录而且还想去登录------不行
-        if(to.path=="/login"){
+        if (to.path == "/login") {
             next('/');
-        }else{
+        } else {
             //已经登陆了,访问的是非登录与注册
             //登录了且拥有用户信息放行
-            if(id){
+            if (id) {
                 next();
-            }else{
+            } else {
                 //登陆了且没有用户信息
                 //在路由跳转之前获取用户信息且放行
                 try {
@@ -74,14 +74,14 @@ router.beforeEach(async (to, from, next) => {
                 }
             }
         }
-    }else{
+    } else {
         //未登录：不能去个人中心
         //未登录去上面这些路由-----登录
         let toPath = to.path;
-        if(toPath.indexOf('/message')!=-1 || toPath.indexOf('/addPage')!=-1){
+        if (toPath.indexOf('/message') != -1 || toPath.indexOf('/addPage') != -1 || toPath.indexOf('/account/**') != -1) {
             //把未登录的时候向去而没有去成的信息，存储于地址栏中【路由】
-            next('/login?redirect='+toPath);
-        }else{
+            next('/login?redirect=' + toPath);
+        } else {
             //去的不是上面这些路由（home|search|shopCart）---放行
             next();
         }

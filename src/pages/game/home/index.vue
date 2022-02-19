@@ -66,9 +66,10 @@
                           <el-button plain>light游戏评测</el-button>
                         </div>
                         <div style="display: inline;">
-                          <a-progress  v-if="this.gameInfoView.lightScore!=null" strokeWidth=12 :width="80" strokeColor="red" type="circle" :percent="this.gameInfoView.lightScore">
+                          <a-progress v-if="this.gameInfoView.lightScore!=null" strokeWidth=12 :width="80"
+                                      strokeColor="red" type="circle" :percent="this.gameInfoView.lightScore">
                             <template #format="percent" style="font-size: 30px;">
-                              <a-statistic :value="percent/10 "
+                              <a-statistic :value="percent"
                                            :value-style="{ color: 'red',fontSize: '30px',fontWeight: 'bold'}"/>
                             </template>
                           </a-progress>
@@ -79,11 +80,12 @@
                       </div>
                       <div class="game-home-info-score">
                         <div class="game-home-info-score111" style="">
-<!--                          TODO: 未登录显示请登录，以及登录显示评分，或者请评分-->
+                          <!--                          TODO: 未登录显示请登录，以及登录显示评分，或者请评分-->
                           <span>你的评分是9.9</span>
                         </div>
                         <div style="display: inline;">
-                          <a-progress v-if="this.gameInfoView.userScore!=null" :strokeWidth="12" :width="80" strokeColor="red" type="circle"
+                          <a-progress v-if="this.gameInfoView.userScore!=null" :strokeWidth="12" :width="80"
+                                      strokeColor="red" type="circle"
                                       :percent="this.gameInfoView.userScore">
                             <template #format="percent" style="font-size: 30px;">
                               <a-statistic :value="percent/10 "
@@ -134,7 +136,7 @@
                   <el-card>
                     <el-carousel indicator-position="outside">
                       <div v-for="(item,index) in this.gameInfoView.bannerList" :key="index">
-                        <el-carousel-item >
+                        <el-carousel-item>
                           <el-image
                               style="width: 100%; height:100%"
                               :src="item"
@@ -151,7 +153,7 @@
                   <div class="game-info-home-cover2">
                     <el-card style="height: 640px;">
                       <a-list bordered :data-source="data">
-<!--                       TODO: 游戏动态显示-->
+                        <!--                       TODO: 游戏动态显示-->
                         <a-list-item slot="renderItem" slot-scope="item, index">
                           {{ item }}
                         </a-list-item>
@@ -166,7 +168,7 @@
 
           </div>
           <!--          游戏评分和奖项-->
-          <div style="margin-top: 30px;">
+          <div v-if="this.gameInfoView.scoreList==null && this.gameInfoView.awardList==null" style="margin-top: 30px;">
             <el-row>
               <el-col :span="15">
                 <el-card class="game-home-info-card-10">
@@ -182,12 +184,12 @@
                             <span style="font-size: 24px;color: red;font-style:italic;">{{ item.gameScore }}</span>
                             <span style="font-size: 15px;">/10</span>
                             <div class="media-game-info-text">
-                              {{item.scoreDescribe}}
+                              {{ item.scoreDescribe }}
                             </div>
                           </el-card>
                         </div>
                       </a-list-item>
-                      <div v-if="this.gameInfoView.scoreList.length ==0">
+                      <div v-if="this.gameInfoView.scoreList ==null">
                         <el-card class="box-at-1">
                           <el-image
                               style="width: 256px; height:  256px;"
@@ -220,7 +222,7 @@
                         <span style="font-size:12px;color: #8e8e93;margin-left: 10px;">( the game award )</span>
                       </div>
                       <div style="font-size: 13px;">
-                        <span style="margin-left: 10px;color: #ff853b;">2018</span> <span>{{  item.awardName }}</span>
+                        <span style="margin-left: 10px;color: #ff853b;">2018</span> <span>{{ item.awardName }}</span>
                       </div>
                       <div>
                       </div>
@@ -242,7 +244,7 @@
           </div>
 
           <!--          精美图片-->
-          <div class="game-index-home-images-goods">
+          <div v-if="this.gameInfoView.pictureList==null" class="game-index-home-images-goods">
             <el-card>
               <el-carousel :interval="4000" type="card" height="420px">
                 <el-carousel-item v-for="(item,index) in this.gameInfoView.pictureList" :key="index">
@@ -683,12 +685,14 @@ export default {
 
 .game-type-card-index111 {
   margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .game-type-images-index {
   margin-top: 30px;
 }
-.box-at-1{
+
+.box-at-1 {
   /*height: 100%*/
   text-align: center;
   margin-left: 10px;

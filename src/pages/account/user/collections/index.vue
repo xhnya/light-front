@@ -5,74 +5,105 @@
         <span>收藏夹</span>
         <el-button style="float: right; padding: 3px 0" type="text">新建收藏夹</el-button>
       </div>
-      <div v-for="item in collectionsList" :key="item.id" class="text item collections-item">
+      <div v-for="item in followList" :key="item.id" class="text item collections-item">
         <div>
-          <span class="collections-title">{{ item.title }}</span><i style="margin-left: 3px;" v-show="item.isLock===1" class="el-icon-lock"></i>
+          <span class="collections-title">{{ item.modelName }}</span>
+          <i style="margin-left: 3px;" v-show="item.type===1" class="el-icon-lock"></i>
         </div>
         <div>
-          <span>{{ item.updateTime }}</span>更新- <span>{{ item.nums }}</span>条内容
+          <span>{{ item.updateTime }}</span>更新
         </div>
       </div>
     </el-card>
-
+    <el-dialog
+        title="新建收藏夹"
+        :visible.sync="dialogVisible"
+        width="30%"
+        :before-close="handleClose">
+      <div>
+        <el-form label-position="left" label-width="80px" :model="form">
+          <el-form-item label="名称">
+            <el-input v-model="form.modelName"></el-input>
+          </el-form-item>
+          <el-form-item label="类型">
+            <el-radio v-model="form.type" :label="0">公开</el-radio>
+            <el-radio v-model="form.type" :label="1">私有</el-radio>
+          </el-form-item>
+          <el-form-item label="备注">
+            <el-input
+                type="textarea"
+                :autosize="{ minRows: 2, maxRows: 4}"
+                placeholder="请输入备注"
+                v-model="form.favoriteContent">
+            </el-input>
+          </el-form-item>
+        </el-form>
+      </div>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="submit">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
-
 <script>
+import user from '@/api/user'
+
 export default {
   data() {
-    return { collectionsList: [
-        {
-          id: 1,
-          title: "我的收藏夹",
-          isLock: 1,
-          updateTime: "2022-1-01",
-          nums: 6666666
-        },
-        {
-          id: 2,
-          title: "我的收藏夹aaa",
-          isLock: 0,
-          updateTime: "2022-1-24",
-          nums: 9999999
-        },
-        {
-          id: 3,
-          title: "我的收藏夹333",
-          isLock: 1,
-          updateTime: "2022-1-07",
-          nums: 99999
-        },
-        {
-          id: 4,
-          title: "xhnya",
-          isLock: 0,
-          updateTime: "2022-1-15",
-          nums: 7
-        },
-        {
-          id: 5,
-          title: "xhnya的收藏夹",
-          isLock: 0,
-          updateTime: "2022-1-03",
-          nums: 4
-        }
-      ]}
+    return {
+      collectionsList: [],
+      dialogVisible: false,
+      form: {
+        type: 0
+      }
+    }
   },
-  methods: {}
+  computed: {
+    followList() {
+      return this.$store.state.user.follow;
+    }
+  },
+  created() {
+
+  },
+  methods: {
+    handleClose(done) {
+      this.$confirm('确认关闭？')
+          .then(_ => {
+            done();
+          })
+          .catch(_ => {
+          });
+    },
+    submit() {
+      this.dialogVisible = false
+      user.reqAddFollow(this.form).then((res) => {
+        this.form = {}
+        this.form.type = 0
+        this.$message({
+          message: '添加成功',
+          type: 'success'
+        });
+      })
+      this.$store.dispatch('followerList');
+
+    }
+  }
 }
 </script>
 <style lang="less" scoped>
 @margin-top: 30px;
-.user-collections{
+.user-collections {
   margin-top: 10px;
 }
 
-.collections-title{
+.collections-title {
   font-size: 18px;
   font-weight: bold;
 }
-.collections-item{
+
+.collections-item {
   margin-top: @margin-top;
 }
 </style>

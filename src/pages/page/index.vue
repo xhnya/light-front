@@ -1,12 +1,30 @@
 <template>
   <div class="page-index-body">
+    <div style="margin-left: 10%">
+      <a-affix :offset-top="300" @change="change">
+        <div>
+          <div>
+            <el-image
+                style="width: 50px; height: 50px"
+                src="http://img.xhnya.top/img/点赞3.png"
+                fit="fill"></el-image>
+          </div>
+          <div>
+            <el-image
+                style="width: 50px; height: 50px"
+                src="http://img.xhnya.top/img/赏.png"
+                fit="fill"></el-image>
+          </div>
+        </div>
+      </a-affix>
+    </div>
     <!--    内容主体-->
     <div class="page-index-content">
       <div>
         <a-page-header
             style="border: 1px solid rgb(235, 237, 240);background-color: #ffffff; "
             title="返回"
-            sub-title="文章详情"
+            :sub-title="this.pageInfoView.title"
             @back="() =>  this.$router.go(-1)"
         />
         <div class="page-index-content-card">
@@ -127,8 +145,9 @@
 
     </div>
 
-
+    <a-back-top/>
   </div>
+
 </template>
 
 <script>
@@ -175,6 +194,9 @@ export default {
     },
     handleChange(e) {
       this.value = e.target.value;
+    },
+    change(affixed) {
+      console.log(affixed);
     },
   }
 }

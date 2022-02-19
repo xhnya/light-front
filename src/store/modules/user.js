@@ -1,9 +1,10 @@
-import {reqUserLogin, reqUserInfo} from '@/api/user'
+import {reqUserLogin, reqUserInfo, reqUserLoginForPhone, reqFollowerList} from '@/api/user'
 import {getToken, removeToken, setToken} from "@/utils/token";
 
 const state = {
     token: getToken(),
-    userInfo: {}
+    userInfo: {},
+    follow: []
 }
 const mutations = {
     USERLOGIN(state, token) {
@@ -15,10 +16,14 @@ const mutations = {
     CLEAR(state) {
         //帮仓库中先关用户信息清空
         state.token = '';
-        state.userInfo={};
+        state.userInfo = {};
         //本地存储数据清空
         removeToken();
+    },
+    FOLLOWER(state,follow){
+        state.follow = follow;
     }
+
 }
 const actions = {
 
@@ -41,6 +46,28 @@ const actions = {
         if (result.code == 200) {
             commit("GETUSERINFO", result.data.result);
             return "ok"
+        } else {
+            return Promise.reject(new Error("faile"));
+        }
+    },
+    async userLoginForPhone({commit}, data) {
+        let result = await reqUserLoginForPhone(data)
+        //将来经常通过带token找服务器要用户信息进行展示
+        if (result.code == 200) {
+            //用户已经登录成功且获取到token
+            commit("USERLOGIN", result.data.token);
+            //持久化存储token
+            setToken(result.data.token);
+            return "ok";
+        } else {
+            return Promise.reject(new Error("faile"));
+        }
+    },
+    async followerList({commit}) {
+        let result = await reqFollowerList()
+        if (result.code == 200) {
+            commit("FOLLOWER", result.data.page.list);
+            return "ok";
         } else {
             return Promise.reject(new Error("faile"));
         }

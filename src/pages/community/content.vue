@@ -34,7 +34,7 @@
           </span>
         </template>
         <a-list-item-meta :description="item.name">
-          <a slot="title" :href="item.href">  <router-link to='/page/${item.id}'>{{ item.title }}</router-link>  </a>
+          <div  @click="toPageIndex(item.id)" slot="title" >  <span>{{ item.title }}</span>  </div>
           <a-avatar slot="avatar" :src="item.cover"/>
         </a-list-item-meta>
         <div @click="toPageIndex(item.id)">{{ item.content }}</div>

@@ -36,6 +36,18 @@ export default {
                 limit: params.limit
             }
         })
+    },
+    reqInformationByGameId(params) {
+        return request({
+            url: '/community/article/getInformationByGameId',
+            method: 'get',
+            params: {
+                page: params.page,
+                limit: params.limit,
+                gameId: params.gameId,
+                type: params.type
+            }
+        })
     }
 }
 

@@ -32,8 +32,9 @@ requests.interceptors.response.use((res)=>{
     //服务器成功的回调
     return res.data;
 },(error)=>{
-    //响应失败的呃回调函数
-    return Promise.reject(new Error("服务器错误"));
+    //响应失败的回调函数
+    console.log(error)
+    return Promise.reject(error);
 
 })
 export default requests;

@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a4709f25-0ba9-428d-9696-215315439931" name="Default Changelist" comment="页面优化">
+    <list default="true" id="a4709f25-0ba9-428d-9696-215315439931" name="Default Changelist" comment="优化">
+      <change afterPath="$PROJECT_DIR$/src/assets/img/aggre.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/upload.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/community.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/community.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/account/user/collections/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/account/user/collections/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/account/user/home/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/account/user/home/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/account/user/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/account/user/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/collections/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/collections/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/community/content.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/community/content.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/game/home/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/game/home/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/game/home/information.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/game/home/information.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/game/home/strategy.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/game/home/strategy.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/info/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/info/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/login/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/page/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/page/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/modules/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/modules/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/request.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/token.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/token.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +86,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../light-admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/img" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -82,6 +94,11 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.toDoOptions" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\xhn\Desktop\code\light-vue\light\src\assets\img" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="serve" type="js.build_tools.npm" nameIsGenerated="true">
@@ -112,7 +129,8 @@
       <workItem from="1644588906857" duration="3056000" />
       <workItem from="1644728396109" duration="9120000" />
       <workItem from="1644753181156" duration="3642000" />
-      <workItem from="1645198357991" duration="5894000" />
+      <workItem from="1645198357991" duration="6209000" />
+      <workItem from="1645235175251" duration="31741000" />
     </task>
     <task id="LOCAL-00001" summary="页面详情，开始开发后台">
       <created>1642515757184</created>
@@ -135,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645193890511</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="优化">
+      <created>1645205298225</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1645205298225</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,7 +182,8 @@
     <MESSAGE value="页面详情，开始开发后台" />
     <MESSAGE value="页面显示" />
     <MESSAGE value="页面优化" />
-    <option name="LAST_COMMIT_MESSAGE" value="页面优化" />
+    <MESSAGE value="优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

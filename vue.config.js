@@ -1,7 +1,7 @@
 const path=require('path')
 module.exports ={
     //关闭eslint
-    lintOnSave:false,
+    lintOnSave:true,
     devServer:{
         port: 80,
         open: true,
