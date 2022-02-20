@@ -108,8 +108,9 @@
                   </el-col>
                 </el-row>
               </el-tab-pane>
-              <el-tab-pane class="game-info-tabs-item" label="社区" name="community">
-                <router-view/>
+              <el-tab-pane  class="game-info-tabs-item" label="社区"
+                           name="community">
+
               </el-tab-pane>
               <el-tab-pane class="game-info-tabs-item" label="攻略" name="strategy">
                 <router-view/>
@@ -413,10 +414,13 @@ export default {
   },
   methods: {
     handleClick(tab, event) {
-      console.log(tab, event);
+
       if (this.activeName === 'index') {
         this.isIndex = true;
-      } else {
+        this.$router.push({path: '/game/' + this.$route.params.id})
+      } else if (tab.name=== 'community'){
+        this.gotoCommunity(this.$route.params.id)
+      }else {
         this.isIndex = false;
         this.$router.push({path: '/game/' + this.$route.params.id + '/' + this.activeName})
       }
@@ -447,6 +451,9 @@ export default {
     },
     getGameInfo() {
       this.gameInfo = this.$store.state.gameInfo
+    },
+    gotoCommunity(val) {
+      this.$router.push({path: '/game/community/' + val})
     }
 
   },

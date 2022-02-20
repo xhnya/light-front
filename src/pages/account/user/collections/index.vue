@@ -6,7 +6,7 @@
         <el-button style="float: right; padding: 3px 0" type="text">新建收藏夹</el-button>
       </div>
       <div v-for="item in followList" :key="item.id" class="text item collections-item">
-        <div>
+        <div @click="gotoCollections(item.id)">
           <span class="collections-title">{{ item.modelName }}</span>
           <i style="margin-left: 3px;" v-show="item.type===1" class="el-icon-lock"></i>
         </div>
@@ -88,6 +88,11 @@ export default {
       })
       this.$store.dispatch('followerList');
 
+    },
+    gotoCollections(val){
+      this.$router.push({
+        path: `/collections/content/${val}`,
+      })
     }
   }
 }

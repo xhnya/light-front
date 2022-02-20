@@ -65,6 +65,10 @@ export default {
       communityList: []
     }
   },
+  mounted() {
+    //派发action,
+    this.$store.dispatch('followerList');
+  },
   computed: {
     userInfoId() {
       return this.$store.state.user.userInfo.id;

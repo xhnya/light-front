@@ -85,6 +85,18 @@ export default [
         // meta:{show:true}
     },
     {
+        path: "/collections/content/:id",
+        component: () => import('@/pages/collections/content'),
+        name: 'CollectionsContent',
+        // meta:{show:true}
+    },
+    {
+        path: "/game/community/:id",
+        component: () => import('@/pages/community/game'),
+        name: 'GameCommunity',
+        // meta:{show:true}
+    },
+    {
         path: "/account/history",
         component: AccountHistory,
         name: 'accountHistory',

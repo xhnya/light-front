@@ -9,13 +9,19 @@
             <a-list item-layout="vertical" size="large" :pagination="pagination" :data-source="listData">
               <div slot="footer"><b><i>light</i></b> 资讯</div>
               <a-list-item slot="renderItem" key="item.title" slot-scope="item, index">
-                <template v-for="{ type, text } in actions" slot="actions">
-                  <span :key="type">
-                    <a-icon :type="type" style="margin-right: 8px"/>
-                    <span v-if="type==='star-o'">{{ item.collection }}</span>
-                    <span v-if="type==='star-o'">{{ item.likes }}</span>
-                    <span v-if="type==='star-o'">{{ item.countComment }}</span>
-                  </span>
+                <template slot="actions">
+                  <div @click="open(item.id)">
+                    <a-icon type="star-o" style="margin-right: 8px"/>
+                    <span>{{ item.collection }}</span>
+                  </div>
+                  <div @click="userLikes(item.id,index)">
+                    <a-icon type="like-o" style="margin-right: 8px"/>
+                    <span>{{ item.likes }}</span>
+                  </div>
+                  <div>
+                    <a-icon type="message" style="margin-right: 8px"/>
+                    <span>{{ item.countComment }}</span>
+                  </div>
                 </template>
                 <img
                     slot="extra"
@@ -58,7 +64,7 @@
                       <div @click="gotoPageInfo(item.pageId)" class="info-evaluating-content">
                         <p v-text="item.scoreDescribe">它确实在维持原本风味的同时，变得更好了，但可能仍旧无法吸引回对这个配方失去兴趣的食客</p>
                         <p style="display:flex;align-items:flex-end;margin-bottom: 0;">
-                          {{item.createTime }}-{{ item.scoreName }}</p>
+                          {{ item.createTime }}-{{ item.scoreName }}</p>
                       </div>
                     </el-col>
                     <el-col :span="4">
@@ -76,7 +82,24 @@
           </div>
         </el-col>
       </el-row>
-
+      <el-dialog
+          title="选择收藏夹"
+          :visible.sync="dialogVisible"
+          width="30%"
+          :before-close="handleClose">
+        <div>
+          <el-radio-group v-model="radio">
+            <div v-for="item in followList" :key="item.id" class="text item">
+              <el-radio-button :label="item.id">{{ item.modelName }}</el-radio-button>
+              <el-divider></el-divider>
+            </div>
+          </el-radio-group>
+        </div>
+        <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="submitCpllections">确 定</el-button>
+      </span>
+      </el-dialog>
 
     </div>
 
@@ -92,6 +115,9 @@ export default {
   data() {
     return {
       listData: [],
+      radio: 1,
+      state: [],
+      dialogVisible: false,
       pagination: {
         onChange: page => {
           this.pagination.current = page
@@ -122,6 +148,15 @@ export default {
     this.getInformation()
     this.getEvaluating()
   },
+  mounted() {
+    //派发action,
+    this.$store.dispatch('followerList');
+  },
+  computed: {
+    followList() {
+      return this.$store.state.user.follow;
+    }
+  },
   methods: {
     gotoPageInfo(val) {
       this.$router.push({path: '/page/' + val})
@@ -142,6 +177,38 @@ export default {
       game.reqEvaluating().then((res) => {
         this.evaluatingList = res.data.result
       })
+    },
+    open(val) {
+      this.dialogVisible = true
+      this.pageId = val
+    },
+    submitCpllections() {
+      this.dialogVisible = false
+      const params = {}
+      params.contentId = this.pageId
+      params.parentId = this.radio
+      community.reqCollections(params).then((res) => {
+        this.$message({
+          message: '收藏成功',
+          type: 'success'
+        });
+      })
+      this.getPageList()
+    },
+    userLikes(val, index) {
+      if (this.state[index] !== 1) {
+        this.listData[index].likes++
+        this.state[index] = 1
+      }
+      const params = {}
+      params.pid = val
+      community.reqLike(params).then((res) => {
+        this.$message({
+          message: '点赞成功',
+          type: 'success'
+        });
+      })
+
     }
   }
 }

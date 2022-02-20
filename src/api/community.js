@@ -48,6 +48,68 @@ export default {
                 type: params.type
             }
         })
+    },
+    reqHistoryList(title) {
+        return request({
+            url: '/community/history/getUserHistoryList',
+            method: 'get',
+            params: {
+                title: title
+            }
+
+        })
+    },
+    reqDeleteHistory(ids) {
+        return request({
+            url: '/community/history/deleteHistory',
+            method: 'post',
+            data: ids
+        })
+    },
+    reqDeleteHistoryAll() {
+        return request({
+            url: '/community/history/deleteHistoryAll',
+            method: 'post'
+        })
+    },
+    reqCollectionsList(params) {
+        return request({
+            url: '/community/collection/myList',
+            method: 'get',
+            params: {
+                page: params.page,
+                limit: params.limit,
+                parentId: params.parentId
+            }
+        })
+    },
+    reqCollections(collection) {
+        return request({
+            url: '/community/collection/save',
+            method: 'post',
+            data: collection
+        })
+    },
+    reqLike(likes) {
+        return request({
+            url: '/community/likes/save',
+            method: 'post',
+            data: likes
+        })
+    },
+    reqMyPageList(param) {
+        return request({
+            url: '/community/article/getMyPageList',
+            method: 'get',
+            params: param
+        })
+    },
+    reqGameCommunityList(params) {
+        return request({
+            url: '/community/article/getGameCommunityList',
+            method: 'get',
+            params: params
+        })
     }
 }
 

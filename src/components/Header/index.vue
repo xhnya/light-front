@@ -46,7 +46,9 @@
                 <span style="font-size: 21px">{{ userInfoName }}</span>
               </div>
               <el-divider></el-divider>
-              <div style="text-align: center;"><el-button  @click="logout" icon="el-icon-switch-button">退出登录</el-button></div>
+              <div style="text-align: center;">
+                <el-button @click="logout" icon="el-icon-switch-button">退出登录</el-button>
+              </div>
               <el-avatar slot="reference" size="medium" :src="userInfoCover"></el-avatar>
             </el-popover>
 
@@ -82,12 +84,28 @@
       <el-col :span="1">
         <div style="text-align: center;">
           <router-link to="/account/history">
-            <div>
-              <i style="font-size:20px" class="el-icon-time"></i>
-            </div>
-            <div>
-              <span style="font-size: small">历史</span>
-            </div>
+<!--            TODO: 历史显示-->
+            <el-popover
+                width="400"
+                trigger="hover"
+                placement="bottom">
+              <div style="text-align: center;height: 600px;">
+
+              </div>
+
+              <div style="text-align: center;">
+                <el-button>查看全部</el-button>
+              </div>
+              <div slot="reference">
+                <div>
+                  <i style="font-size:20px" class="el-icon-time"></i>
+                </div>
+                <div>
+                  <span style="font-size: small">历史</span>
+                </div>
+              </div>
+            </el-popover>
+
           </router-link>
         </div>
       </el-col>
@@ -154,7 +172,7 @@ export default {
     gotoAddPage() {
       this.$router.push({path: '/addPage'})
     },
-    async logout(){
+    async logout() {
       //退出登录需要做的事情
       //1:需要发请求，通知服务器退出登录【清除一些数据：token】
       //2:清除项目当中的数据【userInfo、token】

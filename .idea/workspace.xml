@@ -2,27 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4709f25-0ba9-428d-9696-215315439931" name="Default Changelist" comment="优化">
-      <change afterPath="$PROJECT_DIR$/src/assets/img/aggre.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/upload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/collections/content.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/community/game.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/community.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/community.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/account/history/history.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/account/history/history.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/account/user/collections/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/account/user/collections/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/account/user/home/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/account/user/home/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/account/user/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/account/user/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/account/user/page/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/account/user/page/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/collections/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/collections/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/community/content.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/community/content.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/community/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/community/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/game/home/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/game/home/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/game/home/information.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/game/home/information.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/game/home/strategy.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/game/home/strategy.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/info/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/info/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/login/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/page/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/page/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/modules/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/modules/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/request.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="VueTemplate" />
         <option value="JavaScript File" />
+        <option value="VueTemplate" />
       </list>
     </option>
   </component>
@@ -130,7 +125,8 @@
       <workItem from="1644728396109" duration="9120000" />
       <workItem from="1644753181156" duration="3642000" />
       <workItem from="1645198357991" duration="6209000" />
-      <workItem from="1645235175251" duration="31741000" />
+      <workItem from="1645235175251" duration="31815000" />
+      <workItem from="1645324929845" duration="28588000" />
     </task>
     <task id="LOCAL-00001" summary="页面详情，开始开发后台">
       <created>1642515757184</created>
@@ -160,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645205298225</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="优化">
+      <created>1645287941374</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1645287941374</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
