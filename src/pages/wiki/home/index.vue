@@ -5,14 +5,14 @@
       <div class="wiki-tabs">
         <el-tabs type="border-card">
           <el-tab-pane label="常用">
-            <a-list :grid="{ gutter: 16, xs: 1, sm: 2, md: 4, lg: 4, xl: 6, xxl: 3 }" :data-source="data">
+            <a-list :grid="{ gutter: 16, xs: 1, sm: 2, md: 4, lg: 4, xl: 6, xxl: 5 }" :data-source="dataAll">
               <a-list-item class="wiki-list-body01" slot="renderItem" slot-scope="item, index">
-                <a-card style="text-align: center;background-color: #00a1d6">
+                <a-card @click="goInfo(item.id)" style="text-align: center;padding: 0;">
                   <el-image
-                      style="width: 100px; height: 80px;margin-top: 5px;"
-                      :src="circleUrl"
+                      style="width: 150px; height: 200px;margin-top: 5px;"
+                      :src="item.cover"
                       fit="fill"></el-image>
-                  <div style="margin-bottom: 5px;">xhnya</div>
+                  <div style="margin-bottom: 5px;">{{ item.name }}</div>
                 </a-card>
               </a-list-item>
             </a-list>
@@ -31,14 +31,14 @@
             </a-list>
           </el-tab-pane>
           <el-tab-pane label="全部">
-            <a-list :grid="{ gutter: 16, xs: 1, sm: 2, md: 4, lg: 4, xl: 6, xxl: 3 }" :data-source="data">
+            <a-list :grid="{ gutter: 16, xs: 1, sm: 2, md: 4, lg: 4, xl: 6, xxl: 5 }" :data-source="dataAll">
               <a-list-item class="wiki-list-body01" slot="renderItem" slot-scope="item, index">
-                <a-card style="text-align: center;background-color: #00a1d6">
+                <a-card style="text-align: center;padding: 0">
                   <el-image
-                      style="width: 100px; height: 80px;margin-top: 5px;"
-                      :src="circleUrl3"
+                      style="width: 150px; height: 200px;margin-top: 5px;"
+                      :src="item.cover"
                       fit="fill"></el-image>
-                  <div style="margin-bottom: 5px;">xhnya</div>
+                  <div style="margin-bottom: 5px;">{{ item.name }}</div>
                 </a-card>
               </a-list-item>
             </a-list>
@@ -50,43 +50,32 @@
 </template>
 
 <script>
-const data = [
-  {
-    title: 'Title 1',
-  },
-  {
-    title: 'Title 2',
-  },
-  {
-    title: 'Title 3',
-  },
-  {
-    title: 'Title 4',
-  }, {
-    title: 'Title 4',
-  },
-  {
-    title: 'Title 4',
-  }, {
-    title: 'Title 4',
-  },
-  {
-    title: 'Title 4',
-  },
-  {
-    title: 'Title 4',
-  },
-];
+import wiki from "@/api/wiki";
+
+const data = [];
 export default {
   data() {
     return {
-      data,
+      dataAll: [],
       circleUrl: "http://img.xhnya.top/img/vae.jpg",
       circleUrl2: "http://img.xhnya.top/DyingLight2.jpg",
-      circleUrl3: "http://img.xhnya.top/img/2077.jpg"
+      circleUrl3: "http://img.xhnya.top/img/2077.jpg",
+      data: []
     }
   },
-  methods: {}
+  created() {
+    this.getAllWikiGameLists()
+  },
+  methods: {
+    getAllWikiGameLists() {
+      wiki.reqAllWikiGameList().then((res) => {
+        this.dataAll = res.data.result
+      })
+    },
+    goInfo(val) {
+      this.$router.push({path: '/wiki/'+val})
+    },
+  }
 }
 </script>
 
