@@ -241,6 +241,12 @@ export default [
         // meta:{show:true}
     },
     {
+        path: "/wiki/info/:id",
+        component: () => import('@/pages/wiki/info/info'),
+        name: 'WikiInfo',
+        // meta:{show:true}
+    },
+    {
         path: "/atlas/:id",
         component: Atlas,
         name: 'Atlas',

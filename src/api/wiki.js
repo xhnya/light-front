@@ -19,5 +19,18 @@ export default {
             url: `/wiki/menu/getMenuList/${id}`,
             method: 'get'
         })
+    },
+    reqSaveWiki(params) {
+        return request({
+            url: `/wiki/menu/saveMenuAndPage`,
+            method: 'post',
+            data: params
+        })
+    },
+    reqPageInfo(id) {
+        return request({
+            url: `/wiki/page/info/${id}`,
+            method: 'get'
+        })
     }
 }

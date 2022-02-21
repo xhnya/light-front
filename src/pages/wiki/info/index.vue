@@ -29,8 +29,20 @@
                 <span>{{ item.name }}</span>
                 <el-button @click="addSecond(item.id) " style="float: right; padding: 3px 0" type="text">添加</el-button>
               </div>
-              <div v-for="list in item.children" :key="list.id" class="text item">
-                <div>list.name</div>
+              <div  class="text item">
+                <a-list :grid="{ gutter: 16, xs: 1, sm: 2, md: 4, lg: 4, xl: 6, xxl: 8 }" :data-source="item.children">
+                  <a-list-item class="wiki-list-body01" slot="renderItem" slot-scope="item, index">
+                    <div @click="gotoInfo(item.pid)">
+                      <a-card style="text-align: center;padding: 0">
+                        <el-image
+                            style="width: 80px; height: 80px"
+                            :src="item.cover"
+                            fit="fill"></el-image>
+                        <div style="margin-bottom: 5px;">{{ item.name }}</div>
+                      </a-card>
+                    </div>
+                  </a-list-item>
+                </a-list>
               </div>
             </el-card>
           </div>
@@ -112,6 +124,9 @@ export default {
         this.getMenuList()
       })
     },
+    gotoInfo(val){
+      this.$router.push({path: '/wiki/info/'+val})
+    },
     getMenuList() {
       wiki.reqMenuList(this.$route.params.id).then((res) => {
         console.log(res)
@@ -120,7 +135,8 @@ export default {
     },
     addSecond(val) {
       this.$store.dispatch('getMenuId',val);
-      this.$router.push({path: '/info/add'})
+      this.$store.dispatch('getMenuGameId',this.$route.params.id);
+      this.$router.push({path: '/wiki/info/add'})
     }
   }
 }
