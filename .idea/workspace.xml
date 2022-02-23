@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4709f25-0ba9-428d-9696-215315439931" name="Default Changelist" comment="优化">
-      <change afterPath="$PROJECT_DIR$/src/pages/wiki/info/info.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/search/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/modules/search.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/wiki.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/wiki.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/game/home/wiki.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/game/home/wiki.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/wiki/info/add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/wiki/info/add.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/wiki/info/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/wiki/info/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/modules/wiki.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/modules/wiki.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="VueTemplate" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -156,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645287941374</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="优化">
+      <created>1645619987823</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1645619987823</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

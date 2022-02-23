@@ -247,6 +247,12 @@ export default [
         // meta:{show:true}
     },
     {
+        path: "/search",
+        component: () => import('@/pages/search/index'),
+        name: 'Search',
+        // meta:{show:true}
+    },
+    {
         path: "/atlas/:id",
         component: Atlas,
         name: 'Atlas',

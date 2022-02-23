@@ -24,12 +24,11 @@
       >
         <div class="grid-content bg-purple">
           <div>
-            <el-input placeholder="请输入内容" v-model="input3">
-              <el-button slot="append" icon="el-icon-search"></el-button>
+            <el-input @change="search" placeholder="请输入内容" v-model="input3">
+              <el-button @click="search" slot="append" icon="el-icon-search"></el-button>
             </el-input>
           </div>
-        </div
-        >
+        </div>
       </el-col>
       <!--   --------------------   搜索框结束，右边---------------------->
       <el-col class="header-right" :span="0.8">
@@ -66,19 +65,19 @@
                 <span>回复我的</span>
               </div>
               <el-divider></el-divider>
-              <div  @click="gotoMessageInfo('atme')" style="text-align: center;">
+              <div @click="gotoMessageInfo('atme')" style="text-align: center;">
                 <span>@我的</span>
               </div>
               <el-divider></el-divider>
-              <div  @click="gotoMessageInfo('love')" style="text-align: center;">
+              <div @click="gotoMessageInfo('love')" style="text-align: center;">
                 <span>收到的赞</span>
               </div>
               <el-divider></el-divider>
-              <div  @click="gotoMessageInfo('system')" style="text-align: center;">
+              <div @click="gotoMessageInfo('system')" style="text-align: center;">
                 <span>系统通知</span>
               </div>
               <el-divider></el-divider>
-              <div  @click="gotoMessageInfo('whisper')" style="text-align: center;">
+              <div @click="gotoMessageInfo('whisper')" style="text-align: center;">
                 <span>我的消息</span>
               </div>
               <el-divider></el-divider>
@@ -219,8 +218,20 @@ export default {
     gotoMessage() {
       this.$router.push({path: '/message/reply'})
     },
-    gotoMessageInfo(val){
-      this.$router.push({path: '/message/'+val})
+    gotoMessageInfo(val) {
+      this.$router.push({path: '/message/' + val})
+    },
+    search() {
+      this.$store.dispatch('searchKeyword',this.input3);
+      if (this.$route.path==='/search'){
+        const params = {}
+        params.keyword = this.$store.state.search.keyword
+        this.$store.dispatch('getSearch', params);
+      }else {
+        this.$router.push({path: '/search'})
+      }
+
+
     }
   }
 };
