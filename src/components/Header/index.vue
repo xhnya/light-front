@@ -57,16 +57,44 @@
       </el-col>
       <el-col :span="1">
         <div style="text-align: center;">
-          <router-link to="/message/reply">
-            <div>
-              <el-badge :value="200" :max="99" class="item">
-                <i style="font-size:20px" class="el-icon-message"></i>
-              </el-badge>
-            </div>
-            <div>
-              <span style="font-size: small">消息</span>
-            </div>
-          </router-link>
+          <div @click="gotoMessage">
+            <el-popover
+                width="100"
+                trigger="hover"
+                placement="bottom">
+              <div @click="gotoMessageInfo('reply')" style="text-align: center;">
+                <span>回复我的</span>
+              </div>
+              <el-divider></el-divider>
+              <div  @click="gotoMessageInfo('atme')" style="text-align: center;">
+                <span>@我的</span>
+              </div>
+              <el-divider></el-divider>
+              <div  @click="gotoMessageInfo('love')" style="text-align: center;">
+                <span>收到的赞</span>
+              </div>
+              <el-divider></el-divider>
+              <div  @click="gotoMessageInfo('system')" style="text-align: center;">
+                <span>系统通知</span>
+              </div>
+              <el-divider></el-divider>
+              <div  @click="gotoMessageInfo('whisper')" style="text-align: center;">
+                <span>我的消息</span>
+              </div>
+              <el-divider></el-divider>
+              <div slot="reference">
+                <div>
+                  <el-badge v-if="userMessageNum!==0" :value="userMessageNum" :max="99" class="item">
+                    <i style="font-size:20px" class="el-icon-message"></i>
+                  </el-badge>
+                  <i v-else style="font-size:20px" class="el-icon-message"></i>
+                </div>
+                <div>
+                  <span style="font-size: small">消息</span>
+                </div>
+              </div>
+            </el-popover>
+          </div>
         </div>
       </el-col>
       <el-col :span="1">
@@ -84,7 +112,7 @@
       <el-col :span="1">
         <div style="text-align: center;">
           <router-link to="/account/history">
-<!--            TODO: 历史显示-->
+            <!--            TODO: 历史显示-->
             <el-popover
                 width="400"
                 trigger="hover"
@@ -157,6 +185,9 @@ export default {
     },
     userInfoName() {
       return this.$store.state.user.userInfo.userName;
+    },
+    userMessageNum() {
+      return this.$store.state.user.userInfo.messageNum;
     }
   },
   methods: {
@@ -184,6 +215,12 @@ export default {
       } catch (error) {
         this.$message.error('退出失败');
       }
+    },
+    gotoMessage() {
+      this.$router.push({path: '/message/reply'})
+    },
+    gotoMessageInfo(val){
+      this.$router.push({path: '/message/'+val})
     }
   }
 };

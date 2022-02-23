@@ -209,7 +209,7 @@ export default {
     },
     userLikes(val, index) {
       if (this.state[index] !== 1) {
-        this.listData[index].likes++
+        this.listData[index].likes=this.listData[index].likes+1
         this.state[index] = 1
       }
       const params = {}

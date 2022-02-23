@@ -22,6 +22,7 @@
               </a-list-item>
             </a-list>
           </div>
+          <el-empty v-if="menuList==null" :image-size="200"></el-empty>
         </el-card>
       </div>
     </div>

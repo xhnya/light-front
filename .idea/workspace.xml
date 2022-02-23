@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a4709f25-0ba9-428d-9696-215315439931" name="Default Changelist" comment="优化">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/community/content.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/community/content.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/game/home/wiki.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/game/home/wiki.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/message/love/love.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/message/love/love.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645159830547</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="优化">
+      <created>1645583899098</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1645583899098</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,7 +181,8 @@
     <MESSAGE value="页面详情，开始开发后台" />
     <MESSAGE value="首页显示" />
     <MESSAGE value="页面显示" />
-    <option name="LAST_COMMIT_MESSAGE" value="页面显示" />
+    <MESSAGE value="优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

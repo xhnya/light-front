@@ -50,5 +50,11 @@ export default {
             method: 'post',
             data: favorite
         })
+    },
+    reqMyLikeMessage() {
+        return request({
+            url: '/user/message/getMyLikeList',
+            method: 'get'
+        })
     }
 }
