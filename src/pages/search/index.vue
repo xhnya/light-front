@@ -52,6 +52,18 @@
             </div>
           </el-tab-pane>
         </el-tabs>
+        <div class="block page">
+          <el-pagination
+              @size-change="sizeChangeHandle"
+              @current-change="currentChangeHandle"
+              :current-page="page"
+              :page-sizes="[10, 50, 100, 500]"
+              :page-size.sync="limit"
+              layout="total, sizes, prev, pager, next, jumper"
+              :total="total"
+          >
+          </el-pagination>
+        </div>
       </el-card>
     </div>
   </div>
@@ -61,7 +73,11 @@
 export default {
   data() {
     return {
-      activeName: 'first'
+      activeName: 'first',
+      page: 1,
+      limit: 10,
+      total: 10,
+      typeSearch: "综合"
     }
   },
   created() {
@@ -69,49 +85,47 @@ export default {
   },
   computed: {
     searchInfo() {
-      return this.$store.state.search.search;
+      this.page=this.$store.state.search.search.pageNum
+      this.total=this.$store.state.search.search.total
+      return this.$store.state.search.search.model;
     }
   },
   methods: {
+    sizeChangeHandle(val) {
+      this.limit = val
+      this.page = 1
+      this.searchPage()
+    },
+    // 当前页
+    currentChangeHandle(val) {
+      this.page = val
+      this.searchPage()
+    },
     handleClick(tab, event) {
-      if (tab.label === "游戏") {
-        const params = {}
-        params.keyword = this.$store.state.search.keyword
-        params.typeSearch = 1
-        this.$store.dispatch('getSearch', params);
-      }
-      if (tab.label === "用户") {
-        const params = {}
-        params.keyword = this.$store.state.search.keyword
-        params.typeSearch = 0
-        this.$store.dispatch('getSearch', params);
-      }
-      if (tab.label === "文章") {
-        const params = {}
-        params.keyword = this.$store.state.search.keyword
-        params.typeSearch = 2
-        this.$store.dispatch('getSearch', params);
-      }
-      if (tab.label === "百科") {
-        const params = {}
-        params.keyword = this.$store.state.search.keyword
-        params.typeSearch = 3
-        this.$store.dispatch('getSearch', params);
-      }
-      if (tab.label === "综合") {
-        const params = {}
-        params.keyword = this.$store.state.search.keyword
-        this.$store.dispatch('getSearch', params);
-      }
+      this.typeSearch=tab.label
+      this.searchPage()
     },
     searchPage() {
       const params = {}
+      const val=this.typeSearch
+      if (val === "游戏") {
+        params.typeSearch = 1
+      }
+      if (val === "用户") {
+        params.typeSearch = 0
+      }
+      if (val === "文章") {
+        params.typeSearch = 2
+      }
+      if (val === "百科") {
+        params.typeSearch = 3
+      }
+      params.pageNum=this.page
       params.keyword = this.$store.state.search.keyword
       this.$store.dispatch('getSearch', params);
     },
     gotoInfo(id, type) {
       if (type === 0) {
-
       }
       if (type === 1){
         this.$router.push({path: '/game/'+id})

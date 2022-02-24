@@ -16,7 +16,7 @@ const actions = {
     async getSearch({commit}, data) {
         let result = await reqSearch(data)
         if (result.code == 200) {
-            commit("SEARCH", result.data.result.model);
+            commit("SEARCH", result.data.result);
             return "ok";
         } else {
             return Promise.reject(new Error("搜索失败"));
