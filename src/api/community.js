@@ -110,6 +110,13 @@ export default {
             method: 'get',
             params: params
         })
+    },
+    reqAddPageComment(comment) {
+        return request({
+            url: '/community/comment/save',
+            method: 'post',
+            data: comment
+        })
     }
 }
 
