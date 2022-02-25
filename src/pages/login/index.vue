@@ -181,12 +181,66 @@
             </el-tab-pane
             >
           </el-tabs>
+          <el-link @click="dialogVisible=true" type="primary">忘记密码</el-link>
+          <el-dialog
+              title="找回密码"
+              :visible.sync="dialogVisible"
+              width="30%"
+              :before-close="handleClose">
+            <div>
+              <div v-if="step===1">
+                选择找回方式:
+                <el-button @click="step=3" type="primary">邮件</el-button>
+                <el-button @click="step=5" type="primary">手机号</el-button>
+              </div>
+              <div v-if="step===3">
+                邮箱：
+                <el-input style="width: 300px;" v-model="input" placeholder="请输入邮箱"></el-input>
+              </div>
+              <div v-if="step===4">
+                <span>已发送到你的邮箱</span>
+              </div>
+              <div v-if="step===5">
+                <div>
+                  手机号：
+                  <el-input style="width: 300px;" v-model="fdPhone" placeholder="请输入手机号"></el-input>
+                </div>
+                <div>
+                  验证码：
+                  <el-input
+                      type="text"
+                      class="lable-width"
+                      v-model="findByPhoneCode"
+                      autocomplete="off"
+                  >
+
+                    <el-button v-if="show" style="background-color: #00a1d6;color: #fffffc;height: 100%" slot="append"
+                               @click="sms" type="primary">获取验证码
+                    </el-button>
+                    <el-button v-if="!show" style="background-color: #00a1d6;color: #fffffc;height: 100%" slot="append"
+                               type="primary">{{ times }}s
+                    </el-button>
+                  </el-input>
+                  <div>
+                    新密码：
+                    <el-input  type="password"  style="width: 300px;" v-model="findByPassword" placeholder="请输入密码"></el-input>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span slot="footer" class="dialog-footer">
+              <el-button @click="dialogVisible = false">取 消</el-button>
+              <el-button v-if="step===3" type="primary" @click="step=4">下一步</el-button>
+              <el-button v-if="step===2" type="primary" @click="dialogVisible = false">确 定</el-button>
+              <el-button v-if="step===5" type="primary" @click="dialogVisible = false">确 定</el-button>
+            </span>
+          </el-dialog>
         </div>
       </el-col>
     </el-row>
-    <p data-v-2c844fd9="">登录即代表你同意<a data-v-2c844fd9="" target="_blank" href="#">用户协议</a>和<a data-v-2c844fd9=""
-                                                                                             target="_blank" href="#">隐私政策</a>
-    </p>
+    <p data-v-2c844fd9="">登录即代表你同意<a data-v-2c844fd9="" target="_blank" href="#">
+      用户协议</a>和<a data-v-2c844fd9="" target="_blank" href="#">隐私政策</a></p>
+
   </div>
 </template>
 
@@ -219,6 +273,11 @@ export default {
         email: "",
         code: "",
       },
+      step: 1,
+      fdPhone: '',
+      findByPhoneCode: "",
+      findByPassword: "",
+      dialogVisible: false,
       activeName: "first",
       rules: {
         pass: [
@@ -304,7 +363,7 @@ export default {
         if (this.times === 0) {
           this.show = true
           clearInterval(this.timer)
-          this.times=60
+          this.times = 60
         }
       }, 1000)
       user.smsPhone(this.phoneForm.mobile).then((res) => {
@@ -314,6 +373,14 @@ export default {
         });
       })
     },
+    handleClose(done) {
+      this.$confirm('确认关闭？')
+          .then(_ => {
+            done();
+          })
+          .catch(_ => {
+          });
+    }
   },
 };
 </script>
