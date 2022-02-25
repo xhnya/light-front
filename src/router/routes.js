@@ -253,6 +253,12 @@ export default [
         // meta:{show:true}
     },
     {
+        path: "/forget",
+        component: () => import('@/pages/login/forget'),
+        name: 'Forget',
+        // meta:{show:true}
+    },
+    {
         path: "/atlas/:id",
         component: Atlas,
         name: 'Atlas',

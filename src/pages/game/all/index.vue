@@ -3,12 +3,13 @@
     <div class="all-game-body01">
       <el-card class="box-card">
         <h1>全部游戏</h1>
-        <div style="margin: 30px">
-          <el-button type="primary">分类</el-button>
-        </div>
-        <div style="margin: 30px">
-          <el-button type="primary">标签</el-button>
-        </div>
+<!--        TODO: 游戏分类显示-->
+<!--        <div style="margin: 30px">-->
+<!--          <el-button type="primary">分类</el-button>-->
+<!--        </div>-->
+<!--        <div style="margin: 30px">-->
+<!--          <el-button type="primary">标签</el-button>-->
+<!--        </div>-->
         <a-list item-layout="vertical"
                 size="large"
                 :pagination="pagination"

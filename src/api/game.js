@@ -74,6 +74,22 @@ export default {
             method: 'get',
             params: params
         })
+    },
+    reqUserGame(userGame) {
+        return request({
+            url: '/game/usergame/save',
+            method: 'post',
+            data: userGame
+        })
+    },
+    reqGameInfoPage(id) {
+        return request({
+            url: '/community/article/gameInfoList',
+            method: 'get',
+            params: {
+                id: id
+            }
+        })
     }
 }
 export const getGameInfo = (id) => request({

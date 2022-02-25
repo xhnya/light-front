@@ -76,7 +76,7 @@
                 >
                   <el-input
                       type="text"
-                      v-model="phoneForm.mobile"
+                      v-model="username"
                       autocomplete="off"
                       class="lable-width"
                   ></el-input>
@@ -95,7 +95,7 @@
                   <el-input
                       type="text"
                       class="lable-width"
-                      v-model="phoneForm.code"
+                      v-model="code"
                       autocomplete="off"
                   >
 
@@ -140,7 +140,7 @@
                 >
                   <el-input
                       type="text"
-                      v-model="emailForm.email"
+                      v-model="username"
                       autocomplete="off"
                       class="lable-width"
                   ></el-input>
@@ -158,20 +158,21 @@
                 >
                   <el-input
                       type="text"
-                      v-model="emailForm.code"
-                      autocomplete="off"
                       class="lable-width"
+                      v-model="code"
+                      autocomplete="off"
                   >
-                    <el-button style="background-color: #00a1d6;color: #fffffc;height: 100%" slot="append"
-                               type="primary"
-                    >获取验证码
-                    </el-button
-                    >
-                  </el-input
-                  >
+
+                    <el-button v-if="show" style="background-color: #00a1d6;color: #fffffc;height: 100%" slot="append"
+                               @click="sendEmail" type="primary">获取验证码
+                    </el-button>
+                    <el-button v-if="!show" style="background-color: #00a1d6;color: #fffffc;height: 100%" slot="append"
+                               type="primary">{{ times }}s
+                    </el-button>
+                  </el-input>
                 </el-form-item>
                 <el-form-item>
-                  <el-button type="primary" @click="submitForm('ruleForm')"
+                  <el-button type="primary" @click="userLoginForPhone"
                   >登录
                   </el-button
                   >
@@ -181,60 +182,7 @@
             </el-tab-pane
             >
           </el-tabs>
-          <el-link @click="dialogVisible=true" type="primary">忘记密码</el-link>
-          <el-dialog
-              title="找回密码"
-              :visible.sync="dialogVisible"
-              width="30%"
-              :before-close="handleClose">
-            <div>
-              <div v-if="step===1">
-                选择找回方式:
-                <el-button @click="step=3" type="primary">邮件</el-button>
-                <el-button @click="step=5" type="primary">手机号</el-button>
-              </div>
-              <div v-if="step===3">
-                邮箱：
-                <el-input style="width: 300px;" v-model="input" placeholder="请输入邮箱"></el-input>
-              </div>
-              <div v-if="step===4">
-                <span>已发送到你的邮箱</span>
-              </div>
-              <div v-if="step===5">
-                <div>
-                  手机号：
-                  <el-input style="width: 300px;" v-model="fdPhone" placeholder="请输入手机号"></el-input>
-                </div>
-                <div>
-                  验证码：
-                  <el-input
-                      type="text"
-                      class="lable-width"
-                      v-model="findByPhoneCode"
-                      autocomplete="off"
-                  >
-
-                    <el-button v-if="show" style="background-color: #00a1d6;color: #fffffc;height: 100%" slot="append"
-                               @click="sms" type="primary">获取验证码
-                    </el-button>
-                    <el-button v-if="!show" style="background-color: #00a1d6;color: #fffffc;height: 100%" slot="append"
-                               type="primary">{{ times }}s
-                    </el-button>
-                  </el-input>
-                  <div>
-                    新密码：
-                    <el-input  type="password"  style="width: 300px;" v-model="findByPassword" placeholder="请输入密码"></el-input>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <span slot="footer" class="dialog-footer">
-              <el-button @click="dialogVisible = false">取 消</el-button>
-              <el-button v-if="step===3" type="primary" @click="step=4">下一步</el-button>
-              <el-button v-if="step===2" type="primary" @click="dialogVisible = false">确 定</el-button>
-              <el-button v-if="step===5" type="primary" @click="dialogVisible = false">确 定</el-button>
-            </span>
-          </el-dialog>
+          <el-link type="primary"><router-link to="/forget">忘记密码</router-link> </el-link>
         </div>
       </el-col>
     </el-row>
@@ -291,7 +239,8 @@ export default {
         ],
       },
       times: 60,
-      show: true
+      show: true,
+      username: ''
     };
   },
   created() {
@@ -313,6 +262,30 @@ export default {
       this.activeName = 'second'
       this.$message('输入手机号,注册账号');
       this.$refs[formName].resetFields();
+    },
+    sendEmail(){
+      if (this.username == "") {
+        this.$message({
+          message: '请输入邮箱',
+          type: 'warning'
+        });
+        return;
+      }
+      this.show = false
+      this.timer = setInterval(() => {
+        this.times--
+        if (this.times === 0) {
+          this.show = true
+          clearInterval(this.timer)
+          this.times = 60
+        }
+      }, 1000)
+      user.sendEmails(this.username).then((res) => {
+        this.$message({
+          message: '发送成功',
+          type: 'success'
+        });
+      })
     },
     checkPhone(rule, value, callback) {
       //debugger
@@ -340,8 +313,8 @@ export default {
     async userLoginForPhone() {
       try {
         //登录成功
-        const username = this.phoneForm.mobile
-        const password = this.phoneForm.code
+        const username = this.username
+        const password = this.code
         username && password && (await this.$store.dispatch("userLoginForPhone", {username, password}));
         //登录的路由组件：看x路由当中是否包含query参数，有：调到query参数指定路由，没有：调到home
         //let toPath = this.$route.query.redirect||"/home";
@@ -351,7 +324,7 @@ export default {
       }
     },
     sms() {
-      if (this.phoneForm.mobile == "") {
+      if (this.username == "") {
         this.$message({
           message: '请输入手机号',
           type: 'warning'
@@ -366,7 +339,7 @@ export default {
           this.times = 60
         }
       }, 1000)
-      user.smsPhone(this.phoneForm.mobile).then((res) => {
+      user.smsPhone(this.username).then((res) => {
         this.$message({
           message: '发送成功',
           type: 'success'

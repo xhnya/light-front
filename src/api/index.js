@@ -39,5 +39,14 @@ export default {
             url: 'community/article/getUserNeedKnow',
             method: 'get'
         })
+    },
+    reqBannerGame(type) {
+        return request({
+            url: 'game/recommend/bannerList',
+            method: 'get',
+            params: {
+                type: type
+            }
+        })
     }
 }

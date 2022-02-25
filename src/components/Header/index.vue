@@ -112,27 +112,32 @@
         <div style="text-align: center;">
           <router-link to="/account/history">
             <!--            TODO: 历史显示-->
-            <el-popover
-                width="400"
-                trigger="hover"
-                placement="bottom">
-              <div style="text-align: center;height: 600px;">
+            <!--            <el-popover-->
+            <!--                width="400"-->
+            <!--                trigger="hover"-->
+            <!--                placement="bottom">-->
+            <!--              <div style="text-align: center;height: 600px;">-->
 
-              </div>
+            <!--              </div>-->
 
-              <div style="text-align: center;">
-                <el-button>查看全部</el-button>
-              </div>
-              <div slot="reference">
-                <div>
-                  <i style="font-size:20px" class="el-icon-time"></i>
-                </div>
-                <div>
-                  <span style="font-size: small">历史</span>
-                </div>
-              </div>
-            </el-popover>
-
+            <!--              <div style="text-align: center;">-->
+            <!--                <el-button>查看全部</el-button>-->
+            <!--              </div>-->
+            <!--              <div slot="reference">-->
+            <!--                <div>-->
+            <!--                  <i style="font-size:20px" class="el-icon-time"></i>-->
+            <!--                </div>-->
+            <!--                <div>-->
+            <!--                  <span style="font-size: small">历史</span>-->
+            <!--                </div>-->
+            <!--              </div>-->
+            <!--            </el-popover>-->
+            <div>
+              <i style="font-size:20px" class="el-icon-time"></i>
+            </div>
+            <div>
+              <span style="font-size: small">历史</span>
+            </div>
           </router-link>
         </div>
       </el-col>
@@ -222,12 +227,12 @@ export default {
       this.$router.push({path: '/message/' + val})
     },
     search() {
-      this.$store.dispatch('searchKeyword',this.input3);
-      if (this.$route.path==='/search'){
+      this.$store.dispatch('searchKeyword', this.input3);
+      if (this.$route.path === '/search') {
         const params = {}
         params.keyword = this.$store.state.search.keyword
         this.$store.dispatch('getSearch', params);
-      }else {
+      } else {
         this.$router.push({path: '/search'})
       }
 

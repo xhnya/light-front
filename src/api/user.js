@@ -56,5 +56,18 @@ export default {
             url: '/user/message/getMyLikeList',
             method: 'get'
         })
+    },
+    changePassword(param) {
+        return request({
+            url: '/user/user/changePassword',
+            method: 'post',
+            data: param
+        })
+    },
+    sendEmails(email) {
+        return request({
+            url: '/cloud/email/sendMailBox/'+email,
+            method: 'get'
+        })
     }
 }

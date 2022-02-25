@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4709f25-0ba9-428d-9696-215315439931" name="Default Changelist" comment="优化">
+      <change afterPath="$PROJECT_DIR$/src/pages/login/forget.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/game/all/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/game/all/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/game/home/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/game/home/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/login/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="VueTemplate" />
         <option value="JavaScript File" />
+        <option value="VueTemplate" />
       </list>
     </option>
   </component>
@@ -56,7 +65,7 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="23rzFgQPY7Dee9SV8Si6ZDZ6W8U" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -64,21 +73,22 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/img" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.toDoOptions" />
+    <property name="ts.external.directory.path" value="I:\JavaTool\WebStorm 2021.1.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\code\light\light-front\src\components" />
+      <recent name="C:\Users\xhn\Desktop\code\light-vue\light\src\assets\img" />
     </key>
   </component>
   <component name="RunManager">
@@ -110,8 +120,9 @@
       <workItem from="1644588906857" duration="3056000" />
       <workItem from="1644728396109" duration="9120000" />
       <workItem from="1644753181156" duration="3642000" />
-      <workItem from="1645090512855" duration="585000" />
-      <workItem from="1645775439370" duration="4047000" />
+      <workItem from="1645198357991" duration="6209000" />
+      <workItem from="1645235175251" duration="31815000" />
+      <workItem from="1645324929845" duration="28588000" />
     </task>
     <task id="LOCAL-00001" summary="页面详情，开始开发后台">
       <created>1642515757184</created>
@@ -127,42 +138,35 @@
       <option name="project" value="LOCAL" />
       <updated>1644677990296</updated>
     </task>
-    <task id="LOCAL-00003" summary="游戏展示">
-      <created>1645006117279</created>
+    <task id="LOCAL-00003" summary="页面优化">
+      <created>1645193890511</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1645006117279</updated>
+      <updated>1645193890511</updated>
     </task>
-    <task id="LOCAL-00004" summary="首页显示">
-      <created>1645078614818</created>
+    <task id="LOCAL-00004" summary="优化">
+      <created>1645205298225</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1645078614818</updated>
+      <updated>1645205298225</updated>
     </task>
-    <task id="LOCAL-00005" summary="页面显示">
-      <created>1645159830547</created>
+    <task id="LOCAL-00005" summary="优化">
+      <created>1645287941374</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1645159830547</updated>
+      <updated>1645287941374</updated>
     </task>
     <task id="LOCAL-00006" summary="优化">
-      <created>1645583899098</created>
+      <created>1645619987823</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1645583899098</updated>
+      <updated>1645619987823</updated>
     </task>
-    <task id="LOCAL-00007" summary="优化">
-      <created>1645770726796</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1645770726796</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,27 +185,14 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="页面详情，开始开发后台" />
-    <MESSAGE value="首页显示" />
     <MESSAGE value="页面显示" />
+    <MESSAGE value="页面优化" />
     <MESSAGE value="优化" />
     <option name="LAST_COMMIT_MESSAGE" value="优化" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/pages/type/index.vue</url>
-          <line>263</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/pages/type/index.vue</url>
-          <line>266</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

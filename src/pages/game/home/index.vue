@@ -54,6 +54,7 @@
                             <el-link :href="this.gameInfoView.website" target="_blank"
                                      type="primary">点击进入
                             </el-link>
+                            <span @click="fouceGame">关注游戏</span>
                           </div>
                         </div>
                       </div>
@@ -81,7 +82,8 @@
                       <div class="game-home-info-score">
                         <div class="game-home-info-score111" style="">
                           <!--                          TODO: 未登录显示请登录，以及登录显示评分，或者请评分-->
-                          <span>你的评分是9.9</span>
+                          <span v-if="this.$store.state.user.userInfo.id==null">请登录</span>
+                          <span >你的评分是9.9</span>
                         </div>
                         <div style="display: inline;">
                           <a-progress v-if="this.gameInfoView.userScore!=null" :strokeWidth="12" :width="80"
@@ -108,7 +110,7 @@
                   </el-col>
                 </el-row>
               </el-tab-pane>
-              <el-tab-pane  class="game-info-tabs-item" label="社区"
+              <el-tab-pane class="game-info-tabs-item" label="社区"
                            name="community">
 
               </el-tab-pane>
@@ -153,10 +155,9 @@
                 <el-col :span="12">
                   <div class="game-info-home-cover2">
                     <el-card style="height: 640px;">
-                      <a-list bordered :data-source="data">
-                        <!--                       TODO: 游戏动态显示-->
+                      <a-list bordered :data-source="gameInfoPage">
                         <a-list-item slot="renderItem" slot-scope="item, index">
-                          {{ item }}
+                          <span @click="toPageIndex(item.id)">{{ item.name }}</span>
                         </a-list-item>
                       </a-list>
                     </el-card>
@@ -382,12 +383,14 @@ export default {
         minRows: 4,
         maxRows: 8
       },
+      gameInfoPage: []
     }
   },
   created() {
     this.gameId = this.$route.params.id
     this.getGameInfo()
     this.getCommentList()
+    this.getGamePage()
   },
   mounted() {
     //派发action获取gameInfo
@@ -397,14 +400,25 @@ export default {
     ...mapGetters(["gameInfoView"]),
   },
   methods: {
+    fouceGame() {
+      const params = {}
+      params.gid = this.$route.params.id
+      params.uid = this.$store.state.user.userInfo.id
+      game.reqUserGame(params).then((res) => {
+        this.$message({
+          message: '关注成功',
+          type: 'success'
+        });
+      })
+    },
     handleClick(tab, event) {
 
       if (this.activeName === 'index') {
         this.isIndex = true;
         this.$router.push({path: '/game/' + this.$route.params.id})
-      } else if (tab.name=== 'community'){
+      } else if (tab.name === 'community') {
         this.gotoCommunity(this.$route.params.id)
-      }else {
+      } else {
         this.isIndex = false;
         this.$router.push({path: '/game/' + this.$route.params.id + '/' + this.activeName})
       }
@@ -467,6 +481,14 @@ export default {
     },
     gotoCommunity(val) {
       this.$router.push({path: '/game/community/' + val})
+    },
+    getGamePage() {
+      game.reqGameInfoPage(this.$route.params.id).then((res) => {
+        this.gameInfoPage=res.data.results
+      })
+    },
+    toPageIndex(val) {
+      this.$router.push({path: `/page/${val}`})
     }
 
   },

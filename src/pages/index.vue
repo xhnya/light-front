@@ -14,15 +14,10 @@
           <el-col :span="10">
             <div class="grid-content ">
               <div class="game-item text-tag">
-                <span @click="toGameInfo()">荒野大镖客2</span>
-                <el-divider direction="vertical"></el-divider>
-                <span>荒野大镖客2</span>
-                <el-divider direction="vertical"></el-divider>
-                <span>荒野大镖客2</span>
-                <el-divider direction="vertical"></el-divider>
-                <span>荒野大镖客2</span>
-                <el-divider direction="vertical"></el-divider>
-                <span>荒野大镖客2</span>
+                <span v-for="item in bannerHotGame" :key="item.id">
+                  <span @click="gotoGameInfo(item.id)">{{ item.name }}</span>
+                  <el-divider direction="vertical"></el-divider>
+                </span>
               </div>
             </div>
           </el-col>
@@ -34,16 +29,10 @@
           <el-col :span="10">
             <div class="grid-content ">
               <div class="game-item">
-                <span>荒野大镖客2</span>
-                <el-divider direction="vertical"></el-divider>
-                <span>荒野大镖客2</span>
-                <el-divider direction="vertical"></el-divider>
-                <span>荒野大镖客2</span>
-                <el-divider direction="vertical"></el-divider>
-                <span>荒野大镖客2</span>
-                <el-divider direction="vertical"></el-divider>
-                <span>荒野大镖客2</span>
-
+                 <span v-for="item in bannerExpectGame" :key="item.id">
+                  <span @click="gotoGameInfo(item.id)">{{ item.name }}</span>
+                  <el-divider direction="vertical"></el-divider>
+                 </span>
               </div>
             </div>
           </el-col>
@@ -59,16 +48,10 @@
           <el-col :span="10">
             <div class="grid-content ">
               <div class="game-item">
-                <span>荒野大镖客2</span>
-                <el-divider direction="vertical"></el-divider>
-                <span>荒野大镖客2</span>
-                <el-divider direction="vertical"></el-divider>
-                <span>荒野大镖客2</span>
-                <el-divider direction="vertical"></el-divider>
-                <span>荒野大镖客2</span>
-                <el-divider direction="vertical"></el-divider>
-                <span>荒野大镖客2</span>
-
+                <span v-for="item in bannerDiscountGame" :key="item.id">
+                  <span @click="gotoGameInfo(item.id)">{{ item.name }}</span>
+                  <el-divider direction="vertical"></el-divider>
+                 </span>
               </div>
             </div>
           </el-col>
@@ -80,15 +63,10 @@
           <el-col :span="10">
             <div class="grid-content ">
               <div class="game-item">
-                <span>荒野大镖客2</span>
-                <el-divider direction="vertical"></el-divider>
-                <span>荒野大镖客2</span>
-                <el-divider direction="vertical"></el-divider>
-                <span>荒野大镖客2</span>
-                <el-divider direction="vertical"></el-divider>
-                <span>荒野大镖客2</span>
-                <el-divider direction="vertical"></el-divider>
-                <span>荒野大镖客2</span>
+                <span v-for="item in bannerLatelyGame" :key="item.id">
+                  <span @click="gotoGameInfo(item.id)">{{ item.name }}</span>
+                  <el-divider direction="vertical"></el-divider>
+                 </span>
               </div>
             </div>
           </el-col>
@@ -396,7 +374,11 @@ export default {
       hotPageList: [],
       newReleaseGame: [],
       gamePageInfoList: [],
-      userNeedKnow: []
+      userNeedKnow: [],
+      bannerHotGame: [],
+      bannerDiscountGame: [],
+      bannerExpectGame: [],
+      bannerLatelyGame: []
     };
   },
   created() {
@@ -406,6 +388,7 @@ export default {
     this.getNewRelease()
     this.getGamePageInfo()
     this.getUserNeedKnow()
+    this.getBannerGameList()
   },
   mounted() {
     //派发action,
@@ -486,9 +469,23 @@ export default {
         this.gamePageInfoList = res.data.result
       })
     },
-    getUserNeedKnow(){
+    getUserNeedKnow() {
       index.reqUserNeedKnow().then((res) => {
-        this.userNeedKnow=res.data.list
+        this.userNeedKnow = res.data.list
+      })
+    },
+    getBannerGameList() {
+      index.reqBannerGame(1).then((res) => {
+        this.bannerDiscountGame = res.data.result
+      })
+      index.reqBannerGame(2).then((res) => {
+        this.bannerHotGame = res.data.result
+      })
+      index.reqBannerGame(3).then((res) => {
+        this.bannerExpectGame = res.data.result
+      })
+      index.reqBannerGame(4).then((res) => {
+        this.bannerLatelyGame = res.data.result
       })
     }
 
