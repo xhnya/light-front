@@ -117,6 +117,13 @@ export default {
             method: 'post',
             data: comment
         })
+    },
+    reqCommentList(params) {
+        return request({
+            url: '/community/comment/getCommentList',
+            method: 'get',
+            params: params
+        })
     }
 }
 

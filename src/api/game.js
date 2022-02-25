@@ -60,6 +60,20 @@ export default {
             url: '/game/score/getEvaluating',
             method: 'get'
         })
+    },
+    reqAddGameComment(content) {
+        return request({
+            url: '/game/content/save',
+            method: 'post',
+            data: content
+        })
+    },
+    reqGameCommentList(params) {
+        return request({
+            url: '/game/content/list',
+            method: 'get',
+            params: params
+        })
     }
 }
 export const getGameInfo = (id) => request({

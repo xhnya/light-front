@@ -79,14 +79,25 @@
             >
               <a-list-item slot="renderItem" slot-scope="item, index">
                 <a-comment
-                    :author="item.author"
-                    :avatar="item.avatar"
+                    :author="item.userName"
+                    :avatar="item.cover"
                     :content="item.content"
-                    :datetime="item.datetime"
+                    :datetime="item.createTime"
                 />
               </a-list-item>
             </a-list>
-
+            <div class="block page">
+              <el-pagination
+                  @size-change="sizeChangeHandle"
+                  @current-change="currentChangeHandle"
+                  :current-page="page"
+                  :page-sizes="[10, 50, 100, 500]"
+                  :page-size.sync="limit"
+                  layout="total, sizes, prev, pager, next, jumper"
+                  :total="total"
+              >
+              </el-pagination>
+            </div>
           </div>
         </el-card>
       </div>
@@ -114,6 +125,9 @@ export default {
       submitting: false,
       value: '',
       moment,
+      page: 1,
+      limit: 10,
+      total: 10
     }
   },
   mounted() {
@@ -122,6 +136,9 @@ export default {
   },
   computed: {
     ...mapGetters(["pageInfoView"]),
+  },
+  created() {
+    this.getCommentList()
   },
   methods: {
     handleSubmit() {
@@ -157,8 +174,26 @@ export default {
       console.log(affixed);
     },
     getCommentList() {
-
-    }
+      const params = {}
+      params.page = this.page
+      params.limit = this.limit
+      params.parentId = this.$route.params.id
+      community.reqCommentList(params).then((res) => {
+        this.comments = res.data.page.list
+        this.page = res.data.page.currPage
+        this.total = res.data.page.totalCount
+      })
+    },
+    sizeChangeHandle(val) {
+      this.limit = val
+      this.page = 1
+      this.getCommentList()
+    },
+    // 当前页
+    currentChangeHandle(val) {
+      this.page = val
+      this.getCommentList()
+    },
   }
 }
 </script>
