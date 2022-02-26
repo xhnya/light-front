@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4709f25-0ba9-428d-9696-215315439931" name="Default Changelist" comment="优化">
-      <change afterPath="$PROJECT_DIR$/src/pages/login/forget.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/game/all/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/game/all/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/game/home/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/game/home/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/login/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,6 +114,7 @@
       <workItem from="1645198357991" duration="6209000" />
       <workItem from="1645235175251" duration="31815000" />
       <workItem from="1645324929845" duration="28588000" />
+      <workItem from="1645863955120" duration="3640000" />
     </task>
     <task id="LOCAL-00001" summary="页面详情，开始开发后台">
       <created>1642515757184</created>
@@ -166,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645619987823</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="优化">
+      <created>1645815123032</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1645815123032</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

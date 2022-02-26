@@ -4,7 +4,7 @@
     <div class="title-line"><span class="tit" style="font-size: 38px;">登录</span></div>
     <el-row>
       <el-col :span="16">
-        <div>left</div>
+        <div></div>
         <div class="line"></div>
       </el-col>
 
