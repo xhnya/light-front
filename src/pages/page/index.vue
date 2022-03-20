@@ -74,7 +74,7 @@
             <a-list
                 v-if="comments.length"
                 :data-source="comments"
-                :header="`${comments.length} ${comments.length > 1 ? 'replies' : 'reply'}`"
+                :header="`${comments.length} ${comments.length > 1 ? '评论' : '评论'}`"
                 item-layout="horizontal"
             >
               <a-list-item slot="renderItem" slot-scope="item, index">
@@ -166,6 +166,7 @@ export default {
       })
       this.value = ''
       this.submitting = false
+      this.getCommentList()
     },
     handleChange(e) {
       this.value = e.target.value;

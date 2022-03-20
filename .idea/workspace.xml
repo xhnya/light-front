@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a4709f25-0ba9-428d-9696-215315439931" name="Default Changelist" comment="优化">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/login/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/page/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/page/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +114,11 @@
       <workItem from="1645198357991" duration="6209000" />
       <workItem from="1645235175251" duration="31815000" />
       <workItem from="1645324929845" duration="28588000" />
-      <workItem from="1645863955120" duration="3640000" />
+      <workItem from="1645863955120" duration="3678000" />
+      <workItem from="1645952689081" duration="5032000" />
+      <workItem from="1646579841362" duration="440000" />
+      <workItem from="1647138798162" duration="3442000" />
+      <workItem from="1647674902043" duration="27000" />
     </task>
     <task id="LOCAL-00001" summary="页面详情，开始开发后台">
       <created>1642515757184</created>
@@ -165,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645815123032</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="优化">
+      <created>1645875540599</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1645875540599</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

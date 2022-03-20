@@ -5,7 +5,7 @@
         <div v-for="item in replyList" :key="item.id">
           <el-avatar style="width: 50px;height: 50px;margin-top: 10px;" size="large" :src="circleUrl"></el-avatar>
           <div style="display:inline-block;" class="reply-content-item">
-            <div>{{ item.message }}</div>
+            <div v-html="item.message "></div>
             <div class="max-text">{{ item.likeTime }}</div>
           </div>
           <el-divider></el-divider>
