@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a4709f25-0ba9-428d-9696-215315439931" name="Default Changelist" comment="优化">
+    <list default="true" id="a4709f25-0ba9-428d-9696-215315439931" name="Default Changelist" comment="消息显示">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/page/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/page/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +119,16 @@
       <workItem from="1646579841362" duration="440000" />
       <workItem from="1647138798162" duration="3442000" />
       <workItem from="1647674902043" duration="27000" />
+      <workItem from="1647741698279" duration="78000" />
+      <workItem from="1647742221256" duration="17000" />
+      <workItem from="1648348018667" duration="665000" />
+      <workItem from="1648455919966" duration="1583000" />
+      <workItem from="1648540592229" duration="618000" />
+      <workItem from="1648605831534" duration="807000" />
+      <workItem from="1648610754116" duration="2000" />
+      <workItem from="1648708627731" duration="579000" />
+      <workItem from="1648714912780" duration="424000" />
+      <workItem from="1648986761573" duration="424000" />
     </task>
     <task id="LOCAL-00001" summary="页面详情，开始开发后台">
       <created>1642515757184</created>
@@ -176,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645875540599</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="消息显示">
+      <created>1647741766076</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1647741766076</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,7 +216,8 @@
     <MESSAGE value="页面显示" />
     <MESSAGE value="页面优化" />
     <MESSAGE value="优化" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化" />
+    <MESSAGE value="消息显示" />
+    <option name="LAST_COMMIT_MESSAGE" value="消息显示" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
